@@ -174,11 +174,18 @@ ul.bullets li{ margin-bottom:2px; }
 .side-block:first-child .section-title{ margin-top:0; }
 .side-text{ margin:2px 0 0; color:var(--muted); }
 
+/* Botón de descarga: solo en pantalla, oculto al imprimir/exportar PDF */
+.download-btn{ display:none; }
+
 /* Pantalla (web): fondo gris y hoja tipo papel */
 @media screen{
   body{ background:#e9e9ea; padding:24px 12px; }
   .sheet{ background:#fff; padding:16mm 15mm; box-shadow:0 4px 24px rgba(0,0,0,.14);
     border-radius:2px; }
+  .download-btn{ display:inline-block; position:fixed; top:18px; right:18px; z-index:10;
+    background:#2b2b2b; color:#fff; text-decoration:none; font-size:13px; font-weight:600;
+    padding:9px 15px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,.22); }
+  .download-btn:hover{ background:#000; }
 }
 `;
 
@@ -190,6 +197,7 @@ function renderHTML(data) {
   const main = colSections.map(renderMainSection).join('');
   const side = data.side.map(renderSideSection).join('');
   const fullBlock = full ? `<div class="full-width">${full}</div>` : '';
+  const pdfName = (data.meta && data.meta.pdfFileName) || 'CV';
   return `<!doctype html>
 <html lang="${esc(data.meta && data.meta.language) || 'en'}">
 <head>
@@ -199,6 +207,7 @@ function renderHTML(data) {
 <style>${CSS}</style>
 </head>
 <body>
+<a class="download-btn" href="dist/${esc(pdfName)}.pdf" download>↓ Download PDF</a>
 <div class="sheet">
   ${renderHeader(data.header)}
   ${fullBlock}
