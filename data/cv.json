@@ -1,0 +1,251 @@
+{
+  "meta": {
+    "variant": "base",
+    "language": "en",
+    "pdfFileName": "Aitor-Izurrategui-CV"
+  },
+  "header": {
+    "name": "AITOR IZURRATEGUI",
+    "title": "GAME DEVELOPER | UNITY | C# | UNREAL ENGINE",
+    "summary": "Experienced in Unity and C#, specializing in game design. With knowledge in graphics programming and engine development. Background in systems and networks enhances technical proficiency. Known for enthusiasm and teamwork.",
+    "photo": "assets/photo.jpg",
+    "contact": {
+      "location": "Madrid, Spain",
+      "phone": "+34-672144246",
+      "email": "aitorizur@gmail.com"
+    },
+    "links": [
+      { "label": "Portfolio", "url": "https://aitorizur.my.canva.site/", "icon": "globe" },
+      { "label": "Linkedin", "url": "https://www.linkedin.com/in/aitor-izurrategui-de-castro/", "icon": "linkedin" },
+      { "label": "Github", "url": "https://github.com/aitorizur", "icon": "github" }
+    ]
+  },
+  "main": [
+    {
+      "title": "PROFESSIONAL EXPERIENCE",
+      "type": "experience",
+      "layout": "full",
+      "items": [
+        {
+          "org": "LURTIS AI",
+          "location": "Móstoles, Spain",
+          "date": "Sept 2022 - June 2024 (1 year 10 months)",
+          "role": "Unity Game Developer",
+          "bullets": [
+            "Programmed, tested and optimized gameplay mechanics and in-game environments in unannounced RPG mobile transmedia title in Unity URP.",
+            "Helped design and document gameplay mechanics, UI, and general game experience for an unannounced RPG mobile transmedia title.",
+            "Coordinated 3D and 2D art teams using an agile workflow to create and implement assets in-engine, following design documentation.",
+            "Helped create the initial promotion campaign for an unannounced RPG mobile transmedia title.",
+            "Developed a dashboard to balance and manage the mobile game “ZPLN,” connecting to a Google Firebase backend using Angular and TypeScript.",
+            "Designed an early multiplayer testing mode for the mobile video game “ZPLN” using a Firebase backend."
+          ]
+        },
+        {
+          "org": "LURTIS AI",
+          "location": "Móstoles, Spain",
+          "date": "Mar 2021 - June 2021 (4 months)",
+          "role": "Intern Unity Developer",
+          "bullets": [
+            "Implemented game mechanics and UI for a serious game focused on teaching recent history to teenagers in a classroom setting."
+          ]
+        },
+        {
+          "org": "ISOSTOPY",
+          "location": "Madrid, Spain",
+          "date": "Feb 2020 - July 2020 (6 months)",
+          "role": "Intern Unity Developer",
+          "bullets": [
+            "Assisted in the development of a truck checking simulator for a company that issues truck driving licenses in the United States.",
+            "Assisted in the development of a runner-type video game for a Spanish company."
+          ]
+        },
+        {
+          "org": "GENETSIS",
+          "location": "Madrid, Spain",
+          "date": "Feb 2017 - June 2017 (5 months)",
+          "role": "Intern Networking Technician",
+          "bullets": [
+            "Designed and implemented networking solutions for small companies using Cisco and other third-party routers and switches.",
+            "Attended customer calls to resolve everyday issues in previously installed networks."
+          ]
+        },
+        {
+          "org": "MULESOL, AENA",
+          "location": "Madrid, Spain",
+          "date": "Sept 2016 - Nov 2016 (3 months)",
+          "role": "Intern IT Technician",
+          "bullets": [
+            "Worked on resolving daily IT issues for the company's employees."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ADDITIONAL EXPERIENCE",
+      "type": "experience",
+      "items": [
+        {
+          "org": "Freelance online",
+          "location": "",
+          "date": "2022",
+          "role": "Private tutor in Unity and Programming",
+          "bullets": []
+        }
+      ]
+    },
+    {
+      "title": "PROJECTS",
+      "type": "projects",
+      "items": [
+        {
+          "name": "G!RO (Unity)",
+          "tag": "Procedural Top-down Arcade Game",
+          "url": "https://negone.itch.io/giro",
+          "date": "2022",
+          "role": "Designer and Programmer (Team: 2 Programmers and 2 Artists)",
+          "bullets": [
+            "Designed and programmed overall game experience, mechanics, progression and UI.",
+            "Awarded the “Most Enjoyable Game” audience award in the Fun&Serious Bilbao Event (2022). Also got nominated for the “Best Retro Game” award."
+          ]
+        },
+        {
+          "name": "Gravity Down Quick (Unity)",
+          "tag": "Level Based FPS Platformer",
+          "url": "https://www.youtube.com/watch?v=0_vrLjIdiCg&ab_channel=Perceve",
+          "date": "2019",
+          "role": "Designer and Programmer (Team: 1 Designer/Programmer and 1 Artist)",
+          "bullets": [
+            "Designed and implemented gameplay mechanics and levels."
+          ]
+        },
+        {
+          "name": "FADE (Unity)",
+          "tag": "Serious Puzzle Game",
+          "url": "https://www.youtube.com/watch?v=mRA8XhR5a6M&t=46s&ab_channel=FADETEAM",
+          "date": "2019",
+          "role": "Programmer (Team: 1 Designer, 2 Programmers and 2 Artists)",
+          "bullets": [
+            "Programmed all the main mechanics and helped design puzzles",
+            "Developed in 48 hours for Telefonica’s Event “Hackathon” (2019) as a serious game to help visualize problems of third-age people with Alzheimer. Awarded 3rd prize in the “serious games and gamification” category."
+          ]
+        },
+        {
+          "name": "C++ Game Engine",
+          "tag": "3D and 2D",
+          "url": "https://github.com/aitorizur/Cpp-Game-Engine",
+          "date": "2023",
+          "role": "Programmer",
+          "bullets": [
+            "Developed a c++ game engine using SDL2 and OpenGL for learning purposes."
+          ]
+        },
+        {
+          "name": "Unity tools",
+          "tag": "",
+          "date": "2024",
+          "role": "Programmer",
+          "bullets": [
+            "Variety of tools developed over time while using Unity including components, extensions, etc."
+          ]
+        },
+        {
+          "name": "Notion tools (Python & Notion API)",
+          "tag": "",
+          "date": "2024",
+          "role": "Programmer",
+          "bullets": [
+            "Developed some tools to manage databases in Notion for personal use."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "EDUCATION",
+      "type": "education",
+      "items": [
+        {
+          "org": "Universidad Rey Juan Carlos",
+          "location": "Móstoles, Spain",
+          "date": "2022",
+          "role": "Master's in Computer Graphics, Simulation & VR",
+          "bullets": []
+        },
+        {
+          "org": "UDIT",
+          "location": "Madrid, Spain",
+          "date": "2018 - 2022",
+          "role": "Bachelor Degree in Videogame Development and Game Design",
+          "bullets": []
+        },
+        {
+          "org": "UDIT",
+          "location": "Madrid, Spain",
+          "date": "2018 - 2020",
+          "role": "Certificate of Higher Education in 3D Animations, Game Development and Interactive Environments",
+          "bullets": []
+        },
+        {
+          "org": "UDIT",
+          "location": "Madrid, Spain",
+          "date": "2018 - 2020",
+          "role": "Higher National Diploma (UK) in Creative Media Production",
+          "bullets": []
+        },
+        {
+          "org": "JOYFE",
+          "location": "Madrid, Spain",
+          "date": "2016 - 2018",
+          "role": "Vocational Education and Training in Microcomputer Systems and Networking",
+          "bullets": []
+        }
+      ]
+    },
+    {
+      "title": "ADDITIONAL EDUCATION",
+      "type": "education",
+      "items": [
+        {
+          "org": "JOYFE",
+          "location": "Madrid, Spain",
+          "date": "2022",
+          "role": "Cisco CCNA: Routing and Switching",
+          "bullets": []
+        },
+        {
+          "org": "JOYFE",
+          "location": "Madrid, Spain",
+          "date": "2022",
+          "role": "Microsoft Office Specialist for Word, Excel, PowerPoint and Access",
+          "bullets": []
+        }
+      ]
+    }
+  ],
+  "side": [
+    {
+      "title": "PROGRAMMING LANGUAGES",
+      "type": "list",
+      "items": ["C#", "Python", "C++", "Javascript / Typescript"]
+    },
+    {
+      "title": "TECHNOLOGIES",
+      "type": "list",
+      "items": ["Unity", "Unreal Engine", "Git", "Github Actions", "OpenGL", "GLSL", "Angular", "Firebase", "HTML", "CSS"]
+    },
+    {
+      "title": "ADDITIONAL SKILLS",
+      "type": "list",
+      "items": ["Notion", "Clickup", "Agile Workflow", "Canva", "Miró", "Photoshop", "Premiere", "Audition", "Zbrush", "3DS MAX", "Substance Painter", "Marmoset Viewer", "After Effects"]
+    },
+    {
+      "title": "LANGUAGES",
+      "type": "list",
+      "items": ["Spanish (Native)", "English (Fluent)"]
+    },
+    {
+      "title": "HOBBIES",
+      "type": "text",
+      "text": "Love playing almost any sport and currently in a volleyball team. Videogame enthusiast and working everyday to expand my knowledge on the industry and game design."
+    }
+  ]
+}
