@@ -2,8 +2,13 @@
   "meta": {
     "variant": "base",
     "language": "en",
+    "htmlFile": "index.html",
     "pdfFileName": "Aitor-Izurrategui-CV"
   },
+  "languages": [
+    { "label": "EN", "href": "index.html" },
+    { "label": "ES", "href": "cv-es.html" }
+  ],
   "header": {
     "name": "AITOR IZURRATEGUI",
     "title": "GAME DEVELOPER | UNITY | C# | UNREAL ENGINE",

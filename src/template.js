@@ -127,10 +127,10 @@ body{
 
 /* Cabecera */
 .header{ display:flex; gap:20px; align-items:center; margin-bottom:14px; }
-.photo{ flex:0 0 auto; width:96px; height:96px; border-radius:50%; overflow:hidden;
+.photo{ flex:0 0 auto; width:144px; height:144px; border-radius:50%; overflow:hidden;
   background:#e8e8e8; display:flex; align-items:center; justify-content:center; }
 .photo img{ width:100%; height:100%; object-fit:cover; }
-.photo-fallback{ font-weight:700; font-size:26px; color:#8a2a2a; letter-spacing:1px; }
+.photo-fallback{ font-weight:700; font-size:39px; color:#8a2a2a; letter-spacing:1px; }
 .head-text{ flex:1 1 auto; }
 .name{ font-size:23pt; font-weight:700; letter-spacing:1px; margin:0 0 2px; }
 .title{ font-size:9.5pt; letter-spacing:4px; text-transform:uppercase; color:var(--muted);
@@ -174,17 +174,22 @@ ul.bullets li{ margin-bottom:2px; }
 .side-block:first-child .section-title{ margin-top:0; }
 .side-text{ margin:2px 0 0; color:var(--muted); }
 
-/* Botón de descarga: solo en pantalla, oculto al imprimir/exportar PDF */
-.download-btn{ display:none; }
+/* Acciones (selector de idioma + descarga): solo en pantalla, ocultas al imprimir/exportar PDF */
+.top-actions{ display:none; }
 
 /* Pantalla (web): fondo gris y hoja tipo papel */
 @media screen{
   body{ background:#e9e9ea; padding:24px 12px; }
   .sheet{ background:#fff; padding:16mm 15mm; box-shadow:0 4px 24px rgba(0,0,0,.14);
     border-radius:2px; }
-  .download-btn{ display:inline-block; position:fixed; top:18px; right:18px; z-index:10;
-    background:#2b2b2b; color:#fff; text-decoration:none; font-size:13px; font-weight:600;
-    padding:9px 15px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,.22); }
+  .top-actions{ display:flex; align-items:center; gap:10px; position:fixed; top:18px; right:18px; z-index:10; }
+  .lang-switch{ display:flex; background:#fff; border:1px solid #ccc; border-radius:6px;
+    overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,.12); }
+  .lang-switch .lang{ padding:8px 11px; font-size:13px; font-weight:600; text-decoration:none; color:#2b2b2b; }
+  .lang-switch a.lang:hover{ background:#f0f0f0; }
+  .lang-switch .cur{ background:#2b2b2b; color:#fff; }
+  .download-btn{ display:inline-block; background:#2b2b2b; color:#fff; text-decoration:none;
+    font-size:13px; font-weight:600; padding:9px 15px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,.22); }
   .download-btn:hover{ background:#000; }
 }
 `;
@@ -198,8 +203,21 @@ function renderHTML(data) {
   const side = data.side.map(renderSideSection).join('');
   const fullBlock = full ? `<div class="full-width">${full}</div>` : '';
   const pdfName = (data.meta && data.meta.pdfFileName) || 'CV';
+  const lang = (data.meta && data.meta.language) || 'en';
+  const current = (data.meta && data.meta.htmlFile) || 'index.html';
+  const dlLabel = lang === 'es' ? '↓ Descargar PDF' : '↓ Download PDF';
+  const langSwitch =
+    data.languages && data.languages.length
+      ? `<div class="lang-switch">${data.languages
+          .map((l) =>
+            l.href === current
+              ? `<span class="lang cur">${esc(l.label)}</span>`
+              : `<a class="lang" href="${esc(l.href)}">${esc(l.label)}</a>`
+          )
+          .join('')}</div>`
+      : '';
   return `<!doctype html>
-<html lang="${esc(data.meta && data.meta.language) || 'en'}">
+<html lang="${esc(lang)}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -207,7 +225,7 @@ function renderHTML(data) {
 <style>${CSS}</style>
 </head>
 <body>
-<a class="download-btn" href="dist/${esc(pdfName)}.pdf" download>↓ Download PDF</a>
+<div class="top-actions">${langSwitch}<a class="download-btn" href="dist/${esc(pdfName)}.pdf" download>${dlLabel}</a></div>
 <div class="sheet">
   ${renderHeader(data.header)}
   ${fullBlock}

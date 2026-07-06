@@ -1,0 +1,256 @@
+{
+  "meta": {
+    "variant": "es",
+    "language": "es",
+    "htmlFile": "cv-es.html",
+    "pdfFileName": "Aitor-Izurrategui-CV-ES"
+  },
+  "languages": [
+    { "label": "EN", "href": "index.html" },
+    { "label": "ES", "href": "cv-es.html" }
+  ],
+  "header": {
+    "name": "AITOR IZURRATEGUI",
+    "title": "DESARROLLADOR DE VIDEOJUEGOS | UNITY | C# | UNREAL ENGINE",
+    "summary": "Experiencia en Unity y C#, especializado en diseño de videojuegos. Con conocimientos en programación gráfica y desarrollo de motores. Mi formación en sistemas y redes refuerza mi solvencia técnica. Destaco por mi entusiasmo y trabajo en equipo.",
+    "photo": "assets/photo.jpg",
+    "contact": {
+      "location": "Madrid, España",
+      "phone": "+34-672144246",
+      "email": "aitorizur@gmail.com"
+    },
+    "links": [
+      { "label": "Portfolio", "url": "https://aitorizur.my.canva.site/", "icon": "globe" },
+      { "label": "Linkedin", "url": "https://www.linkedin.com/in/aitor-izurrategui-de-castro/", "icon": "linkedin" },
+      { "label": "Github", "url": "https://github.com/aitorizur", "icon": "github" }
+    ]
+  },
+  "main": [
+    {
+      "title": "EXPERIENCIA PROFESIONAL",
+      "type": "experience",
+      "layout": "full",
+      "items": [
+        {
+          "org": "LURTIS AI",
+          "location": "Móstoles, España",
+          "date": "Sept 2022 - Jun 2024 (1 año 10 meses)",
+          "role": "Desarrollador de Videojuegos Unity",
+          "bullets": [
+            "Programé, probé y optimicé mecánicas de juego y entornos en un título RPG móvil transmedia sin anunciar, desarrollado en Unity URP.",
+            "Colaboré en el diseño y la documentación de mecánicas de juego, UI y la experiencia general de un título RPG móvil transmedia sin anunciar.",
+            "Coordiné equipos de arte 2D y 3D con metodología ágil para crear e integrar assets en el motor, siguiendo la documentación de diseño.",
+            "Participé en la creación de la campaña de promoción inicial de un título RPG móvil transmedia sin anunciar.",
+            "Desarrollé un panel para balancear y gestionar el juego móvil “ZPLN”, conectado a un backend de Google Firebase, con Angular y TypeScript.",
+            "Diseñé un modo multijugador de pruebas inicial para el juego móvil “ZPLN” usando un backend de Firebase."
+          ]
+        },
+        {
+          "org": "LURTIS AI",
+          "location": "Móstoles, España",
+          "date": "Mar 2021 - Jun 2021 (4 meses)",
+          "role": "Desarrollador Unity en Prácticas",
+          "bullets": [
+            "Implementé mecánicas de juego y UI para un serious game orientado a enseñar historia reciente a adolescentes en el aula."
+          ]
+        },
+        {
+          "org": "ISOSTOPY",
+          "location": "Madrid, España",
+          "date": "Feb 2020 - Jul 2020 (6 meses)",
+          "role": "Desarrollador Unity en Prácticas",
+          "bullets": [
+            "Colaboré en el desarrollo de un simulador de inspección de camiones para una empresa que expide licencias de conducción de camiones en Estados Unidos.",
+            "Colaboré en el desarrollo de un videojuego de tipo runner para una empresa española."
+          ]
+        },
+        {
+          "org": "GENETSIS",
+          "location": "Madrid, España",
+          "date": "Feb 2017 - Jun 2017 (5 meses)",
+          "role": "Técnico de Redes en Prácticas",
+          "bullets": [
+            "Diseñé e implementé soluciones de red para pequeñas empresas usando routers y switches de Cisco y de terceros.",
+            "Atendí llamadas de clientes para resolver incidencias cotidianas en redes ya instaladas."
+          ]
+        },
+        {
+          "org": "MULESOL, AENA",
+          "location": "Madrid, España",
+          "date": "Sept 2016 - Nov 2016 (3 meses)",
+          "role": "Técnico IT en Prácticas",
+          "bullets": [
+            "Resolví incidencias informáticas diarias de los empleados de la empresa."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "EXPERIENCIA ADICIONAL",
+      "type": "experience",
+      "items": [
+        {
+          "org": "Freelance online",
+          "location": "",
+          "date": "2022",
+          "role": "Profesor particular de Unity y Programación",
+          "bullets": []
+        }
+      ]
+    },
+    {
+      "title": "PROYECTOS",
+      "type": "projects",
+      "items": [
+        {
+          "name": "G!RO (Unity)",
+          "tag": "Juego arcade cenital procedural",
+          "url": "https://negone.itch.io/giro",
+          "date": "2022",
+          "role": "Diseñador y Programador (Equipo: 2 Programadores y 2 Artistas)",
+          "bullets": [
+            "Diseñé y programé la experiencia de juego, las mecánicas, la progresión y la UI.",
+            "Ganador del premio del público “Most Enjoyable Game” en el Fun&Serious de Bilbao (2022). También nominado al premio “Best Retro Game”."
+          ]
+        },
+        {
+          "name": "Gravity Down Quick (Unity)",
+          "tag": "Plataformas FPS por niveles",
+          "url": "https://www.youtube.com/watch?v=0_vrLjIdiCg&ab_channel=Perceve",
+          "date": "2019",
+          "role": "Diseñador y Programador (Equipo: 1 Diseñador/Programador y 1 Artista)",
+          "bullets": [
+            "Diseñé e implementé las mecánicas de juego y los niveles."
+          ]
+        },
+        {
+          "name": "FADE (Unity)",
+          "tag": "Serious game de puzles",
+          "url": "https://www.youtube.com/watch?v=mRA8XhR5a6M&t=46s&ab_channel=FADETEAM",
+          "date": "2019",
+          "role": "Programador (Equipo: 1 Diseñador, 2 Programadores y 2 Artistas)",
+          "bullets": [
+            "Programé todas las mecánicas principales y colaboré en el diseño de puzles.",
+            "Desarrollado en 48 horas para el “Hackathon” de Telefónica (2019) como serious game para visualizar los problemas de personas mayores con Alzheimer. 3er premio en la categoría de “serious games y gamificación”."
+          ]
+        },
+        {
+          "name": "C++ Game Engine",
+          "tag": "3D y 2D",
+          "url": "https://github.com/aitorizur/Cpp-Game-Engine",
+          "date": "2023",
+          "role": "Programador",
+          "bullets": [
+            "Desarrollé un motor de videojuegos en C++ con SDL2 y OpenGL con fines de aprendizaje."
+          ]
+        },
+        {
+          "name": "Unity tools",
+          "tag": "",
+          "date": "2024",
+          "role": "Programador",
+          "bullets": [
+            "Diversas herramientas desarrolladas a lo largo del tiempo usando Unity: componentes, extensiones, etc."
+          ]
+        },
+        {
+          "name": "Notion tools (Python & Notion API)",
+          "tag": "",
+          "date": "2024",
+          "role": "Programador",
+          "bullets": [
+            "Desarrollé varias herramientas para gestionar bases de datos en Notion para uso personal."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "FORMACIÓN",
+      "type": "education",
+      "items": [
+        {
+          "org": "Universidad Rey Juan Carlos",
+          "location": "Móstoles, España",
+          "date": "2022",
+          "role": "Máster en Gráficos por Computador, Simulación y Realidad Virtual",
+          "bullets": []
+        },
+        {
+          "org": "UDIT",
+          "location": "Madrid, España",
+          "date": "2018 - 2022",
+          "role": "Grado en Desarrollo y Diseño de Videojuegos",
+          "bullets": []
+        },
+        {
+          "org": "UDIT",
+          "location": "Madrid, España",
+          "date": "2018 - 2020",
+          "role": "Título Superior en Animación 3D, Desarrollo de Videojuegos y Entornos Interactivos",
+          "bullets": []
+        },
+        {
+          "org": "UDIT",
+          "location": "Madrid, España",
+          "date": "2018 - 2020",
+          "role": "Higher National Diploma (Reino Unido) en Producción de Medios Creativos",
+          "bullets": []
+        },
+        {
+          "org": "JOYFE",
+          "location": "Madrid, España",
+          "date": "2016 - 2018",
+          "role": "Grado Medio (FP) en Sistemas Microinformáticos y Redes",
+          "bullets": []
+        }
+      ]
+    },
+    {
+      "title": "FORMACIÓN ADICIONAL",
+      "type": "education",
+      "items": [
+        {
+          "org": "JOYFE",
+          "location": "Madrid, España",
+          "date": "2022",
+          "role": "Cisco CCNA: Routing and Switching",
+          "bullets": []
+        },
+        {
+          "org": "JOYFE",
+          "location": "Madrid, España",
+          "date": "2022",
+          "role": "Microsoft Office Specialist en Word, Excel, PowerPoint y Access",
+          "bullets": []
+        }
+      ]
+    }
+  ],
+  "side": [
+    {
+      "title": "LENGUAJES DE PROGRAMACIÓN",
+      "type": "list",
+      "items": ["C#", "Python", "C++", "Javascript / Typescript"]
+    },
+    {
+      "title": "TECNOLOGÍAS",
+      "type": "list",
+      "items": ["Unity", "Unreal Engine", "Git", "Github Actions", "OpenGL", "GLSL", "Angular", "Firebase", "HTML", "CSS"]
+    },
+    {
+      "title": "OTRAS COMPETENCIAS",
+      "type": "list",
+      "items": ["Notion", "Clickup", "Metodología Ágil", "Canva", "Miró", "Photoshop", "Premiere", "Audition", "Zbrush", "3DS MAX", "Substance Painter", "Marmoset Viewer", "After Effects"]
+    },
+    {
+      "title": "IDIOMAS",
+      "type": "list",
+      "items": ["Español (Nativo)", "Inglés (Fluido)"]
+    },
+    {
+      "title": "INTERESES",
+      "type": "text",
+      "text": "Me encanta practicar casi cualquier deporte y actualmente juego en un equipo de voleibol. Entusiasta de los videojuegos, trabajo cada día para ampliar mis conocimientos sobre la industria y el diseño de videojuegos."
+    }
+  ]
+}

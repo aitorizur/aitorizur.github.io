@@ -22,20 +22,23 @@ El diseño no se toca nunca al actualizar el contenido.
 
 ```bash
 npm install        # solo la primera vez (instala puppeteer-core)
-node build.js      # genera web + PDF + vista previa
+node build.js      # genera TODAS las variantes (web + PDF) + vista previa
 ```
 
 El PDF se imprime con el Microsoft Edge ya instalado (no descarga Chromium).
 
-## CVs personalizados por oferta
+## Idiomas y variantes
 
-Para una versión adaptada a una oferta concreta, se crea un archivo de datos
-alternativo y se genera con su nombre:
+Cada archivo `data/cv*.json` es una variante y `node build.js` las construye todas:
 
-```bash
-# data/cv.ascendion.json  (copia de cv.json con lo relevante destacado)
-node build.js ascendion    # → dist/<nombre>.pdf
-```
+- `data/cv.json`     → `index.html`  + `dist/Aitor-Izurrategui-CV.pdf`    (inglés)
+- `data/cv.es.json`  → `cv-es.html`  + `dist/Aitor-Izurrategui-CV-ES.pdf` (español)
+
+La web incluye un selector de idioma (EN/ES). Cada variante define en su `meta`:
+`htmlFile` (página de salida) y `pdfFileName` (PDF), y comparte el bloque `languages`.
+
+Para una versión adaptada a una oferta concreta, se crea `data/cv.<variante>.json`
+con su propio `meta.htmlFile` y `meta.pdfFileName`, y `node build.js` la genera junto al resto.
 
 ## Foto
 
