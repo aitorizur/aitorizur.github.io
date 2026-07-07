@@ -20,7 +20,7 @@
       "email": "aitorizur@gmail.com"
     },
     "links": [
-      { "label": "Portfolio", "url": "https://aitorizur.my.canva.site/", "icon": "globe" },
+      { "label": "Portfolio", "url": "https://aitorizur.github.io/portfolio/", "icon": "globe" },
       { "label": "Linkedin", "url": "https://www.linkedin.com/in/aitor-izurrategui-de-castro/", "icon": "linkedin" },
       { "label": "Github", "url": "https://github.com/aitorizur", "icon": "github" }
     ]
