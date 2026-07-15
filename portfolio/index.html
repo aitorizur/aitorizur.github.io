@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Aitor Izurrategui — Game Developer · Portfolio</title>
 <meta name="description" content="Aitor Izurrategui — game developer (gameplay &amp; game design). Portfolio of games, prototypes and 3D art.">
+<link rel="icon" type="image/jpeg" href="assets/photo.jpg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aitor Izurrategui — Game Developer · Portfolio">
+<meta property="og:description" content="Aitor Izurrategui — game developer (gameplay &amp; game design). Portfolio of games, prototypes and 3D art.">
+<meta property="og:url" content="https://aitorizur.github.io/portfolio/index.html">
+<meta property="og:image" content="https://aitorizur.github.io/portfolio/assets/photo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aitor Izurrategui — Game Developer · Portfolio">
+<meta name="twitter:description" content="Aitor Izurrategui — game developer (gameplay &amp; game design). Portfolio of games, prototypes and 3D art.">
+<meta name="twitter:image" content="https://aitorizur.github.io/portfolio/assets/photo.jpg">
 <style>
 :root{
   --bg:#0d0d0f; --panel:#141416; --ink:#eaeaea; --muted:#9a9a9e;
@@ -40,6 +50,9 @@ a{ color:inherit; }
 .intro-photo img{ width:100%; height:100%; object-fit:cover; }
 .greeting{ margin:0 0 4px; font-size:24px; font-weight:800; }
 .tagline{ margin:0; color:#3a3a3a; font-size:15px; max-width:640px; }
+.cta-btn{ display:inline-block; margin-top:14px; background:var(--accent); color:#141416;
+  font-weight:800; text-decoration:none; padding:9px 18px; border-radius:8px; font-size:13.5px; }
+.cta-btn:hover{ background:#ffd53d; }
 
 /* Layout */
 .wrap{ max-width:1080px; margin:0 auto; padding:10px 22px 40px; }
@@ -68,6 +81,10 @@ a{ color:inherit; }
 .card-arrow{ font-size:13px; color:var(--muted); transition:color .18s ease; }
 .card-link:hover .card-arrow{ color:var(--accent); }
 .card-role{ color:var(--muted); font-size:12.5px; margin-top:2px; }
+.card-award{ display:inline-flex; align-items:center; gap:5px; background:rgba(245,197,24,.12);
+  color:var(--accent); border:1px solid rgba(245,197,24,.4); border-radius:999px;
+  padding:3px 10px; font-size:11px; font-weight:700; margin-top:8px; }
+.card-tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
 .card-desc{ color:#cfcfd2; font-size:13.5px; margin:8px 0 0; }
 .card-compact .card-body{ padding:10px 12px 12px; }
 .card-compact .card-title{ font-size:14px; }
@@ -131,6 +148,7 @@ a{ color:inherit; }
       <div class="intro-text">
         <h1 class="greeting">Hey!</h1>
         <p class="tagline">Game developer based in Madrid, Spain. Currently focusing on gameplay &amp; game design.</p>
+        <a class="cta-btn" href="../dist/Aitor-Izurrategui-CV.pdf" target="_blank" rel="noopener">Download CV ↓</a>
       </div>
     </div>
   </section><main class="wrap"><section class="section" id="games">
@@ -138,56 +156,56 @@ a{ color:inherit; }
     <p class="section-intro">Take a look at some of the games I've worked on over the years!</p>
     <div class="grid"><a class="card card-link" href="games/precise-hero.html"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/precise-hero.jpg" alt="The Precise Hero"></div><div class="card-body">
       <h3 class="card-title">The Precise Hero<span class="card-arrow">→</span></h3>
-      <div class="card-role">Designer / Programmer</div><p class="card-desc">Precision platformer where you control a hero suffering from narcolepsy.</p>
+      <div class="card-role">Designer / Programmer</div><div class="card-award">🏆 4th place — Todo Game Jam</div><div class="card-tags"><span class="tag">Platformer</span><span class="tag">2024</span></div><p class="card-desc">Precision platformer where you control a hero suffering from narcolepsy.</p>
     </div></a><a class="card card-link" href="games/giro.html"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/giro.jpg" alt="G!RO"></div><div class="card-body">
       <h3 class="card-title">G!RO<span class="card-arrow">→</span></h3>
-      <div class="card-role">Designer / Programmer</div><p class="card-desc">Fast-paced arcade game where you pilot a constantly rotating spaceship with a single button.</p>
+      <div class="card-role">Designer / Programmer</div><div class="card-award">🏆 Most Enjoyable Game — Fun&amp;Serious 2022</div><div class="card-tags"><span class="tag">Arcade</span><span class="tag">2022</span></div><p class="card-desc">Fast-paced arcade game where you pilot a constantly rotating spaceship with a single button.</p>
     </div></a><a class="card card-link" href="games/point-of-no-return.html"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/point-of-no-return.jpg" alt="Point of No Return"></div><div class="card-body">
       <h3 class="card-title">Point of No Return<span class="card-arrow">→</span></h3>
-      <div class="card-role">Designer / Programmer</div><p class="card-desc">Space exploration game where you race against the expansion of the universe.</p>
+      <div class="card-role">Designer / Programmer</div><div class="card-award">🏆 2nd place — Unity Jam</div><div class="card-tags"><span class="tag">Exploration</span><span class="tag">2024</span></div><p class="card-desc">Space exploration game where you race against the expansion of the universe.</p>
     </div></a><a class="card card-link" href="games/feather-fallout.html"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/feather-fallout.jpg" alt="Feather Fallout"></div><div class="card-body">
       <h3 class="card-title">Feather Fallout<span class="card-arrow">→</span></h3>
-      <div class="card-role">Designer / Programmer</div><p class="card-desc">Two-colour tower defense where each turret can only hit enemies of its matching colour.</p>
+      <div class="card-role">Designer / Programmer</div><div class="card-tags"><span class="tag">Tower Defense</span></div><p class="card-desc">Two-colour tower defense where each turret can only hit enemies of its matching colour.</p>
     </div></a><a class="card card-link" href="https://www.youtube.com/watch?v=0_vrLjIdiCg" target="_blank" rel="noopener"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/gravity-down-quick.jpg" alt="Gravity Down Quick"></div><div class="card-body">
       <h3 class="card-title">Gravity Down Quick<span class="card-arrow">↗</span></h3>
-      <div class="card-role">Designer / Programmer</div><p class="card-desc">FPS platformer where you gain speed and change the direction of gravity by shooting.</p>
+      <div class="card-role">Designer / Programmer</div><div class="card-tags"><span class="tag">FPS Platformer</span><span class="tag">2019</span></div><p class="card-desc">FPS platformer where you gain speed and change the direction of gravity by shooting.</p>
     </div></a><a class="card card-link" href="https://www.youtube.com/watch?v=mRA8XhR5a6M" target="_blank" rel="noopener"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/fade.jpg" alt="FADE"></div><div class="card-body">
       <h3 class="card-title">FADE<span class="card-arrow">↗</span></h3>
-      <div class="card-role">Programmer</div><p class="card-desc">Serious game designed to help visualise the daily challenges faced by people living with Alzheimer's.</p>
+      <div class="card-role">Programmer</div><div class="card-award">🏆 3rd Prize — Hackathon Telefónica 2019</div><div class="card-tags"><span class="tag">Serious Game</span><span class="tag">2019</span></div><p class="card-desc">Serious game designed to help visualise the daily challenges faced by people living with Alzheimer's.</p>
     </div></a><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/talassophobia.jpg" alt="Talassophobia"></div><div class="card-body">
       <h3 class="card-title">Talassophobia</h3>
       <div class="card-role">Solo developer</div><p class="card-desc">An experience that emulates the intense fear of deep bodies of water and the unknown lurking below.</p>
     </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/haunted-echoes.jpg" alt="Haunted Echoes"></div><div class="card-body">
       <h3 class="card-title">Haunted Echoes</h3>
-      <div class="card-role">Solo developer</div><p class="card-desc">VR experience where you uncover what happened by listening to audio cues in complete darkness.</p>
+      <div class="card-role">Solo developer</div><div class="card-tags"><span class="tag">VR</span></div><p class="card-desc">VR experience where you uncover what happened by listening to audio cues in complete darkness.</p>
     </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/zpln.jpg" alt="ZPLN"></div><div class="card-body">
       <h3 class="card-title">ZPLN</h3>
-      <div class="card-role">Programmer</div><p class="card-desc">Space-themed strategy shooter built around pinball-like bounces.</p>
+      <div class="card-role">Programmer</div><div class="card-tags"><span class="tag">Published</span></div><p class="card-desc">Space-themed strategy shooter built around pinball-like bounces.</p>
     </div></div></div>
   </section><section class="section" id="misc">
     <h2 class="section-title">MISCELLANEOUS PROJECTS</h2>
     <p class="section-intro">I've also been involved in projects beyond video games! Here are a few of them.</p>
     <div class="grid"><a class="card card-link" href="https://github.com/aitorizur/Cpp-Game-Engine" target="_blank" rel="noopener"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/cpp-game-engine.jpg" alt="C++ Game Engine"></div><div class="card-body">
       <h3 class="card-title">C++ Game Engine<span class="card-arrow">↗</span></h3>
-      <p class="card-desc">Game engine built from scratch in C++ using SDL2 and OpenGL.</p>
+      <div class="card-tags"><span class="tag">C++</span><span class="tag">SDL2</span><span class="tag">OpenGL</span></div><p class="card-desc">Game engine built from scratch in C++ using SDL2 and OpenGL.</p>
     </div></a><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/python-notion.jpg" alt="Python × Notion"></div><div class="card-body">
       <h3 class="card-title">Python × Notion</h3>
-      <p class="card-desc">Utilities to modify Notion databases through its API using Python.</p>
+      <div class="card-tags"><span class="tag">Python</span></div><p class="card-desc">Utilities to modify Notion databases through its API using Python.</p>
     </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/unity-utilities.jpg" alt="Unity Utilities"></div><div class="card-body">
       <h3 class="card-title">Unity Utilities</h3>
-      <p class="card-desc">A personal toolbox of Unity components and extensions I reuse in every project.</p>
+      <div class="card-tags"><span class="tag">Unity</span><span class="tag">C#</span></div><p class="card-desc">A personal toolbox of Unity components and extensions I reuse in every project.</p>
     </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/nori-pathtracer.jpg" alt="Nori Pathtracer"></div><div class="card-body">
       <h3 class="card-title">Nori Pathtracer</h3>
-      <p class="card-desc">Learning project in C++ where I built a core pathtracer on top of Nori.</p>
+      <div class="card-tags"><span class="tag">C++</span></div><p class="card-desc">Learning project in C++ where I built a core pathtracer on top of Nori.</p>
     </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/fluid-simulation.jpg" alt="Fluid Simulation"></div><div class="card-body">
       <h3 class="card-title">Fluid Simulation</h3>
-      <p class="card-desc">Learning project in C++ to experiment with basic fluid simulation.</p>
+      <div class="card-tags"><span class="tag">C++</span></div><p class="card-desc">Learning project in C++ to experiment with basic fluid simulation.</p>
     </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/classroom-2060.jpg" alt="Classroom 2060"></div><div class="card-body">
       <h3 class="card-title">Classroom 2060</h3>
-      <p class="card-desc">Helped build an experience for students to learn recent history through a game played in class.</p>
+      <div class="card-tags"><span class="tag">2021</span></div><p class="card-desc">Helped build an experience for students to learn recent history through a game played in class.</p>
     </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/breakout-android.jpg" alt="Breakout in Android Studio"></div><div class="card-body">
       <h3 class="card-title">Breakout in Android Studio</h3>
-      <p class="card-desc">Developed "Breakout" natively in Android Studio with C++.</p>
+      <div class="card-tags"><span class="tag">C++</span><span class="tag">Android</span></div><p class="card-desc">Developed "Breakout" natively in Android Studio with C++.</p>
     </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/truck-inspection.jpg" alt="Truck Pre-Trip Inspection"></div><div class="card-body">
       <h3 class="card-title">Truck Pre-Trip Inspection</h3>
       <p class="card-desc">Assisted in a truck-inspection simulator for a US company that issues truck-driving licences.</p>

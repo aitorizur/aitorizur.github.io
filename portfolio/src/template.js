@@ -3,6 +3,10 @@
 // Diseño "mezcla": tema oscuro + acento dorado (Canva/itch.io) con los títulos de
 // sección centrados con línea del CV. base = "" en el hub, "../" en las fichas.
 
+const SITE_ROOT = 'https://aitorizur.github.io/portfolio/';
+const DEFAULT_DESCRIPTION =
+  'Aitor Izurrategui — game developer (gameplay & game design). Portfolio of games, prototypes and 3D art.';
+
 const ICONS = {
   linkedin:
     '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>',
@@ -49,11 +53,16 @@ function renderCard(item, base, compact) {
   const ext = href && isExternal(href);
   const media = `<div class="card-media"><img loading="lazy" src="${esc(base + item.thumb)}" alt="${esc(item.title)}"></div>`;
   const role = item.role ? `<div class="card-role">${esc(item.role)}</div>` : '';
+  const award = item.award && !compact ? `<div class="card-award">🏆 ${esc(item.award)}</div>` : '';
+  const tags =
+    item.tags && item.tags.length && !compact
+      ? `<div class="card-tags">${item.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</div>`
+      : '';
   const desc = item.desc && !compact ? `<p class="card-desc">${esc(item.desc)}</p>` : '';
   const arrow = href ? `<span class="card-arrow">${ext ? '↗' : '→'}</span>` : '';
   const body = `<div class="card-body">
       <h3 class="card-title">${esc(item.title)}${arrow}</h3>
-      ${role}${desc}
+      ${role}${award}${tags}${desc}
     </div>`;
   const inner = media + body;
   if (href) {
@@ -79,16 +88,21 @@ function renderHub(data) {
   const base = '';
   const h = data.header;
   const sections = data.sections.map((s) => renderSection(s, base)).join('');
+  const cta = h.cta ? `<a class="cta-btn" href="${esc(h.cta.url)}" target="_blank" rel="noopener">${esc(h.cta.label)} ↓</a>` : '';
   const intro = `<section class="intro">
     <div class="intro-inner">
       <div class="intro-photo"><img src="${esc(base + h.photo)}" alt="${esc(h.name)}"></div>
       <div class="intro-text">
         <h1 class="greeting">${esc(h.greeting)}</h1>
         <p class="tagline">${esc(h.tagline)}</p>
+        ${cta}
       </div>
     </div>
   </section>`;
-  return page(data.meta, renderTopbar(h, base, 'SHOWCASE') + intro + `<main class="wrap">${sections}</main>` + footer(h, base), base);
+  return page(data.meta, renderTopbar(h, base, 'SHOWCASE') + intro + `<main class="wrap">${sections}</main>` + footer(h, base), base, {
+    path: 'index.html',
+    image: h.photo
+  });
 }
 
 function renderGame(data, slug) {
@@ -127,7 +141,11 @@ function renderGame(data, slug) {
     <h2 class="section-title">CONTRIBUTIONS</h2>
     <div class="contribs">${contribs}</div>
   </main>`;
-  return page(meta, renderTopbar(h, base, null) + body + footer(h, base), base);
+  return page(meta, renderTopbar(h, base, null) + body + footer(h, base), base, {
+    path: `games/${slug}.html`,
+    image: (g.gallery && g.gallery[0]) || h.photo,
+    description: (g.description && g.description[0]) || undefined
+  });
 }
 
 function footer(h, base) {
@@ -178,6 +196,9 @@ a{ color:inherit; }
 .intro-photo img{ width:100%; height:100%; object-fit:cover; }
 .greeting{ margin:0 0 4px; font-size:24px; font-weight:800; }
 .tagline{ margin:0; color:#3a3a3a; font-size:15px; max-width:640px; }
+.cta-btn{ display:inline-block; margin-top:14px; background:var(--accent); color:#141416;
+  font-weight:800; text-decoration:none; padding:9px 18px; border-radius:8px; font-size:13.5px; }
+.cta-btn:hover{ background:#ffd53d; }
 
 /* Layout */
 .wrap{ max-width:1080px; margin:0 auto; padding:10px 22px 40px; }
@@ -206,6 +227,10 @@ a{ color:inherit; }
 .card-arrow{ font-size:13px; color:var(--muted); transition:color .18s ease; }
 .card-link:hover .card-arrow{ color:var(--accent); }
 .card-role{ color:var(--muted); font-size:12.5px; margin-top:2px; }
+.card-award{ display:inline-flex; align-items:center; gap:5px; background:rgba(245,197,24,.12);
+  color:var(--accent); border:1px solid rgba(245,197,24,.4); border-radius:999px;
+  padding:3px 10px; font-size:11px; font-weight:700; margin-top:8px; }
+.card-tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
 .card-desc{ color:#cfcfd2; font-size:13.5px; margin:8px 0 0; }
 .card-compact .card-body{ padding:10px 12px 12px; }
 .card-compact .card-title{ font-size:14px; }
@@ -259,16 +284,30 @@ a{ color:inherit; }
 }
 `;
 
-function page(meta, inner, base) {
+function page(meta, inner, base, opts) {
   const lang = (meta && meta.language) || 'en';
   const title = (meta && meta.title) || 'Portfolio';
+  const o = opts || {};
+  const description = o.description || DEFAULT_DESCRIPTION;
+  const pageUrl = SITE_ROOT + (o.path || 'index.html');
+  const imageUrl = SITE_ROOT + (o.image || 'assets/photo.jpg');
   return `<!doctype html>
 <html lang="${esc(lang)}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
-<meta name="description" content="Aitor Izurrategui — game developer (gameplay &amp; game design). Portfolio of games, prototypes and 3D art.">
+<meta name="description" content="${esc(description)}">
+<link rel="icon" type="image/jpeg" href="${esc(base + 'assets/photo.jpg')}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(description)}">
+<meta property="og:url" content="${esc(pageUrl)}">
+<meta property="og:image" content="${esc(imageUrl)}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(title)}">
+<meta name="twitter:description" content="${esc(description)}">
+<meta name="twitter:image" content="${esc(imageUrl)}">
 <style>${CSS}</style>
 </head>
 <body>

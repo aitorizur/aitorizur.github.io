@@ -17,7 +17,8 @@
       { "label": "LinkedIn", "url": "https://www.linkedin.com/in/aitor-izurrategui-de-castro/", "icon": "linkedin" },
       { "label": "GitHub", "url": "https://github.com/aitorizur", "icon": "github" },
       { "label": "itch.io", "url": "https://perceve.itch.io/", "icon": "itch" }
-    ]
+    ],
+    "cta": { "label": "Download CV", "url": "../dist/Aitor-Izurrategui-CV.pdf" }
   },
 
   "sections": [
@@ -26,15 +27,15 @@
       "title": "GAMES",
       "intro": "Take a look at some of the games I've worked on over the years!",
       "items": [
-        { "slug": "precise-hero", "title": "The Precise Hero", "role": "Designer / Programmer", "desc": "Precision platformer where you control a hero suffering from narcolepsy.", "thumb": "assets/thumbs/games/precise-hero.jpg", "href": "games/precise-hero.html" },
-        { "slug": "giro", "title": "G!RO", "role": "Designer / Programmer", "desc": "Fast-paced arcade game where you pilot a constantly rotating spaceship with a single button.", "thumb": "assets/thumbs/games/giro.jpg", "href": "games/giro.html" },
-        { "slug": "point-of-no-return", "title": "Point of No Return", "role": "Designer / Programmer", "desc": "Space exploration game where you race against the expansion of the universe.", "thumb": "assets/thumbs/games/point-of-no-return.jpg", "href": "games/point-of-no-return.html" },
-        { "slug": "feather-fallout", "title": "Feather Fallout", "role": "Designer / Programmer", "desc": "Two-colour tower defense where each turret can only hit enemies of its matching colour.", "thumb": "assets/thumbs/games/feather-fallout.jpg", "href": "games/feather-fallout.html" },
-        { "slug": "gravity-down-quick", "title": "Gravity Down Quick", "role": "Designer / Programmer", "desc": "FPS platformer where you gain speed and change the direction of gravity by shooting.", "thumb": "assets/thumbs/games/gravity-down-quick.jpg", "href": "https://www.youtube.com/watch?v=0_vrLjIdiCg" },
-        { "slug": "fade", "title": "FADE", "role": "Programmer", "desc": "Serious game designed to help visualise the daily challenges faced by people living with Alzheimer's.", "thumb": "assets/thumbs/games/fade.jpg", "href": "https://www.youtube.com/watch?v=mRA8XhR5a6M" },
+        { "slug": "precise-hero", "title": "The Precise Hero", "role": "Designer / Programmer", "desc": "Precision platformer where you control a hero suffering from narcolepsy.", "thumb": "assets/thumbs/games/precise-hero.jpg", "href": "games/precise-hero.html", "tags": ["Platformer", "2024"], "award": "4th place — Todo Game Jam" },
+        { "slug": "giro", "title": "G!RO", "role": "Designer / Programmer", "desc": "Fast-paced arcade game where you pilot a constantly rotating spaceship with a single button.", "thumb": "assets/thumbs/games/giro.jpg", "href": "games/giro.html", "tags": ["Arcade", "2022"], "award": "Most Enjoyable Game — Fun&Serious 2022" },
+        { "slug": "point-of-no-return", "title": "Point of No Return", "role": "Designer / Programmer", "desc": "Space exploration game where you race against the expansion of the universe.", "thumb": "assets/thumbs/games/point-of-no-return.jpg", "href": "games/point-of-no-return.html", "tags": ["Exploration", "2024"], "award": "2nd place — Unity Jam" },
+        { "slug": "feather-fallout", "title": "Feather Fallout", "role": "Designer / Programmer", "desc": "Two-colour tower defense where each turret can only hit enemies of its matching colour.", "thumb": "assets/thumbs/games/feather-fallout.jpg", "href": "games/feather-fallout.html", "tags": ["Tower Defense"] },
+        { "slug": "gravity-down-quick", "title": "Gravity Down Quick", "role": "Designer / Programmer", "desc": "FPS platformer where you gain speed and change the direction of gravity by shooting.", "thumb": "assets/thumbs/games/gravity-down-quick.jpg", "href": "https://www.youtube.com/watch?v=0_vrLjIdiCg", "tags": ["FPS Platformer", "2019"] },
+        { "slug": "fade", "title": "FADE", "role": "Programmer", "desc": "Serious game designed to help visualise the daily challenges faced by people living with Alzheimer's.", "thumb": "assets/thumbs/games/fade.jpg", "href": "https://www.youtube.com/watch?v=mRA8XhR5a6M", "tags": ["Serious Game", "2019"], "award": "3rd Prize — Hackathon Telefónica 2019" },
         { "slug": "talassophobia", "title": "Talassophobia", "role": "Solo developer", "desc": "An experience that emulates the intense fear of deep bodies of water and the unknown lurking below.", "thumb": "assets/thumbs/games/talassophobia.jpg" },
-        { "slug": "haunted-echoes", "title": "Haunted Echoes", "role": "Solo developer", "desc": "VR experience where you uncover what happened by listening to audio cues in complete darkness.", "thumb": "assets/thumbs/games/haunted-echoes.jpg" },
-        { "slug": "zpln", "title": "ZPLN", "role": "Programmer", "desc": "Space-themed strategy shooter built around pinball-like bounces.", "thumb": "assets/thumbs/games/zpln.jpg" }
+        { "slug": "haunted-echoes", "title": "Haunted Echoes", "role": "Solo developer", "desc": "VR experience where you uncover what happened by listening to audio cues in complete darkness.", "thumb": "assets/thumbs/games/haunted-echoes.jpg", "tags": ["VR"] },
+        { "slug": "zpln", "title": "ZPLN", "role": "Programmer", "desc": "Space-themed strategy shooter built around pinball-like bounces.", "thumb": "assets/thumbs/games/zpln.jpg", "tags": ["Published"] }
       ]
     },
     {
@@ -42,13 +43,13 @@
       "title": "MISCELLANEOUS PROJECTS",
       "intro": "I've also been involved in projects beyond video games! Here are a few of them.",
       "items": [
-        { "title": "C++ Game Engine", "desc": "Game engine built from scratch in C++ using SDL2 and OpenGL.", "thumb": "assets/thumbs/misc/cpp-game-engine.jpg", "href": "https://github.com/aitorizur/Cpp-Game-Engine" },
-        { "title": "Python × Notion", "desc": "Utilities to modify Notion databases through its API using Python.", "thumb": "assets/thumbs/misc/python-notion.jpg" },
-        { "title": "Unity Utilities", "desc": "A personal toolbox of Unity components and extensions I reuse in every project.", "thumb": "assets/thumbs/misc/unity-utilities.jpg" },
-        { "title": "Nori Pathtracer", "desc": "Learning project in C++ where I built a core pathtracer on top of Nori.", "thumb": "assets/thumbs/misc/nori-pathtracer.jpg" },
-        { "title": "Fluid Simulation", "desc": "Learning project in C++ to experiment with basic fluid simulation.", "thumb": "assets/thumbs/misc/fluid-simulation.jpg" },
-        { "title": "Classroom 2060", "desc": "Helped build an experience for students to learn recent history through a game played in class.", "thumb": "assets/thumbs/misc/classroom-2060.jpg" },
-        { "title": "Breakout in Android Studio", "desc": "Developed \"Breakout\" natively in Android Studio with C++.", "thumb": "assets/thumbs/misc/breakout-android.jpg" },
+        { "title": "C++ Game Engine", "desc": "Game engine built from scratch in C++ using SDL2 and OpenGL.", "thumb": "assets/thumbs/misc/cpp-game-engine.jpg", "href": "https://github.com/aitorizur/Cpp-Game-Engine", "tags": ["C++", "SDL2", "OpenGL"] },
+        { "title": "Python × Notion", "desc": "Utilities to modify Notion databases through its API using Python.", "thumb": "assets/thumbs/misc/python-notion.jpg", "tags": ["Python"] },
+        { "title": "Unity Utilities", "desc": "A personal toolbox of Unity components and extensions I reuse in every project.", "thumb": "assets/thumbs/misc/unity-utilities.jpg", "tags": ["Unity", "C#"] },
+        { "title": "Nori Pathtracer", "desc": "Learning project in C++ where I built a core pathtracer on top of Nori.", "thumb": "assets/thumbs/misc/nori-pathtracer.jpg", "tags": ["C++"] },
+        { "title": "Fluid Simulation", "desc": "Learning project in C++ to experiment with basic fluid simulation.", "thumb": "assets/thumbs/misc/fluid-simulation.jpg", "tags": ["C++"] },
+        { "title": "Classroom 2060", "desc": "Helped build an experience for students to learn recent history through a game played in class.", "thumb": "assets/thumbs/misc/classroom-2060.jpg", "tags": ["2021"] },
+        { "title": "Breakout in Android Studio", "desc": "Developed \"Breakout\" natively in Android Studio with C++.", "thumb": "assets/thumbs/misc/breakout-android.jpg", "tags": ["C++", "Android"] },
         { "title": "Truck Pre-Trip Inspection", "desc": "Assisted in a truck-inspection simulator for a US company that issues truck-driving licences.", "thumb": "assets/thumbs/misc/truck-inspection.jpg" }
       ]
     },
