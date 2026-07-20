@@ -11,8 +11,8 @@
   ],
   "header": {
     "name": "AITOR IZURRATEGUI",
-    "title": "DESARROLLADOR DE VIDEOJUEGOS | UNITY | C# | UNREAL ENGINE",
-    "summary": "Experiencia en Unity y C#, especializado en diseño de videojuegos. Con conocimientos en programación gráfica y desarrollo de motores. Mi formación en sistemas y redes refuerza mi solvencia técnica. Destaco por mi entusiasmo y trabajo en equipo.",
+    "title": "INGENIERO DE PRODUCTO | UNITY | DESARROLLADOR AI FIRST",
+    "summary": "Ingeniero de producto con más de 5 años desarrollando experiencias en Unity/VR, actualmente construyendo apps de deportes en Realidad Mixta financiadas por Meta para Meta Quest. Desarrollador AI-first que aprovecha herramientas agénticas (Claude Code, MCP) para avanzar rápido en proyectos de videojuegos, web y herramientas, con fuerte instinto de diseño UX y de sistemas.",
     "photo": "assets/photo.jpg",
     "contact": {
       "location": "Madrid, España",
@@ -31,6 +31,20 @@
       "type": "experience",
       "layout": "full",
       "items": [
+        {
+          "org": "YBVR (YERBA BUENA VR)",
+          "location": "Madrid, España",
+          "date": "Nov 2024 - Actualidad (1 año 8 meses)",
+          "role": "Desarrollador Unity VR",
+          "bullets": [
+            "Desarrollé funcionalidades en Unity/OpenXR para Xtadium, una app gratuita de deportes en Realidad Mixta financiada por Meta para Meta Quest, destacada como una de las mejores apps de MR de Meta, con streaming de NBA, UFC, EuroLeague y NASCAR hasta 8K en 180°/360°.",
+            "Construí un sistema de componentes de UI que permitió al equipo de diseño maquetar pantallas directamente en Unity, delegando por completo el trabajo de maquetación a diseño.",
+            "Implementé un sistema completo de localización (inglés, español y alemán) y un framework de onboarding/tutoriales utilizable directamente por diseño.",
+            "Diseñé y desarrollé un tablero 3D interactivo en tiempo real para las retransmisiones de NASCAR, renderizando más de 100 coches sincronizados con telemetría en directo y VOD, usado en 3 eventos en vivo.",
+            "Construí el sistema reutilizable de spin-offs que da vida a más de 5 apps derivadas (Xtadium Music, CultVRe, EuroLeague TV VR, X Games 360Vision) desde una base de código compartida.",
+            "Optimicé el renderizado y los pipelines de datos para mantener 90 FPS estables en Meta Quest, y participé en la migración del render pipeline de Built-in a URP."
+          ]
+        },
         {
           "org": "LURTIS AI",
           "location": "Móstoles, España",
@@ -63,25 +77,6 @@
             "Colaboré en el desarrollo de un simulador de inspección de camiones para una empresa que expide licencias de conducción de camiones en Estados Unidos.",
             "Colaboré en el desarrollo de un videojuego de tipo runner para una empresa española."
           ]
-        },
-        {
-          "org": "GENETSIS",
-          "location": "Madrid, España",
-          "date": "Feb 2017 - Jun 2017 (5 meses)",
-          "role": "Técnico de Redes en Prácticas",
-          "bullets": [
-            "Diseñé e implementé soluciones de red para pequeñas empresas usando routers y switches de Cisco y de terceros.",
-            "Atendí llamadas de clientes para resolver incidencias cotidianas en redes ya instaladas."
-          ]
-        },
-        {
-          "org": "MULESOL, AENA",
-          "location": "Madrid, España",
-          "date": "Sept 2016 - Nov 2016 (3 meses)",
-          "role": "Técnico IT en Prácticas",
-          "bullets": [
-            "Resolví incidencias informáticas diarias de los empleados de la empresa."
-          ]
         }
       ]
     },
@@ -95,6 +90,20 @@
           "date": "2022",
           "role": "Profesor particular de Unity y Programación",
           "bullets": []
+        },
+        {
+          "org": "GENETSIS",
+          "location": "Madrid, España",
+          "date": "2017",
+          "role": "Técnico de Redes en Prácticas",
+          "bullets": []
+        },
+        {
+          "org": "MULESOL, AENA",
+          "location": "Madrid, España",
+          "date": "2016",
+          "role": "Técnico IT en Prácticas",
+          "bullets": []
         }
       ]
     },
@@ -102,6 +111,26 @@
       "title": "PROYECTOS",
       "type": "projects",
       "items": [
+        {
+          "name": "C++ Game Engine",
+          "tag": "3D y 2D",
+          "url": "https://github.com/aitorizur/Cpp-Game-Engine",
+          "date": "2023",
+          "role": "Programador",
+          "bullets": [
+            "Desarrollé un motor de videojuegos en C++ con SDL2 y OpenGL con fines de aprendizaje."
+          ]
+        },
+        {
+          "name": "Game Jams (Unity)",
+          "tag": "3 Game Jams en solitario",
+          "url": "https://perceve.itch.io",
+          "date": "2024",
+          "role": "Diseñador y Programador (Equipo: 1 Diseñador/Programador y 1 Artista)",
+          "bullets": [
+            "Diseñé y programé tres juegos de jams en solitario en plazos de 3 días a 2 semanas: Point of No Return (2º puesto general, Unity Jam/Tooling.gg), The Precise Hero (4º en gameplay, Todo Game Jam) y Feather Fallout (1 bit Jam #4)."
+          ]
+        },
         {
           "name": "G!RO (Unity)",
           "tag": "Juego arcade cenital procedural",
@@ -121,45 +150,6 @@
           "role": "Diseñador y Programador (Equipo: 1 Diseñador/Programador y 1 Artista)",
           "bullets": [
             "Diseñé e implementé las mecánicas de juego y los niveles."
-          ]
-        },
-        {
-          "name": "FADE (Unity)",
-          "tag": "Serious game de puzles",
-          "url": "https://www.youtube.com/watch?v=mRA8XhR5a6M&t=46s&ab_channel=FADETEAM",
-          "date": "2019",
-          "role": "Programador (Equipo: 1 Diseñador, 2 Programadores y 2 Artistas)",
-          "bullets": [
-            "Programé todas las mecánicas principales y colaboré en el diseño de puzles.",
-            "Desarrollado en 48 horas para el “Hackathon” de Telefónica (2019) como serious game para visualizar los problemas de personas mayores con Alzheimer. 3er premio en la categoría de “serious games y gamificación”."
-          ]
-        },
-        {
-          "name": "C++ Game Engine",
-          "tag": "3D y 2D",
-          "url": "https://github.com/aitorizur/Cpp-Game-Engine",
-          "date": "2023",
-          "role": "Programador",
-          "bullets": [
-            "Desarrollé un motor de videojuegos en C++ con SDL2 y OpenGL con fines de aprendizaje."
-          ]
-        },
-        {
-          "name": "Unity tools",
-          "tag": "",
-          "date": "2024",
-          "role": "Programador",
-          "bullets": [
-            "Diversas herramientas desarrolladas a lo largo del tiempo usando Unity: componentes, extensiones, etc."
-          ]
-        },
-        {
-          "name": "Notion tools (Python & Notion API)",
-          "tag": "",
-          "date": "2024",
-          "role": "Programador",
-          "bullets": [
-            "Desarrollé varias herramientas para gestionar bases de datos en Notion para uso personal."
           ]
         }
       ]
@@ -235,7 +225,7 @@
     {
       "title": "TECNOLOGÍAS",
       "type": "list",
-      "items": ["Unity", "Unreal Engine", "Git", "Github Actions", "OpenGL", "GLSL", "Angular", "Firebase", "HTML", "CSS"]
+      "items": ["Unity", "Unreal Engine", "VR / OpenXR", "Photon", "ShaderGraph / HLSL", "Git", "Github Actions", "OpenGL", "GLSL", "Angular", "Firebase", "HTML", "CSS"]
     },
     {
       "title": "OTRAS COMPETENCIAS",
@@ -246,11 +236,6 @@
       "title": "IDIOMAS",
       "type": "list",
       "items": ["Español (Nativo)", "Inglés (Fluido)"]
-    },
-    {
-      "title": "INTERESES",
-      "type": "text",
-      "text": "Me encanta practicar casi cualquier deporte y actualmente juego en un equipo de voleibol. Entusiasta de los videojuegos, trabajo cada día para ampliar mis conocimientos sobre la industria y el diseño de videojuegos."
     }
   ]
 }

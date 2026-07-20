@@ -11,8 +11,8 @@
   ],
   "header": {
     "name": "AITOR IZURRATEGUI",
-    "title": "GAME DEVELOPER | UNITY | C# | UNREAL ENGINE",
-    "summary": "Experienced in Unity and C#, specializing in game design. With knowledge in graphics programming and engine development. Background in systems and networks enhances technical proficiency. Known for enthusiasm and teamwork.",
+    "title": "PRODUCT ENGINEER | UNITY | AI FIRST DEVELOPER",
+    "summary": "Product engineer with 5+ years building Unity/VR experiences, currently shipping Meta-funded Mixed Reality sports apps for Meta Quest. AI-first developer leveraging agentic tools (Claude Code, MCP) to move fast across game, web and tooling projects, with strong UX and systems design instincts.",
     "photo": "assets/photo.jpg",
     "contact": {
       "location": "Madrid, Spain",
@@ -31,6 +31,20 @@
       "type": "experience",
       "layout": "full",
       "items": [
+        {
+          "org": "YBVR (YERBA BUENA VR)",
+          "location": "Madrid, Spain",
+          "date": "Nov 2024 - Present (1 year 8 months)",
+          "role": "Unity VR Developer",
+          "bullets": [
+            "Developed Unity/OpenXR features for Xtadium, a free Meta-funded Mixed Reality sports app for Meta Quest featured as a top Meta MR app, streaming NBA, UFC, EuroLeague and NASCAR content up to 8K 180°/360°.",
+            "Built a UI component system that let the design team assemble screens directly in Unity, fully removing engineering from UI layout work.",
+            "Shipped a full localization system (English, Spanish, German) and an onboarding/tutorial framework usable directly by designers.",
+            "Designed and developed a real-time interactive 3D tabletop for NASCAR broadcasts rendering 100+ cars synced to live and VOD telemetry, used across 3 live events.",
+            "Built the reusable spin-off system powering derivative apps (Xtadium Music, CultVRe) from a shared codebase.",
+            "Optimized rendering and data pipelines to sustain a stable 90 FPS on Meta Quest and contributed to the Built-in to URP render pipeline migration."
+          ]
+        },
         {
           "org": "LURTIS AI",
           "location": "Móstoles, Spain",
@@ -63,25 +77,6 @@
             "Assisted in the development of a truck checking simulator for a company that issues truck driving licenses in the United States.",
             "Assisted in the development of a runner-type video game for a Spanish company."
           ]
-        },
-        {
-          "org": "GENETSIS",
-          "location": "Madrid, Spain",
-          "date": "Feb 2017 - June 2017 (5 months)",
-          "role": "Intern Networking Technician",
-          "bullets": [
-            "Designed and implemented networking solutions for small companies using Cisco and other third-party routers and switches.",
-            "Attended customer calls to resolve everyday issues in previously installed networks."
-          ]
-        },
-        {
-          "org": "MULESOL, AENA",
-          "location": "Madrid, Spain",
-          "date": "Sept 2016 - Nov 2016 (3 months)",
-          "role": "Intern IT Technician",
-          "bullets": [
-            "Worked on resolving daily IT issues for the company's employees."
-          ]
         }
       ]
     },
@@ -95,6 +90,20 @@
           "date": "2022",
           "role": "Private tutor in Unity and Programming",
           "bullets": []
+        },
+        {
+          "org": "GENETSIS",
+          "location": "Madrid, Spain",
+          "date": "2017",
+          "role": "Intern Networking Technician",
+          "bullets": []
+        },
+        {
+          "org": "MULESOL, AENA",
+          "location": "Madrid, Spain",
+          "date": "2016",
+          "role": "Intern IT Technician",
+          "bullets": []
         }
       ]
     },
@@ -102,6 +111,26 @@
       "title": "PROJECTS",
       "type": "projects",
       "items": [
+        {
+          "name": "C++ Game Engine",
+          "tag": "3D and 2D",
+          "url": "https://github.com/aitorizur/Cpp-Game-Engine",
+          "date": "2023",
+          "role": "Programmer",
+          "bullets": [
+            "Developed a c++ game engine using SDL2 and OpenGL for learning purposes."
+          ]
+        },
+        {
+          "name": "Game Jams (Unity)",
+          "tag": "3 Solo Game Jams",
+          "url": "https://perceve.itch.io",
+          "date": "2024",
+          "role": "Designer and Programmer (Team: 1 Designer/Programmer and 1 Artist)",
+          "bullets": [
+            "Designed and programmed three solo-jam games in 3-day to 2-week timeframes: Point of No Return (2nd overall, Unity Jam/Tooling.gg), The Precise Hero (4th in gameplay, Todo Game Jam) and Feather Fallout (1 bit Jam #4)."
+          ]
+        },
         {
           "name": "G!RO (Unity)",
           "tag": "Procedural Top-down Arcade Game",
@@ -121,45 +150,6 @@
           "role": "Designer and Programmer (Team: 1 Designer/Programmer and 1 Artist)",
           "bullets": [
             "Designed and implemented gameplay mechanics and levels."
-          ]
-        },
-        {
-          "name": "FADE (Unity)",
-          "tag": "Serious Puzzle Game",
-          "url": "https://www.youtube.com/watch?v=mRA8XhR5a6M&t=46s&ab_channel=FADETEAM",
-          "date": "2019",
-          "role": "Programmer (Team: 1 Designer, 2 Programmers and 2 Artists)",
-          "bullets": [
-            "Programmed all the main mechanics and helped design puzzles",
-            "Developed in 48 hours for Telefonica’s Event “Hackathon” (2019) as a serious game to help visualize problems of third-age people with Alzheimer. Awarded 3rd prize in the “serious games and gamification” category."
-          ]
-        },
-        {
-          "name": "C++ Game Engine",
-          "tag": "3D and 2D",
-          "url": "https://github.com/aitorizur/Cpp-Game-Engine",
-          "date": "2023",
-          "role": "Programmer",
-          "bullets": [
-            "Developed a c++ game engine using SDL2 and OpenGL for learning purposes."
-          ]
-        },
-        {
-          "name": "Unity tools",
-          "tag": "",
-          "date": "2024",
-          "role": "Programmer",
-          "bullets": [
-            "Variety of tools developed over time while using Unity including components, extensions, etc."
-          ]
-        },
-        {
-          "name": "Notion tools (Python & Notion API)",
-          "tag": "",
-          "date": "2024",
-          "role": "Programmer",
-          "bullets": [
-            "Developed some tools to manage databases in Notion for personal use."
           ]
         }
       ]
@@ -235,7 +225,7 @@
     {
       "title": "TECHNOLOGIES",
       "type": "list",
-      "items": ["Unity", "Unreal Engine", "Git", "Github Actions", "OpenGL", "GLSL", "Angular", "Firebase", "HTML", "CSS"]
+      "items": ["Unity", "Unreal Engine", "VR / OpenXR", "Photon", "ShaderGraph / HLSL", "Git", "Github Actions", "OpenGL", "GLSL", "Angular", "Firebase", "HTML", "CSS"]
     },
     {
       "title": "ADDITIONAL SKILLS",
@@ -246,11 +236,6 @@
       "title": "LANGUAGES",
       "type": "list",
       "items": ["Spanish (Native)", "English (Fluent)"]
-    },
-    {
-      "title": "HOBBIES",
-      "type": "text",
-      "text": "Love playing almost any sport and currently in a volleyball team. Videogame enthusiast and working everyday to expand my knowledge on the industry and game design."
     }
   ]
 }
