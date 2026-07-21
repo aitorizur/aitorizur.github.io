@@ -42,7 +42,8 @@
             "Shipped a full localization system (English, Spanish, German) and an onboarding/tutorial framework usable directly by designers.",
             "Developed a real-time interactive 3D tabletop for NASCAR broadcasts rendering 100+ cars synced to live and VOD telemetry, used across 3 live events.",
             "Built the reusable spin-off system powering derivative apps (Xtadium Music, CultVRe) from a shared codebase.",
-            "Optimized rendering and data pipelines to sustain a stable 90 FPS on Meta Quest and contributed to the Built-in to URP render pipeline migration."
+            "Optimized rendering and data pipelines to sustain a stable 90 FPS on Meta Quest.",
+            "Contributed to the continuous refactor of core app systems (UI, navigation, notifications, backend data integration) and the Built-in to URP render pipeline migration, paying down technical debt on a live production app without slowing feature delivery."
           ]
         },
         {

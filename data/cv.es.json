@@ -42,7 +42,8 @@
             "Implementé un sistema completo de localización (inglés, español y alemán) y un framework de onboarding/tutoriales utilizable directamente por diseño.",
             "Desarrollé un tablero 3D interactivo en tiempo real para las retransmisiones de NASCAR, renderizando más de 100 coches sincronizados con telemetría en directo y VOD, usado en 3 eventos en vivo.",
             "Construí el sistema reutilizable de spin-offs que da vida a más de 5 apps derivadas (Xtadium Music, CultVRe, EuroLeague TV VR, X Games 360Vision) desde una base de código compartida.",
-            "Optimicé el renderizado y los pipelines de datos para mantener 90 FPS estables en Meta Quest, y participé en la migración del render pipeline de Built-in a URP."
+            "Optimicé el renderizado y los pipelines de datos para mantener 90 FPS estables en Meta Quest.",
+            "Contribuí a la refactorización continua de sistemas clave de la app (UI, navegación, notificaciones, integración de datos con el backend) y a la migración del render pipeline de Built-in a URP, reduciendo deuda técnica en una app en producción sin frenar las entregas."
           ]
         },
         {
