@@ -154,8 +154,8 @@ body{
   border-bottom:1.4px solid var(--rule); }
 .block{ margin-bottom:2px; }
 .block:first-child .section-title{ margin-top:0; }
-.full-width{ margin-bottom:4px; }
-.full-width .block:first-child .section-title{ margin-top:8px; }
+.full-width{ margin-top:20px; margin-bottom:20px; }
+.full-width .block:first-child .section-title{ margin-top:18px; }
 
 /* Entradas */
 .entry{ margin-bottom:11px; break-inside:avoid; }

@@ -12,7 +12,7 @@
   "header": {
     "name": "AITOR IZURRATEGUI",
     "title": "PRODUCT ENGINEER | UNITY | AI FIRST DEVELOPER",
-    "summary": "Product engineer with 5+ years building Unity/VR experiences, currently shipping Meta-funded Mixed Reality sports apps for Meta Quest. AI-first developer leveraging agentic tools (Claude Code, MCP) to move fast across game, web and tooling projects, with strong UX and systems design instincts.",
+    "summary": "Product engineer with 5+ years building Unity/VR experiences, currently shipping Meta-funded Mixed Reality sports apps for Meta Quest. AI-first developer leveraging agentic tools (Claude Code) to move fast across game, web and tooling projects, with strong UX and systems design instincts.",
     "photo": "assets/photo.jpg",
     "contact": {
       "location": "Madrid, Spain",
@@ -40,7 +40,7 @@
             "Developed Unity/OpenXR features for Xtadium, a free Meta-funded Mixed Reality sports app for Meta Quest featured as a top Meta MR app, streaming NBA, UFC, EuroLeague and NASCAR content up to 8K 180°/360°.",
             "Built a UI component system that let the design team assemble screens directly in Unity, fully removing engineering from UI layout work.",
             "Shipped a full localization system (English, Spanish, German) and an onboarding/tutorial framework usable directly by designers.",
-            "Designed and developed a real-time interactive 3D tabletop for NASCAR broadcasts rendering 100+ cars synced to live and VOD telemetry, used across 3 live events.",
+            "Developed a real-time interactive 3D tabletop for NASCAR broadcasts rendering 100+ cars synced to live and VOD telemetry, used across 3 live events.",
             "Built the reusable spin-off system powering derivative apps (Xtadium Music, CultVRe) from a shared codebase.",
             "Optimized rendering and data pipelines to sustain a stable 90 FPS on Meta Quest and contributed to the Built-in to URP render pipeline migration."
           ]
@@ -54,9 +54,8 @@
             "Programmed, tested and optimized gameplay mechanics and in-game environments in unannounced RPG mobile transmedia title in Unity URP.",
             "Helped design and document gameplay mechanics, UI, and general game experience for an unannounced RPG mobile transmedia title.",
             "Coordinated 3D and 2D art teams using an agile workflow to create and implement assets in-engine, following design documentation.",
-            "Helped create the initial promotion campaign for an unannounced RPG mobile transmedia title.",
             "Developed a dashboard to balance and manage the mobile game “ZPLN,” connecting to a Google Firebase backend using Angular and TypeScript.",
-            "Designed an early multiplayer testing mode for the mobile video game “ZPLN” using a Firebase backend."
+            "Designed and implemented an early multiplayer testing mode for the mobile video game “ZPLN” using a Firebase backend."
           ]
         },
         {

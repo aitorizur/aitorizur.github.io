@@ -12,7 +12,7 @@
   "header": {
     "name": "AITOR IZURRATEGUI",
     "title": "INGENIERO DE PRODUCTO | UNITY | DESARROLLADOR AI FIRST",
-    "summary": "Ingeniero de producto con más de 5 años desarrollando experiencias en Unity/VR, actualmente construyendo apps de deportes en Realidad Mixta financiadas por Meta para Meta Quest. Desarrollador AI-first que aprovecha herramientas agénticas (Claude Code, MCP) para avanzar rápido en proyectos de videojuegos, web y herramientas, con fuerte instinto de diseño UX y de sistemas.",
+    "summary": "Ingeniero de producto con más de 5 años desarrollando experiencias en Unity/VR, actualmente construyendo apps de deportes en Realidad Mixta financiadas por Meta para Meta Quest. Desarrollador AI-first que aprovecha herramientas agénticas (Claude Code) para avanzar rápido en proyectos de videojuegos, web y herramientas, con fuerte instinto de diseño UX y de sistemas.",
     "photo": "assets/photo.jpg",
     "contact": {
       "location": "Madrid, España",
@@ -40,7 +40,7 @@
             "Desarrollé funcionalidades en Unity/OpenXR para Xtadium, una app gratuita de deportes en Realidad Mixta financiada por Meta para Meta Quest, destacada como una de las mejores apps de MR de Meta, con streaming de NBA, UFC, EuroLeague y NASCAR hasta 8K en 180°/360°.",
             "Construí un sistema de componentes de UI que permitió al equipo de diseño maquetar pantallas directamente en Unity, delegando por completo el trabajo de maquetación a diseño.",
             "Implementé un sistema completo de localización (inglés, español y alemán) y un framework de onboarding/tutoriales utilizable directamente por diseño.",
-            "Diseñé y desarrollé un tablero 3D interactivo en tiempo real para las retransmisiones de NASCAR, renderizando más de 100 coches sincronizados con telemetría en directo y VOD, usado en 3 eventos en vivo.",
+            "Desarrollé un tablero 3D interactivo en tiempo real para las retransmisiones de NASCAR, renderizando más de 100 coches sincronizados con telemetría en directo y VOD, usado en 3 eventos en vivo.",
             "Construí el sistema reutilizable de spin-offs que da vida a más de 5 apps derivadas (Xtadium Music, CultVRe, EuroLeague TV VR, X Games 360Vision) desde una base de código compartida.",
             "Optimicé el renderizado y los pipelines de datos para mantener 90 FPS estables en Meta Quest, y participé en la migración del render pipeline de Built-in a URP."
           ]
@@ -54,9 +54,8 @@
             "Programé, probé y optimicé mecánicas de juego y entornos en un título RPG móvil transmedia sin anunciar, desarrollado en Unity URP.",
             "Colaboré en el diseño y la documentación de mecánicas de juego, UI y la experiencia general de un título RPG móvil transmedia sin anunciar.",
             "Coordiné equipos de arte 2D y 3D con metodología ágil para crear e integrar assets en el motor, siguiendo la documentación de diseño.",
-            "Participé en la creación de la campaña de promoción inicial de un título RPG móvil transmedia sin anunciar.",
             "Desarrollé un panel para balancear y gestionar el juego móvil “ZPLN”, conectado a un backend de Google Firebase, con Angular y TypeScript.",
-            "Diseñé un modo multijugador de pruebas inicial para el juego móvil “ZPLN” usando un backend de Firebase."
+            "Diseñé e implementé un modo multijugador de pruebas inicial para el juego móvil “ZPLN” usando un backend de Firebase."
           ]
         },
         {
