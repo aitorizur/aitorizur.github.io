@@ -51,13 +51,13 @@
           "bullets": [
             "Developed Unity/OpenXR features for Xtadium, a free Meta-funded Mixed Reality sports app for Meta Quest featured as a top Meta MR app, streaming NBA, UFC, EuroLeague and NASCAR content up to 8K 180°/360°.",
             "Redesigned the app's spatial UI system for VR and Mixed Reality: default placement and scale of every panel, plus automatic repositioning tied to the headset's native recenter, replacing a manual confirmation step.",
-            "Built a UI component system and a shared design-system package (custom UI Toolkit editors, global data bindings) that let the design team assemble and restyle screens directly in Unity, fully removing engineering from UI layout work.",
-            "Owned the first-run interactive tutorial end to end, from Timeline prototype to production: step sequencing with exit and resume at any point, 3D coachmarks in space, immersive video synced to the flow, and hand-tracking support.",
+            "Contributed to the team's UI component system and shared design-system package (custom UI Toolkit editors, global data bindings): design now builds and restyles entire screens in Unity, and engineering only wires up functionality.",
+            "Owned the end-to-end implementation of the first-run interactive tutorial, from Timeline prototype to production, on a UX shaped with the design team: step sequencing with exit and resume at any point, 3D coachmarks in space, immersive video synced to the flow, and hand tracking.",
             "Built a real-time interactive 3D tabletop for NASCAR content: a manipulable track model rendering 100+ cars from chunked race telemetry, kept in sync with video playback and designed to consume the same stream for live and VOD.",
-            "Built co-watching (watch party) in remote and co-located modes on Photon, with split host/guest permissions, guest playback controls and reactions, and host handover.",
-            "Built the reusable spin-off system powering 5+ derivative apps (Xtadium Music, CultVRe, EuroLeague TV VR, X Games 360Vision) from a shared codebase, plus the localization system behind it (English, Spanish and German, extensible to any number of languages).",
-            "Migrated the interaction rig to Unity's XR Interaction Toolkit and the headset loader from Oculus to OpenXR, restoring every dependent interaction (reticle, grab, panel and object manipulation) and the app's 3D minigames on the new rig.",
-            "Optimized rendering and data pipelines to sustain a stable 90 FPS on Meta Quest, including smart loading of the interface, generic object pooling and Addressables organized per build configuration.",
+            "Built the reusable spin-off system that derives standalone apps from a shared codebase, shipping 3 published store apps across sports, music and culture, plus the localization system behind it (English, Spanish and German, extensible to any number of languages).",
+            "Leading the effort to take the app beyond a single headset vendor: isolating device-specific dependencies (vendor avatar profiles and other SDK-bound features) into device-agnostic systems so every target builds from a single project.",
+            "Contributed to the Photon-based co-watching (watch party) feature in remote and co-located modes, and to the team migration of the interaction rig to Unity's XR Interaction Toolkit and the headset loader from Oculus to OpenXR.",
+            "Contributed to the team's stable 90 FPS target on Meta Quest with generic object pooling, smart loading of the interface and Addressables organized per build configuration.",
             "Owned the notification subsystem across two generations and the retirement of the legacy one, within a continuous refactor of core systems (navigation, backend data integration, Built-in to URP migration) that cut technical debt on a live app without slowing delivery."
           ]
         },
