@@ -42,17 +42,22 @@ body{
 .col-main{ width:80%; padding-right:22px; }
 .col-side{ width:20%; }
 
+/* El bloque de columnas es indivisible: si cae a caballo del salto de página, el
+   navegador lo empuja entero y puede desbordar a una tercera hoja. Se fuerza el corte
+   antes: hoja 1 = cabecera + experiencia a ancho completo, hoja 2 = las dos columnas.
+   Solo afecta a impresión/PDF; en pantalla el documento sigue siendo continuo. */
+
 /* Títulos de sección */
 .section-title{ text-align:center; text-transform:uppercase; letter-spacing:2px;
-  font-size:10.5pt; font-weight:700; margin:16px 0 10px; padding-bottom:6px;
+  font-size:10.5pt; font-weight:700; margin:13px 0 9px; padding-bottom:5px;
   border-bottom:1.4px solid var(--rule); }
 .block{ margin-bottom:2px; }
 .block:first-child .section-title{ margin-top:0; }
-.full-width{ margin-top:20px; margin-bottom:20px; }
+.full-width{ margin-top:16px; margin-bottom:16px; }
 .full-width .block:first-child .section-title{ margin-top:18px; }
 
 /* Entradas */
-.entry{ margin-bottom:11px; break-inside:avoid; }
+.entry{ margin-bottom:9px; break-inside:avoid; }
 .entry-top{ display:flex; justify-content:space-between; gap:12px; align-items:baseline; }
 .entry-left{ color:var(--muted); font-size:9pt; }
 .org{ color:var(--muted); }
@@ -61,7 +66,7 @@ a.proj-name, a.proj-name:link, a.proj-name:visited{ color:var(--ink); text-decor
 .entry-date{ color:var(--muted); font-size:8.6pt; white-space:nowrap; }
 .role{ font-weight:700; margin:1px 0 3px; }
 ul.bullets{ margin:2px 0 0; padding-left:16px; }
-ul.bullets li{ margin-bottom:2px; }
+ul.bullets li{ margin-bottom:1px; }
 
 /* Lateral */
 .side-block .section-title{ margin-top:14px; }
@@ -70,6 +75,16 @@ ul.bullets li{ margin-bottom:2px; }
 
 /* Acciones (selector de idioma + descarga): solo en pantalla, ocultas al imprimir/exportar PDF */
 .top-actions{ display:none; }
+
+/* Impresión / PDF: el bloque de dos columnas es una tabla de una sola fila y Chrome la
+   fragmenta mal si cae a caballo del salto de página (deja una tira huérfana y se va a
+   una tercera hoja). Se le prohíbe partirse y se añade separación para que arranque ya
+   en la hoja 2: hoja 1 = cabecera + experiencia; hoja 2 = las dos columnas.
+   Debe ir al final del CSS para ganar a las reglas base. */
+@media print{
+  .columns{ break-inside:auto; }
+  .columns .block{ break-inside:avoid; }
+}
 
 /* Pantalla (web): fondo gris y hoja tipo papel */
 @media screen{
@@ -96,7 +111,7 @@ ul.bullets li{ margin-bottom:2px; }
     <div class="head-text">
       <h1 class="name">AITOR IZURRATEGUI</h1>
       <div class="title">PRODUCT ENGINEER | UNITY | AI FIRST DEVELOPER</div>
-      <p class="summary">Product engineer with 5+ years building Unity/VR experiences, currently shipping Meta-funded Mixed Reality sports apps for Meta Quest. AI-first developer leveraging agentic tools (Claude Code) to move fast across game, web and tooling projects, with strong UX and systems design instincts.</p>
+      <p class="summary">Product engineer with 5+ years building Unity/VR experiences, currently owning cross-cutting systems on a Meta-funded Mixed Reality sports app for Meta Quest. AI-first developer leveraging agentic tools (Claude Code) to move fast across game, web and tooling projects, with strong UX and systems design instincts.</p>
       <div class="contact">Madrid, Spain • +34-672144246 • aitorizur@gmail.com</div>
       <div class="links"><a class="link" href="https://aitorizur.github.io/portfolio/"><span class="link-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></span><span class="link-label">Portfolio</span></a><a class="link" href="https://www.linkedin.com/in/aitor-izurrategui-de-castro/"><span class="link-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></span><span class="link-label">Linkedin</span></a><a class="link" href="https://github.com/aitorizur"><span class="link-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.42-1.305.762-1.605-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 0 1 3.003-.404c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.805 5.624-5.478 5.92.43.372.814 1.102.814 2.222 0 1.606-.014 2.9-.014 3.294 0 .32.216.694.825.576C20.565 22.296 24 17.798 24 12.5 24 5.87 18.627.5 12 .5z"/></svg></span><span class="link-label">Github</span></a></div>
     </div>
@@ -104,13 +119,13 @@ ul.bullets li{ margin-bottom:2px; }
   <div class="full-width"><section class="block">
     <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
     <div class="entry">
-    <div class="entry-top"><span class="entry-left"><span class="org">YBVR (YERBA BUENA VR)</span> • Madrid, Spain</span><span class="entry-date">Nov 2024 - Present (1 year 8 months)</span></div>
+    <div class="entry-top"><span class="entry-left"><span class="org">YBVR (YERBA BUENA VR)</span> • Madrid, Spain</span><span class="entry-date">Nov 2024 - Present (1 year 9 months)</span></div>
     <div class="role">Unity VR Developer</div>
-    <ul class="bullets"><li>Developed Unity/OpenXR features for Xtadium, a free Meta-funded Mixed Reality sports app for Meta Quest featured as a top Meta MR app, streaming NBA, UFC, EuroLeague and NASCAR content up to 8K 180°/360°.</li><li>Built a UI component system that let the design team assemble screens directly in Unity, fully removing engineering from UI layout work.</li><li>Shipped a full localization system (English, Spanish, German) and an onboarding/tutorial framework usable directly by designers.</li><li>Developed a real-time interactive 3D tabletop for NASCAR broadcasts rendering 100+ cars synced to live and VOD telemetry, used across 3 live events.</li><li>Built the reusable spin-off system powering derivative apps (Xtadium Music, CultVRe) from a shared codebase.</li><li>Optimized rendering and data pipelines to sustain a stable 90 FPS on Meta Quest.</li><li>Contributed to the continuous refactor of core app systems (UI, navigation, notifications, backend data integration) and the Built-in to URP render pipeline migration, paying down technical debt on a live production app without slowing feature delivery.</li></ul>
+    <ul class="bullets"><li>Developed Unity/OpenXR features for Xtadium, a free Meta-funded Mixed Reality sports app for Meta Quest featured as a top Meta MR app, streaming NBA, UFC, EuroLeague and NASCAR content up to 8K 180°/360°.</li><li>Redesigned the app's spatial UI system for VR and Mixed Reality: default placement and scale of every panel, plus automatic repositioning tied to the headset's native recenter, replacing a manual confirmation step.</li><li>Built a UI component system and a shared design-system package (custom UI Toolkit editors, global data bindings) that let the design team assemble and restyle screens directly in Unity, fully removing engineering from UI layout work.</li><li>Owned the first-run interactive tutorial end to end, from Timeline prototype to production: step sequencing with exit and resume at any point, 3D coachmarks in space, immersive video synced to the flow, and hand-tracking support.</li><li>Built a real-time interactive 3D tabletop for NASCAR content: a manipulable track model rendering 100+ cars from chunked race telemetry, kept in sync with video playback and designed to consume the same stream for live and VOD.</li><li>Built co-watching (watch party) in remote and co-located modes on Photon, with split host/guest permissions, guest playback controls and reactions, and host handover.</li><li>Built the reusable spin-off system powering 5+ derivative apps (Xtadium Music, CultVRe, EuroLeague TV VR, X Games 360Vision) from a shared codebase, plus the localization system behind it (English, Spanish and German, extensible to any number of languages).</li><li>Migrated the interaction rig to Unity's XR Interaction Toolkit and the headset loader from Oculus to OpenXR, restoring every dependent interaction (reticle, grab, panel and object manipulation) and the app's 3D minigames on the new rig.</li><li>Optimized rendering and data pipelines to sustain a stable 90 FPS on Meta Quest, including smart loading of the interface, generic object pooling and Addressables organized per build configuration.</li><li>Owned the notification subsystem across two generations and the retirement of the legacy one, within a continuous refactor of core systems (navigation, backend data integration, Built-in to URP migration) that cut technical debt on a live app without slowing delivery.</li></ul>
   </div><div class="entry">
     <div class="entry-top"><span class="entry-left"><span class="org">LURTIS AI</span> • Móstoles, Spain</span><span class="entry-date">Sept 2022 - June 2024 (1 year 10 months)</span></div>
     <div class="role">Unity Game Developer</div>
-    <ul class="bullets"><li>Programmed, tested and optimized gameplay mechanics and in-game environments in unannounced RPG mobile transmedia title in Unity URP.</li><li>Helped design and document gameplay mechanics, UI, and general game experience for an unannounced RPG mobile transmedia title.</li><li>Coordinated 3D and 2D art teams using an agile workflow to create and implement assets in-engine, following design documentation.</li><li>Developed a dashboard to balance and manage the mobile game “ZPLN,” connecting to a Google Firebase backend using Angular and TypeScript.</li><li>Designed and implemented an early multiplayer testing mode for the mobile video game “ZPLN” using a Firebase backend.</li></ul>
+    <ul class="bullets"><li>Programmed, tested and optimized gameplay mechanics and in-game environments for an unannounced RPG mobile transmedia title in Unity URP, and helped design and document its mechanics, UI and overall game experience.</li><li>Defined and helped design its inventory system, and prototyped the core gameplay loop: party management and adventure runs across procedural scenarios.</li><li>Coordinated 3D and 2D art teams using an agile workflow to create and implement assets in-engine, following design documentation.</li><li>Developed a management dashboard (Angular, TypeScript, Firebase) and an early multiplayer testing mode for “ZPLN”, a released mobile game.</li></ul>
   </div><div class="entry">
     <div class="entry-top"><span class="entry-left"><span class="org">LURTIS AI</span> • Móstoles, Spain</span><span class="entry-date">Mar 2021 - June 2021 (4 months)</span></div>
     <div class="role">Intern Unity Developer</div>
@@ -118,7 +133,7 @@ ul.bullets li{ margin-bottom:2px; }
   </div><div class="entry">
     <div class="entry-top"><span class="entry-left"><span class="org">ISOSTOPY</span> • Madrid, Spain</span><span class="entry-date">Feb 2020 - July 2020 (6 months)</span></div>
     <div class="role">Intern Unity Developer</div>
-    <ul class="bullets"><li>Assisted in the development of a truck checking simulator for a company that issues truck driving licenses in the United States.</li><li>Assisted in the development of a runner-type video game for a Spanish company.</li></ul>
+    <ul class="bullets"><li>Assisted in the development of a truck inspection simulator for a US commercial driving licence training company, and of a runner-type video game for a Spanish company.</li></ul>
   </div>
   </section></div>
   <div class="columns">
@@ -145,16 +160,12 @@ ul.bullets li{ margin-bottom:2px; }
     <ul class="bullets"><li>Developed a c++ game engine using SDL2 and OpenGL for learning purposes.</li></ul>
   </div><div class="entry">
     <div class="entry-top"><span class="entry-left"><a class="proj-name" href="https://perceve.itch.io">Game Jams (Unity)</a> • 3 Solo Game Jams</span><span class="entry-date">2024</span></div>
-    <div class="role">Designer and Programmer (Team: 1 Designer/Programmer and 1 Artist)</div>
+    <div class="role">Designer &amp; Programmer (2-person team)</div>
     <ul class="bullets"><li>Designed and programmed three solo-jam games in 3-day to 2-week timeframes: Point of No Return (2nd overall, Unity Jam/Tooling.gg), The Precise Hero (4th in gameplay, Todo Game Jam) and Feather Fallout (1 bit Jam #4).</li></ul>
   </div><div class="entry">
     <div class="entry-top"><span class="entry-left"><a class="proj-name" href="https://negone.itch.io/giro">G!RO (Unity)</a> • Procedural Top-down Arcade Game</span><span class="entry-date">2022</span></div>
-    <div class="role">Designer and Programmer (Team: 2 Programmers and 2 Artists)</div>
+    <div class="role">Designer &amp; Programmer (4-person team)</div>
     <ul class="bullets"><li>Designed and programmed overall game experience, mechanics, progression and UI.</li><li>Awarded the “Most Enjoyable Game” audience award in the Fun&amp;Serious Bilbao Event (2022). Also got nominated for the “Best Retro Game” award.</li></ul>
-  </div><div class="entry">
-    <div class="entry-top"><span class="entry-left"><a class="proj-name" href="https://www.youtube.com/watch?v=0_vrLjIdiCg&amp;ab_channel=Perceve">Gravity Down Quick (Unity)</a> • Level Based FPS Platformer</span><span class="entry-date">2019</span></div>
-    <div class="role">Designer and Programmer (Team: 1 Designer/Programmer and 1 Artist)</div>
-    <ul class="bullets"><li>Designed and implemented gameplay mechanics and levels.</li></ul>
   </div>
   </section><section class="block">
     <h2 class="section-title">EDUCATION</h2>
@@ -178,10 +189,7 @@ ul.bullets li{ margin-bottom:2px; }
     <h2 class="section-title">ADDITIONAL EDUCATION</h2>
     <div class="entry">
     <div class="entry-top"><span class="entry-left"><span class="org">JOYFE</span> • Madrid, Spain</span><span class="entry-date">2022</span></div>
-    <div class="role">Cisco CCNA: Routing and Switching</div>
-  </div><div class="entry">
-    <div class="entry-top"><span class="entry-left"><span class="org">JOYFE</span> • Madrid, Spain</span><span class="entry-date">2022</span></div>
-    <div class="role">Microsoft Office Specialist for Word, Excel, PowerPoint and Access</div>
+    <div class="role">Cisco CCNA: Routing and Switching · Microsoft Office Specialist</div>
   </div>
   </section></div>
     <div class="col col-side"><section class="block side-block">
@@ -189,7 +197,7 @@ ul.bullets li{ margin-bottom:2px; }
     <ul class="bullets"><li>C#</li><li>Python</li><li>C++</li><li>Javascript / Typescript</li></ul>
   </section><section class="block side-block">
     <h2 class="section-title">TECHNOLOGIES</h2>
-    <ul class="bullets"><li>Unity</li><li>Unreal Engine</li><li>VR / OpenXR</li><li>Photon</li><li>ShaderGraph / HLSL</li><li>Git</li><li>Github Actions</li><li>OpenGL</li><li>GLSL</li><li>Angular</li><li>Firebase</li><li>HTML</li><li>CSS</li></ul>
+    <ul class="bullets"><li>Unity (URP)</li><li>Unreal Engine</li><li>VR / MR / OpenXR</li><li>XR Interaction Toolkit</li><li>Meta XR SDK</li><li>Photon</li><li>ShaderGraph / HLSL</li><li>Addressables</li><li>UI Toolkit</li><li>Git / Github Actions</li><li>OpenGL / GLSL</li><li>Angular / Firebase</li><li>HTML / CSS</li></ul>
   </section><section class="block side-block">
     <h2 class="section-title">ADDITIONAL SKILLS</h2>
     <ul class="bullets"><li>Notion</li><li>Clickup</li><li>Agile Workflow</li><li>Canva</li><li>Miró</li><li>Photoshop</li><li>Premiere</li><li>Audition</li><li>Zbrush</li><li>3DS MAX</li><li>Substance Painter</li><li>Marmoset Viewer</li><li>After Effects</li></ul>

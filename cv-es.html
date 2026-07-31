@@ -42,17 +42,22 @@ body{
 .col-main{ width:80%; padding-right:22px; }
 .col-side{ width:20%; }
 
+/* El bloque de columnas es indivisible: si cae a caballo del salto de página, el
+   navegador lo empuja entero y puede desbordar a una tercera hoja. Se fuerza el corte
+   antes: hoja 1 = cabecera + experiencia a ancho completo, hoja 2 = las dos columnas.
+   Solo afecta a impresión/PDF; en pantalla el documento sigue siendo continuo. */
+
 /* Títulos de sección */
 .section-title{ text-align:center; text-transform:uppercase; letter-spacing:2px;
-  font-size:10.5pt; font-weight:700; margin:16px 0 10px; padding-bottom:6px;
+  font-size:10.5pt; font-weight:700; margin:13px 0 9px; padding-bottom:5px;
   border-bottom:1.4px solid var(--rule); }
 .block{ margin-bottom:2px; }
 .block:first-child .section-title{ margin-top:0; }
-.full-width{ margin-top:20px; margin-bottom:20px; }
+.full-width{ margin-top:16px; margin-bottom:16px; }
 .full-width .block:first-child .section-title{ margin-top:18px; }
 
 /* Entradas */
-.entry{ margin-bottom:11px; break-inside:avoid; }
+.entry{ margin-bottom:9px; break-inside:avoid; }
 .entry-top{ display:flex; justify-content:space-between; gap:12px; align-items:baseline; }
 .entry-left{ color:var(--muted); font-size:9pt; }
 .org{ color:var(--muted); }
@@ -61,7 +66,7 @@ a.proj-name, a.proj-name:link, a.proj-name:visited{ color:var(--ink); text-decor
 .entry-date{ color:var(--muted); font-size:8.6pt; white-space:nowrap; }
 .role{ font-weight:700; margin:1px 0 3px; }
 ul.bullets{ margin:2px 0 0; padding-left:16px; }
-ul.bullets li{ margin-bottom:2px; }
+ul.bullets li{ margin-bottom:1px; }
 
 /* Lateral */
 .side-block .section-title{ margin-top:14px; }
@@ -70,6 +75,16 @@ ul.bullets li{ margin-bottom:2px; }
 
 /* Acciones (selector de idioma + descarga): solo en pantalla, ocultas al imprimir/exportar PDF */
 .top-actions{ display:none; }
+
+/* Impresión / PDF: el bloque de dos columnas es una tabla de una sola fila y Chrome la
+   fragmenta mal si cae a caballo del salto de página (deja una tira huérfana y se va a
+   una tercera hoja). Se le prohíbe partirse y se añade separación para que arranque ya
+   en la hoja 2: hoja 1 = cabecera + experiencia; hoja 2 = las dos columnas.
+   Debe ir al final del CSS para ganar a las reglas base. */
+@media print{
+  .columns{ break-inside:auto; }
+  .columns .block{ break-inside:avoid; }
+}
 
 /* Pantalla (web): fondo gris y hoja tipo papel */
 @media screen{
@@ -96,7 +111,7 @@ ul.bullets li{ margin-bottom:2px; }
     <div class="head-text">
       <h1 class="name">AITOR IZURRATEGUI</h1>
       <div class="title">INGENIERO DE PRODUCTO | UNITY | DESARROLLADOR AI FIRST</div>
-      <p class="summary">Ingeniero de producto con más de 5 años desarrollando experiencias en Unity/VR, actualmente construyendo apps de deportes en Realidad Mixta financiadas por Meta para Meta Quest. Desarrollador AI-first que aprovecha herramientas agénticas (Claude Code) para avanzar rápido en proyectos de videojuegos, web y herramientas, con fuerte instinto de diseño UX y de sistemas.</p>
+      <p class="summary">Ingeniero de producto con más de 5 años desarrollando experiencias en Unity/VR, actualmente responsable de sistemas transversales en una app de deportes en Realidad Mixta financiada por Meta para Meta Quest. Desarrollador AI-first que aprovecha herramientas agénticas (Claude Code) para avanzar rápido en proyectos de videojuegos, web y herramientas, con fuerte instinto de diseño UX y de sistemas.</p>
       <div class="contact">Madrid, España • +34-672144246 • aitorizur@gmail.com</div>
       <div class="links"><a class="link" href="https://aitorizur.github.io/portfolio/"><span class="link-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></span><span class="link-label">Portfolio</span></a><a class="link" href="https://www.linkedin.com/in/aitor-izurrategui-de-castro/"><span class="link-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></span><span class="link-label">Linkedin</span></a><a class="link" href="https://github.com/aitorizur"><span class="link-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.42-1.305.762-1.605-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 0 1 3.003-.404c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.805 5.624-5.478 5.92.43.372.814 1.102.814 2.222 0 1.606-.014 2.9-.014 3.294 0 .32.216.694.825.576C20.565 22.296 24 17.798 24 12.5 24 5.87 18.627.5 12 .5z"/></svg></span><span class="link-label">Github</span></a></div>
     </div>
@@ -104,13 +119,13 @@ ul.bullets li{ margin-bottom:2px; }
   <div class="full-width"><section class="block">
     <h2 class="section-title">EXPERIENCIA PROFESIONAL</h2>
     <div class="entry">
-    <div class="entry-top"><span class="entry-left"><span class="org">YBVR (YERBA BUENA VR)</span> • Madrid, España</span><span class="entry-date">Nov 2024 - Actualidad (1 año 8 meses)</span></div>
+    <div class="entry-top"><span class="entry-left"><span class="org">YBVR (YERBA BUENA VR)</span> • Madrid, España</span><span class="entry-date">Nov 2024 - Actualidad (1 año 9 meses)</span></div>
     <div class="role">Desarrollador Unity VR</div>
-    <ul class="bullets"><li>Desarrollé funcionalidades en Unity/OpenXR para Xtadium, una app gratuita de deportes en Realidad Mixta financiada por Meta para Meta Quest, destacada como una de las mejores apps de MR de Meta, con streaming de NBA, UFC, EuroLeague y NASCAR hasta 8K en 180°/360°.</li><li>Construí un sistema de componentes de UI que permitió al equipo de diseño maquetar pantallas directamente en Unity, delegando por completo el trabajo de maquetación a diseño.</li><li>Implementé un sistema completo de localización (inglés, español y alemán) y un framework de onboarding/tutoriales utilizable directamente por diseño.</li><li>Desarrollé un tablero 3D interactivo en tiempo real para las retransmisiones de NASCAR, renderizando más de 100 coches sincronizados con telemetría en directo y VOD, usado en 3 eventos en vivo.</li><li>Construí el sistema reutilizable de spin-offs que da vida a más de 5 apps derivadas (Xtadium Music, CultVRe, EuroLeague TV VR, X Games 360Vision) desde una base de código compartida.</li><li>Optimicé el renderizado y los pipelines de datos para mantener 90 FPS estables en Meta Quest.</li><li>Contribuí a la refactorización continua de sistemas clave de la app (UI, navegación, notificaciones, integración de datos con el backend) y a la migración del render pipeline de Built-in a URP, reduciendo deuda técnica en una app en producción sin frenar las entregas.</li></ul>
+    <ul class="bullets"><li>Desarrollé funcionalidades en Unity/OpenXR para Xtadium, una app gratuita de deportes en Realidad Mixta financiada por Meta para Meta Quest, destacada como una de las mejores apps de MR de Meta, con streaming de NBA, UFC, EuroLeague y NASCAR hasta 8K en 180°/360°.</li><li>Rediseñé el posicionamiento espacial de la interfaz en VR y Realidad Mixta: colocación y escala por defecto de los paneles y recolocación automática integrada con el recentrado nativo de las gafas, en lugar de un paso de confirmación manual.</li><li>Construí un sistema de componentes de UI y un paquete de diseño compartido (editores propios en UI Toolkit, bindings globales) que permitió a diseño maquetar y reestilizar pantallas directamente en Unity, delegando por completo la maquetación.</li><li>Fui responsable de punta a punta del tutorial interactivo de primer arranque, del prototipo en Timeline a producción: secuencia de pasos con salida y reanudación en cualquier momento, coachmarks 3D en el espacio, vídeo inmersivo sincronizado y hand tracking.</li><li>Desarrollé un tablero 3D interactivo en tiempo real para el contenido de NASCAR: maqueta del circuito manipulable que renderiza más de 100 coches a partir de telemetría servida por chunks, en sincronía con el vídeo y diseñada para consumir el mismo stream en directo y en VOD.</li><li>Desarrollé el visionado conjunto (watch party) en modos remoto y co-localizado sobre Photon, con permisos diferenciados entre anfitrión e invitados, controles de reproducción y reacciones para invitados, y traspaso de anfitrión.</li><li>Construí el sistema reutilizable de spin-offs que da vida a más de 5 apps derivadas (Xtadium Music, CultVRe, EuroLeague TV VR, X Games 360Vision) desde una base compartida, más el sistema de localización que lo sostiene (inglés, español y alemán, ampliable a más idiomas).</li><li>Migré el rig de interacción al XR Interaction Toolkit de Unity y el cargador de las gafas de Oculus a OpenXR, recuperando todas las interacciones dependientes (retícula, agarre, manipulación de paneles y objetos) y los minijuegos 3D de la app sobre el nuevo rig.</li><li>Optimicé el renderizado y los pipelines de datos para mantener 90 FPS estables en Meta Quest: carga inteligente de la interfaz, pool genérico de objetos y Addressables por configuración de build.</li><li>Fui responsable del subsistema de notificaciones en dos generaciones y de la retirada del legado, dentro de una refactorización continua de sistemas clave (navegación, datos del backend, migración a URP) que redujo deuda técnica en producción sin frenar las entregas.</li></ul>
   </div><div class="entry">
     <div class="entry-top"><span class="entry-left"><span class="org">LURTIS AI</span> • Móstoles, España</span><span class="entry-date">Sept 2022 - Jun 2024 (1 año 10 meses)</span></div>
     <div class="role">Desarrollador de Videojuegos Unity</div>
-    <ul class="bullets"><li>Programé, probé y optimicé mecánicas de juego y entornos en un título RPG móvil transmedia sin anunciar, desarrollado en Unity URP.</li><li>Colaboré en el diseño y la documentación de mecánicas de juego, UI y la experiencia general de un título RPG móvil transmedia sin anunciar.</li><li>Coordiné equipos de arte 2D y 3D con metodología ágil para crear e integrar assets en el motor, siguiendo la documentación de diseño.</li><li>Desarrollé un panel para balancear y gestionar el juego móvil “ZPLN”, conectado a un backend de Google Firebase, con Angular y TypeScript.</li><li>Diseñé e implementé un modo multijugador de pruebas inicial para el juego móvil “ZPLN” usando un backend de Firebase.</li></ul>
+    <ul class="bullets"><li>Programé, probé y optimicé mecánicas y entornos de un título RPG móvil transmedia sin anunciar en Unity URP, y colaboré en el diseño y documentación de sus mecánicas, UI y experiencia general.</li><li>Definí y ayudé a diseñar su sistema de inventario, y prototipé el core gameplay loop: gestión de party y salidas de aventura en escenarios procedurales.</li><li>Coordiné equipos de arte 2D y 3D con metodología ágil para crear e integrar assets en el motor, siguiendo la documentación de diseño.</li><li>Desarrollé un panel de gestión (Angular, TypeScript, Firebase) y un modo multijugador de pruebas inicial para “ZPLN”, un juego móvil publicado.</li></ul>
   </div><div class="entry">
     <div class="entry-top"><span class="entry-left"><span class="org">LURTIS AI</span> • Móstoles, España</span><span class="entry-date">Mar 2021 - Jun 2021 (4 meses)</span></div>
     <div class="role">Desarrollador Unity en Prácticas</div>
@@ -118,7 +133,7 @@ ul.bullets li{ margin-bottom:2px; }
   </div><div class="entry">
     <div class="entry-top"><span class="entry-left"><span class="org">ISOSTOPY</span> • Madrid, España</span><span class="entry-date">Feb 2020 - Jul 2020 (6 meses)</span></div>
     <div class="role">Desarrollador Unity en Prácticas</div>
-    <ul class="bullets"><li>Colaboré en el desarrollo de un simulador de inspección de camiones para una empresa que expide licencias de conducción de camiones en Estados Unidos.</li><li>Colaboré en el desarrollo de un videojuego de tipo runner para una empresa española.</li></ul>
+    <ul class="bullets"><li>Colaboré en el desarrollo de un simulador de inspección de camiones para una empresa estadounidense de formación de conductores profesionales, y de un videojuego runner para una empresa española.</li></ul>
   </div>
   </section></div>
   <div class="columns">
@@ -145,16 +160,12 @@ ul.bullets li{ margin-bottom:2px; }
     <ul class="bullets"><li>Desarrollé un motor de videojuegos en C++ con SDL2 y OpenGL con fines de aprendizaje.</li></ul>
   </div><div class="entry">
     <div class="entry-top"><span class="entry-left"><a class="proj-name" href="https://perceve.itch.io">Game Jams (Unity)</a> • 3 Game Jams en solitario</span><span class="entry-date">2024</span></div>
-    <div class="role">Diseñador y Programador (Equipo: 1 Diseñador/Programador y 1 Artista)</div>
+    <div class="role">Diseñador y Programador (equipo de 2)</div>
     <ul class="bullets"><li>Diseñé y programé tres juegos de jams en solitario en plazos de 3 días a 2 semanas: Point of No Return (2º puesto general, Unity Jam/Tooling.gg), The Precise Hero (4º en gameplay, Todo Game Jam) y Feather Fallout (1 bit Jam #4).</li></ul>
   </div><div class="entry">
     <div class="entry-top"><span class="entry-left"><a class="proj-name" href="https://negone.itch.io/giro">G!RO (Unity)</a> • Juego arcade cenital procedural</span><span class="entry-date">2022</span></div>
-    <div class="role">Diseñador y Programador (Equipo: 2 Programadores y 2 Artistas)</div>
+    <div class="role">Diseñador y Programador (equipo de 4)</div>
     <ul class="bullets"><li>Diseñé y programé la experiencia de juego, las mecánicas, la progresión y la UI.</li><li>Ganador del premio del público “Most Enjoyable Game” en el Fun&amp;Serious de Bilbao (2022). También nominado al premio “Best Retro Game”.</li></ul>
-  </div><div class="entry">
-    <div class="entry-top"><span class="entry-left"><a class="proj-name" href="https://www.youtube.com/watch?v=0_vrLjIdiCg&amp;ab_channel=Perceve">Gravity Down Quick (Unity)</a> • Plataformas FPS por niveles</span><span class="entry-date">2019</span></div>
-    <div class="role">Diseñador y Programador (Equipo: 1 Diseñador/Programador y 1 Artista)</div>
-    <ul class="bullets"><li>Diseñé e implementé las mecánicas de juego y los niveles.</li></ul>
   </div>
   </section><section class="block">
     <h2 class="section-title">FORMACIÓN</h2>
@@ -178,10 +189,7 @@ ul.bullets li{ margin-bottom:2px; }
     <h2 class="section-title">FORMACIÓN ADICIONAL</h2>
     <div class="entry">
     <div class="entry-top"><span class="entry-left"><span class="org">JOYFE</span> • Madrid, España</span><span class="entry-date">2022</span></div>
-    <div class="role">Cisco CCNA: Routing and Switching</div>
-  </div><div class="entry">
-    <div class="entry-top"><span class="entry-left"><span class="org">JOYFE</span> • Madrid, España</span><span class="entry-date">2022</span></div>
-    <div class="role">Microsoft Office Specialist en Word, Excel, PowerPoint y Access</div>
+    <div class="role">Cisco CCNA: Routing and Switching · Microsoft Office Specialist</div>
   </div>
   </section></div>
     <div class="col col-side"><section class="block side-block">
@@ -189,7 +197,7 @@ ul.bullets li{ margin-bottom:2px; }
     <ul class="bullets"><li>C#</li><li>Python</li><li>C++</li><li>Javascript / Typescript</li></ul>
   </section><section class="block side-block">
     <h2 class="section-title">TECNOLOGÍAS</h2>
-    <ul class="bullets"><li>Unity</li><li>Unreal Engine</li><li>VR / OpenXR</li><li>Photon</li><li>ShaderGraph / HLSL</li><li>Git</li><li>Github Actions</li><li>OpenGL</li><li>GLSL</li><li>Angular</li><li>Firebase</li><li>HTML</li><li>CSS</li></ul>
+    <ul class="bullets"><li>Unity (URP)</li><li>Unreal Engine</li><li>VR / MR / OpenXR</li><li>XR Interaction Toolkit</li><li>Meta XR SDK</li><li>Photon</li><li>ShaderGraph / HLSL</li><li>Addressables</li><li>UI Toolkit</li><li>Git / Github Actions</li><li>OpenGL / GLSL</li><li>Angular / Firebase</li><li>HTML / CSS</li></ul>
   </section><section class="block side-block">
     <h2 class="section-title">OTRAS COMPETENCIAS</h2>
     <ul class="bullets"><li>Notion</li><li>Clickup</li><li>Metodología Ágil</li><li>Canva</li><li>Miró</li><li>Photoshop</li><li>Premiere</li><li>Audition</li><li>Zbrush</li><li>3DS MAX</li><li>Substance Painter</li><li>Marmoset Viewer</li><li>After Effects</li></ul>

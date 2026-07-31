@@ -148,17 +148,22 @@ body{
 .col-main{ width:80%; padding-right:22px; }
 .col-side{ width:20%; }
 
+/* El bloque de columnas es indivisible: si cae a caballo del salto de página, el
+   navegador lo empuja entero y puede desbordar a una tercera hoja. Se fuerza el corte
+   antes: hoja 1 = cabecera + experiencia a ancho completo, hoja 2 = las dos columnas.
+   Solo afecta a impresión/PDF; en pantalla el documento sigue siendo continuo. */
+
 /* Títulos de sección */
 .section-title{ text-align:center; text-transform:uppercase; letter-spacing:2px;
-  font-size:10.5pt; font-weight:700; margin:16px 0 10px; padding-bottom:6px;
+  font-size:10.5pt; font-weight:700; margin:13px 0 9px; padding-bottom:5px;
   border-bottom:1.4px solid var(--rule); }
 .block{ margin-bottom:2px; }
 .block:first-child .section-title{ margin-top:0; }
-.full-width{ margin-top:20px; margin-bottom:20px; }
+.full-width{ margin-top:16px; margin-bottom:16px; }
 .full-width .block:first-child .section-title{ margin-top:18px; }
 
 /* Entradas */
-.entry{ margin-bottom:11px; break-inside:avoid; }
+.entry{ margin-bottom:9px; break-inside:avoid; }
 .entry-top{ display:flex; justify-content:space-between; gap:12px; align-items:baseline; }
 .entry-left{ color:var(--muted); font-size:9pt; }
 .org{ color:var(--muted); }
@@ -167,7 +172,7 @@ a.proj-name, a.proj-name:link, a.proj-name:visited{ color:var(--ink); text-decor
 .entry-date{ color:var(--muted); font-size:8.6pt; white-space:nowrap; }
 .role{ font-weight:700; margin:1px 0 3px; }
 ul.bullets{ margin:2px 0 0; padding-left:16px; }
-ul.bullets li{ margin-bottom:2px; }
+ul.bullets li{ margin-bottom:1px; }
 
 /* Lateral */
 .side-block .section-title{ margin-top:14px; }
@@ -176,6 +181,16 @@ ul.bullets li{ margin-bottom:2px; }
 
 /* Acciones (selector de idioma + descarga): solo en pantalla, ocultas al imprimir/exportar PDF */
 .top-actions{ display:none; }
+
+/* Impresión / PDF: el bloque de dos columnas es una tabla de una sola fila y Chrome la
+   fragmenta mal si cae a caballo del salto de página (deja una tira huérfana y se va a
+   una tercera hoja). Se le prohíbe partirse y se añade separación para que arranque ya
+   en la hoja 2: hoja 1 = cabecera + experiencia; hoja 2 = las dos columnas.
+   Debe ir al final del CSS para ganar a las reglas base. */
+@media print{
+  .columns{ break-inside:auto; }
+  .columns .block{ break-inside:avoid; }
+}
 
 /* Pantalla (web): fondo gris y hoja tipo papel */
 @media screen{

@@ -12,7 +12,7 @@
   "header": {
     "name": "AITOR IZURRATEGUI",
     "title": "PRODUCT ENGINEER | UNITY | AI FIRST DEVELOPER",
-    "summary": "Product engineer with 5+ years building Unity/VR experiences, currently shipping Meta-funded Mixed Reality sports apps for Meta Quest. AI-first developer leveraging agentic tools (Claude Code) to move fast across game, web and tooling projects, with strong UX and systems design instincts.",
+    "summary": "Product engineer with 5+ years building Unity/VR experiences, currently owning cross-cutting systems on a Meta-funded Mixed Reality sports app for Meta Quest. AI-first developer leveraging agentic tools (Claude Code) to move fast across game, web and tooling projects, with strong UX and systems design instincts.",
     "photo": "assets/photo.jpg",
     "contact": {
       "location": "Madrid, Spain",
@@ -20,9 +20,21 @@
       "email": "aitorizur@gmail.com"
     },
     "links": [
-      { "label": "Portfolio", "url": "https://aitorizur.github.io/portfolio/", "icon": "globe" },
-      { "label": "Linkedin", "url": "https://www.linkedin.com/in/aitor-izurrategui-de-castro/", "icon": "linkedin" },
-      { "label": "Github", "url": "https://github.com/aitorizur", "icon": "github" }
+      {
+        "label": "Portfolio",
+        "url": "https://aitorizur.github.io/portfolio/",
+        "icon": "globe"
+      },
+      {
+        "label": "Linkedin",
+        "url": "https://www.linkedin.com/in/aitor-izurrategui-de-castro/",
+        "icon": "linkedin"
+      },
+      {
+        "label": "Github",
+        "url": "https://github.com/aitorizur",
+        "icon": "github"
+      }
     ]
   },
   "main": [
@@ -34,16 +46,19 @@
         {
           "org": "YBVR (YERBA BUENA VR)",
           "location": "Madrid, Spain",
-          "date": "Nov 2024 - Present (1 year 8 months)",
+          "date": "Nov 2024 - Present (1 year 9 months)",
           "role": "Unity VR Developer",
           "bullets": [
             "Developed Unity/OpenXR features for Xtadium, a free Meta-funded Mixed Reality sports app for Meta Quest featured as a top Meta MR app, streaming NBA, UFC, EuroLeague and NASCAR content up to 8K 180°/360°.",
-            "Built a UI component system that let the design team assemble screens directly in Unity, fully removing engineering from UI layout work.",
-            "Shipped a full localization system (English, Spanish, German) and an onboarding/tutorial framework usable directly by designers.",
-            "Developed a real-time interactive 3D tabletop for NASCAR broadcasts rendering 100+ cars synced to live and VOD telemetry, used across 3 live events.",
-            "Built the reusable spin-off system powering derivative apps (Xtadium Music, CultVRe) from a shared codebase.",
-            "Optimized rendering and data pipelines to sustain a stable 90 FPS on Meta Quest.",
-            "Contributed to the continuous refactor of core app systems (UI, navigation, notifications, backend data integration) and the Built-in to URP render pipeline migration, paying down technical debt on a live production app without slowing feature delivery."
+            "Redesigned the app's spatial UI system for VR and Mixed Reality: default placement and scale of every panel, plus automatic repositioning tied to the headset's native recenter, replacing a manual confirmation step.",
+            "Built a UI component system and a shared design-system package (custom UI Toolkit editors, global data bindings) that let the design team assemble and restyle screens directly in Unity, fully removing engineering from UI layout work.",
+            "Owned the first-run interactive tutorial end to end, from Timeline prototype to production: step sequencing with exit and resume at any point, 3D coachmarks in space, immersive video synced to the flow, and hand-tracking support.",
+            "Built a real-time interactive 3D tabletop for NASCAR content: a manipulable track model rendering 100+ cars from chunked race telemetry, kept in sync with video playback and designed to consume the same stream for live and VOD.",
+            "Built co-watching (watch party) in remote and co-located modes on Photon, with split host/guest permissions, guest playback controls and reactions, and host handover.",
+            "Built the reusable spin-off system powering 5+ derivative apps (Xtadium Music, CultVRe, EuroLeague TV VR, X Games 360Vision) from a shared codebase, plus the localization system behind it (English, Spanish and German, extensible to any number of languages).",
+            "Migrated the interaction rig to Unity's XR Interaction Toolkit and the headset loader from Oculus to OpenXR, restoring every dependent interaction (reticle, grab, panel and object manipulation) and the app's 3D minigames on the new rig.",
+            "Optimized rendering and data pipelines to sustain a stable 90 FPS on Meta Quest, including smart loading of the interface, generic object pooling and Addressables organized per build configuration.",
+            "Owned the notification subsystem across two generations and the retirement of the legacy one, within a continuous refactor of core systems (navigation, backend data integration, Built-in to URP migration) that cut technical debt on a live app without slowing delivery."
           ]
         },
         {
@@ -52,11 +67,10 @@
           "date": "Sept 2022 - June 2024 (1 year 10 months)",
           "role": "Unity Game Developer",
           "bullets": [
-            "Programmed, tested and optimized gameplay mechanics and in-game environments in unannounced RPG mobile transmedia title in Unity URP.",
-            "Helped design and document gameplay mechanics, UI, and general game experience for an unannounced RPG mobile transmedia title.",
+            "Programmed, tested and optimized gameplay mechanics and in-game environments for an unannounced RPG mobile transmedia title in Unity URP, and helped design and document its mechanics, UI and overall game experience.",
+            "Defined and helped design its inventory system, and prototyped the core gameplay loop: party management and adventure runs across procedural scenarios.",
             "Coordinated 3D and 2D art teams using an agile workflow to create and implement assets in-engine, following design documentation.",
-            "Developed a dashboard to balance and manage the mobile game “ZPLN,” connecting to a Google Firebase backend using Angular and TypeScript.",
-            "Designed and implemented an early multiplayer testing mode for the mobile video game “ZPLN” using a Firebase backend."
+            "Developed a management dashboard (Angular, TypeScript, Firebase) and an early multiplayer testing mode for “ZPLN”, a released mobile game."
           ]
         },
         {
@@ -74,8 +88,7 @@
           "date": "Feb 2020 - July 2020 (6 months)",
           "role": "Intern Unity Developer",
           "bullets": [
-            "Assisted in the development of a truck checking simulator for a company that issues truck driving licenses in the United States.",
-            "Assisted in the development of a runner-type video game for a Spanish company."
+            "Assisted in the development of a truck inspection simulator for a US commercial driving licence training company, and of a runner-type video game for a Spanish company."
           ]
         }
       ]
@@ -126,7 +139,7 @@
           "tag": "3 Solo Game Jams",
           "url": "https://perceve.itch.io",
           "date": "2024",
-          "role": "Designer and Programmer (Team: 1 Designer/Programmer and 1 Artist)",
+          "role": "Designer & Programmer (2-person team)",
           "bullets": [
             "Designed and programmed three solo-jam games in 3-day to 2-week timeframes: Point of No Return (2nd overall, Unity Jam/Tooling.gg), The Precise Hero (4th in gameplay, Todo Game Jam) and Feather Fallout (1 bit Jam #4)."
           ]
@@ -136,20 +149,10 @@
           "tag": "Procedural Top-down Arcade Game",
           "url": "https://negone.itch.io/giro",
           "date": "2022",
-          "role": "Designer and Programmer (Team: 2 Programmers and 2 Artists)",
+          "role": "Designer & Programmer (4-person team)",
           "bullets": [
             "Designed and programmed overall game experience, mechanics, progression and UI.",
             "Awarded the “Most Enjoyable Game” audience award in the Fun&Serious Bilbao Event (2022). Also got nominated for the “Best Retro Game” award."
-          ]
-        },
-        {
-          "name": "Gravity Down Quick (Unity)",
-          "tag": "Level Based FPS Platformer",
-          "url": "https://www.youtube.com/watch?v=0_vrLjIdiCg&ab_channel=Perceve",
-          "date": "2019",
-          "role": "Designer and Programmer (Team: 1 Designer/Programmer and 1 Artist)",
-          "bullets": [
-            "Designed and implemented gameplay mechanics and levels."
           ]
         }
       ]
@@ -203,14 +206,7 @@
           "org": "JOYFE",
           "location": "Madrid, Spain",
           "date": "2022",
-          "role": "Cisco CCNA: Routing and Switching",
-          "bullets": []
-        },
-        {
-          "org": "JOYFE",
-          "location": "Madrid, Spain",
-          "date": "2022",
-          "role": "Microsoft Office Specialist for Word, Excel, PowerPoint and Access",
+          "role": "Cisco CCNA: Routing and Switching · Microsoft Office Specialist",
           "bullets": []
         }
       ]
@@ -225,7 +221,7 @@
     {
       "title": "TECHNOLOGIES",
       "type": "list",
-      "items": ["Unity", "Unreal Engine", "VR / OpenXR", "Photon", "ShaderGraph / HLSL", "Git", "Github Actions", "OpenGL", "GLSL", "Angular", "Firebase", "HTML", "CSS"]
+      "items": ["Unity (URP)", "Unreal Engine", "VR / MR / OpenXR", "XR Interaction Toolkit", "Meta XR SDK", "Photon", "ShaderGraph / HLSL", "Addressables", "UI Toolkit", "Git / Github Actions", "OpenGL / GLSL", "Angular / Firebase", "HTML / CSS"]
     },
     {
       "title": "ADDITIONAL SKILLS",

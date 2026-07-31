@@ -12,7 +12,7 @@
   "header": {
     "name": "AITOR IZURRATEGUI",
     "title": "INGENIERO DE PRODUCTO | UNITY | DESARROLLADOR AI FIRST",
-    "summary": "Ingeniero de producto con más de 5 años desarrollando experiencias en Unity/VR, actualmente construyendo apps de deportes en Realidad Mixta financiadas por Meta para Meta Quest. Desarrollador AI-first que aprovecha herramientas agénticas (Claude Code) para avanzar rápido en proyectos de videojuegos, web y herramientas, con fuerte instinto de diseño UX y de sistemas.",
+    "summary": "Ingeniero de producto con más de 5 años desarrollando experiencias en Unity/VR, actualmente responsable de sistemas transversales en una app de deportes en Realidad Mixta financiada por Meta para Meta Quest. Desarrollador AI-first que aprovecha herramientas agénticas (Claude Code) para avanzar rápido en proyectos de videojuegos, web y herramientas, con fuerte instinto de diseño UX y de sistemas.",
     "photo": "assets/photo.jpg",
     "contact": {
       "location": "Madrid, España",
@@ -20,9 +20,21 @@
       "email": "aitorizur@gmail.com"
     },
     "links": [
-      { "label": "Portfolio", "url": "https://aitorizur.github.io/portfolio/", "icon": "globe" },
-      { "label": "Linkedin", "url": "https://www.linkedin.com/in/aitor-izurrategui-de-castro/", "icon": "linkedin" },
-      { "label": "Github", "url": "https://github.com/aitorizur", "icon": "github" }
+      {
+        "label": "Portfolio",
+        "url": "https://aitorizur.github.io/portfolio/",
+        "icon": "globe"
+      },
+      {
+        "label": "Linkedin",
+        "url": "https://www.linkedin.com/in/aitor-izurrategui-de-castro/",
+        "icon": "linkedin"
+      },
+      {
+        "label": "Github",
+        "url": "https://github.com/aitorizur",
+        "icon": "github"
+      }
     ]
   },
   "main": [
@@ -34,16 +46,19 @@
         {
           "org": "YBVR (YERBA BUENA VR)",
           "location": "Madrid, España",
-          "date": "Nov 2024 - Actualidad (1 año 8 meses)",
+          "date": "Nov 2024 - Actualidad (1 año 9 meses)",
           "role": "Desarrollador Unity VR",
           "bullets": [
             "Desarrollé funcionalidades en Unity/OpenXR para Xtadium, una app gratuita de deportes en Realidad Mixta financiada por Meta para Meta Quest, destacada como una de las mejores apps de MR de Meta, con streaming de NBA, UFC, EuroLeague y NASCAR hasta 8K en 180°/360°.",
-            "Construí un sistema de componentes de UI que permitió al equipo de diseño maquetar pantallas directamente en Unity, delegando por completo el trabajo de maquetación a diseño.",
-            "Implementé un sistema completo de localización (inglés, español y alemán) y un framework de onboarding/tutoriales utilizable directamente por diseño.",
-            "Desarrollé un tablero 3D interactivo en tiempo real para las retransmisiones de NASCAR, renderizando más de 100 coches sincronizados con telemetría en directo y VOD, usado en 3 eventos en vivo.",
-            "Construí el sistema reutilizable de spin-offs que da vida a más de 5 apps derivadas (Xtadium Music, CultVRe, EuroLeague TV VR, X Games 360Vision) desde una base de código compartida.",
-            "Optimicé el renderizado y los pipelines de datos para mantener 90 FPS estables en Meta Quest.",
-            "Contribuí a la refactorización continua de sistemas clave de la app (UI, navegación, notificaciones, integración de datos con el backend) y a la migración del render pipeline de Built-in a URP, reduciendo deuda técnica en una app en producción sin frenar las entregas."
+            "Rediseñé el posicionamiento espacial de la interfaz en VR y Realidad Mixta: colocación y escala por defecto de los paneles y recolocación automática integrada con el recentrado nativo de las gafas, en lugar de un paso de confirmación manual.",
+            "Construí un sistema de componentes de UI y un paquete de diseño compartido (editores propios en UI Toolkit, bindings globales) que permitió a diseño maquetar y reestilizar pantallas directamente en Unity, delegando por completo la maquetación.",
+            "Fui responsable de punta a punta del tutorial interactivo de primer arranque, del prototipo en Timeline a producción: secuencia de pasos con salida y reanudación en cualquier momento, coachmarks 3D en el espacio, vídeo inmersivo sincronizado y hand tracking.",
+            "Desarrollé un tablero 3D interactivo en tiempo real para el contenido de NASCAR: maqueta del circuito manipulable que renderiza más de 100 coches a partir de telemetría servida por chunks, en sincronía con el vídeo y diseñada para consumir el mismo stream en directo y en VOD.",
+            "Desarrollé el visionado conjunto (watch party) en modos remoto y co-localizado sobre Photon, con permisos diferenciados entre anfitrión e invitados, controles de reproducción y reacciones para invitados, y traspaso de anfitrión.",
+            "Construí el sistema reutilizable de spin-offs que da vida a más de 5 apps derivadas (Xtadium Music, CultVRe, EuroLeague TV VR, X Games 360Vision) desde una base compartida, más el sistema de localización que lo sostiene (inglés, español y alemán, ampliable a más idiomas).",
+            "Migré el rig de interacción al XR Interaction Toolkit de Unity y el cargador de las gafas de Oculus a OpenXR, recuperando todas las interacciones dependientes (retícula, agarre, manipulación de paneles y objetos) y los minijuegos 3D de la app sobre el nuevo rig.",
+            "Optimicé el renderizado y los pipelines de datos para mantener 90 FPS estables en Meta Quest: carga inteligente de la interfaz, pool genérico de objetos y Addressables por configuración de build.",
+            "Fui responsable del subsistema de notificaciones en dos generaciones y de la retirada del legado, dentro de una refactorización continua de sistemas clave (navegación, datos del backend, migración a URP) que redujo deuda técnica en producción sin frenar las entregas."
           ]
         },
         {
@@ -52,11 +67,10 @@
           "date": "Sept 2022 - Jun 2024 (1 año 10 meses)",
           "role": "Desarrollador de Videojuegos Unity",
           "bullets": [
-            "Programé, probé y optimicé mecánicas de juego y entornos en un título RPG móvil transmedia sin anunciar, desarrollado en Unity URP.",
-            "Colaboré en el diseño y la documentación de mecánicas de juego, UI y la experiencia general de un título RPG móvil transmedia sin anunciar.",
+            "Programé, probé y optimicé mecánicas y entornos de un título RPG móvil transmedia sin anunciar en Unity URP, y colaboré en el diseño y documentación de sus mecánicas, UI y experiencia general.",
+            "Definí y ayudé a diseñar su sistema de inventario, y prototipé el core gameplay loop: gestión de party y salidas de aventura en escenarios procedurales.",
             "Coordiné equipos de arte 2D y 3D con metodología ágil para crear e integrar assets en el motor, siguiendo la documentación de diseño.",
-            "Desarrollé un panel para balancear y gestionar el juego móvil “ZPLN”, conectado a un backend de Google Firebase, con Angular y TypeScript.",
-            "Diseñé e implementé un modo multijugador de pruebas inicial para el juego móvil “ZPLN” usando un backend de Firebase."
+            "Desarrollé un panel de gestión (Angular, TypeScript, Firebase) y un modo multijugador de pruebas inicial para “ZPLN”, un juego móvil publicado."
           ]
         },
         {
@@ -74,8 +88,7 @@
           "date": "Feb 2020 - Jul 2020 (6 meses)",
           "role": "Desarrollador Unity en Prácticas",
           "bullets": [
-            "Colaboré en el desarrollo de un simulador de inspección de camiones para una empresa que expide licencias de conducción de camiones en Estados Unidos.",
-            "Colaboré en el desarrollo de un videojuego de tipo runner para una empresa española."
+            "Colaboré en el desarrollo de un simulador de inspección de camiones para una empresa estadounidense de formación de conductores profesionales, y de un videojuego runner para una empresa española."
           ]
         }
       ]
@@ -126,7 +139,7 @@
           "tag": "3 Game Jams en solitario",
           "url": "https://perceve.itch.io",
           "date": "2024",
-          "role": "Diseñador y Programador (Equipo: 1 Diseñador/Programador y 1 Artista)",
+          "role": "Diseñador y Programador (equipo de 2)",
           "bullets": [
             "Diseñé y programé tres juegos de jams en solitario en plazos de 3 días a 2 semanas: Point of No Return (2º puesto general, Unity Jam/Tooling.gg), The Precise Hero (4º en gameplay, Todo Game Jam) y Feather Fallout (1 bit Jam #4)."
           ]
@@ -136,20 +149,10 @@
           "tag": "Juego arcade cenital procedural",
           "url": "https://negone.itch.io/giro",
           "date": "2022",
-          "role": "Diseñador y Programador (Equipo: 2 Programadores y 2 Artistas)",
+          "role": "Diseñador y Programador (equipo de 4)",
           "bullets": [
             "Diseñé y programé la experiencia de juego, las mecánicas, la progresión y la UI.",
             "Ganador del premio del público “Most Enjoyable Game” en el Fun&Serious de Bilbao (2022). También nominado al premio “Best Retro Game”."
-          ]
-        },
-        {
-          "name": "Gravity Down Quick (Unity)",
-          "tag": "Plataformas FPS por niveles",
-          "url": "https://www.youtube.com/watch?v=0_vrLjIdiCg&ab_channel=Perceve",
-          "date": "2019",
-          "role": "Diseñador y Programador (Equipo: 1 Diseñador/Programador y 1 Artista)",
-          "bullets": [
-            "Diseñé e implementé las mecánicas de juego y los niveles."
           ]
         }
       ]
@@ -203,14 +206,7 @@
           "org": "JOYFE",
           "location": "Madrid, España",
           "date": "2022",
-          "role": "Cisco CCNA: Routing and Switching",
-          "bullets": []
-        },
-        {
-          "org": "JOYFE",
-          "location": "Madrid, España",
-          "date": "2022",
-          "role": "Microsoft Office Specialist en Word, Excel, PowerPoint y Access",
+          "role": "Cisco CCNA: Routing and Switching · Microsoft Office Specialist",
           "bullets": []
         }
       ]
@@ -225,7 +221,7 @@
     {
       "title": "TECNOLOGÍAS",
       "type": "list",
-      "items": ["Unity", "Unreal Engine", "VR / OpenXR", "Photon", "ShaderGraph / HLSL", "Git", "Github Actions", "OpenGL", "GLSL", "Angular", "Firebase", "HTML", "CSS"]
+      "items": ["Unity (URP)", "Unreal Engine", "VR / MR / OpenXR", "XR Interaction Toolkit", "Meta XR SDK", "Photon", "ShaderGraph / HLSL", "Addressables", "UI Toolkit", "Git / Github Actions", "OpenGL / GLSL", "Angular / Firebase", "HTML / CSS"]
     },
     {
       "title": "OTRAS COMPETENCIAS",
