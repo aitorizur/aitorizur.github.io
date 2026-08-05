@@ -192,11 +192,14 @@ ul.bullets li{ margin-bottom:1px; }
   .columns .block{ break-inside:avoid; }
 }
 
-/* Pantalla (web): fondo gris y hoja tipo papel */
+/* Pantalla (web): fondo gris y hoja tipo papel.
+   El documento NO se reflowa en móvil: el <meta viewport> fija el ancho al de la hoja
+   (210mm ~= 794px + margen), así que el navegador escala la página entera para que
+   quepa a lo ancho, igual que un visor de PDF, y el zoom con dos dedos sigue activo. */
 @media screen{
   body{ background:#e9e9ea; padding:24px 12px; }
-  .sheet{ background:#fff; padding:16mm 15mm; box-shadow:0 4px 24px rgba(0,0,0,.14);
-    border-radius:2px; }
+  .sheet{ width:210mm; max-width:100%; background:#fff; padding:16mm 15mm;
+    box-shadow:0 4px 24px rgba(0,0,0,.14); border-radius:2px; }
   .top-actions{ display:flex; align-items:center; gap:10px; position:fixed; top:18px; right:18px; z-index:10; }
   .lang-switch{ display:flex; background:#fff; border:1px solid #ccc; border-radius:6px;
     overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,.12); }
@@ -206,6 +209,12 @@ ul.bullets li{ margin-bottom:1px; }
   .download-btn{ display:inline-block; background:#2b2b2b; color:#fff; text-decoration:none;
     font-size:13px; font-weight:600; padding:9px 15px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,.22); }
   .download-btn:hover{ background:#000; }
+}
+
+/* En pantallas táctiles la página se ve escalada (viewport fijo al ancho de la hoja),
+   así que los controles flotantes se agrandan para seguir siendo pulsables. */
+@media screen and (pointer:coarse){
+  .top-actions{ transform:scale(1.7); transform-origin:top right; }
 }
 `;
 
@@ -235,7 +244,7 @@ function renderHTML(data) {
 <html lang="${esc(lang)}">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=820">
 <title>${esc(data.header.name)} — CV</title>
 <style>${CSS}</style>
 </head>
