@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rush Fighter — Aitor Izurrategui</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;900&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/play.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topnav">
+    <div class="brand"><a href="index.html">AITOR IZURRATEGUI</a></div>
+    <div class="navlinks">
+      <a href="index.html" class="active">WORK</a><a href="about.html">ABOUT</a><a href="https://aitorizur.github.io/" target="_blank" rel="noopener">RESUME ↗</a>
+    </div>
+  </div>
+
+  <div class="split divided" style="--cols:1.4fr 1fr; border-bottom:var(--fw) solid var(--ink);">
+    <div>
+      <img class="vid" style="aspect-ratio:16/10; object-fit:cover;" src="assets/rush-fighter/title.jpg" alt="Rush Fighter title art">
+    </div>
+    <div class="pad" style="display:flex; flex-direction:column;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:0.15em;">2D BEAT 'EM UP · 2026 · JAÉNJAM II · TEAM OF 4</div>
+      <div class="game-h md">Rush Fighter</div>
+      <div style="display:inline-flex; align-self:flex-start; align-items:center; gap:8px; background:var(--panel1); border:var(--fw) solid var(--ink); color:var(--ink); font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; padding:7px 12px; margin-top:14px;">GODOT 4 + C# · SHIPPED TO THE BROWSER</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; line-height:1.65; color:color-mix(in srgb, var(--ink) 85%, transparent); margin-top:18px;">A beat 'em up built around one verb: <span style="color:var(--accent);">parry</span>. Year 802 BC, and you are the last frog on Mars, fighting off aliens who are draining the planet's water. Infiltrate them and you find out why they need it — back home a corporation owns their water and spends it cooling AI data centres. Both sides are right, which is the point.</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:14px; line-height:1.65; color:color-mix(in srgb, var(--ink) 70%, transparent); margin-top:12px;"><span style="color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:11px;">MY ROLE —</span> Programming, one of two developers in a team of four: Edu on programming with me, David on narrative and audio, Santi on art.</div>
+      <div class="tags" style="margin-top:18px;">
+        <span class="tag">GODOT 4</span><span class="tag">C#</span><span class="tag">WEBASSEMBLY</span><span class="tag">JAM</span>
+      </div>
+      <div style="display:flex; gap:14px; margin-top:auto; padding-top:26px; flex-wrap:wrap;">
+        <a href="#play" class="btn primary">▶ Play it on this page</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="sec" id="play" style="padding-bottom:0;">
+    <div class="sec-head">
+      <div class="sec-title">Play it right here</div>
+      <div class="sec-sub">LOADS ON DEMAND · NOTHING TO INSTALL</div>
+    </div>
+    <div class="playbox" data-embed="18556571" data-title="Rush Fighter — playable build">
+      <button type="button">▶ Play Rush Fighter</button>
+      <div class="play-note">Godot 4 with C#, exported to WebAssembly — a route Godot does not officially support.</div>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">The interesting problem</div>
+      <div class="sec-sub">C# ON THE WEB, IN AN ENGINE THAT DOESN'T DO THAT</div>
+    </div>
+    <div class="grid-2">
+      <div class="panel">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">01</div>
+        <div class="panel-title">Shipping C# to the browser</div>
+        <div class="card-note">Godot 4 does not officially support exporting C# projects to the web. A jam game that nobody can play in a browser loses most of its audience, so rather than rewrite in GDScript or accept a downloadable build, we got the WebAssembly export working and <span style="color:var(--accent);">wrote the procedure down in the repository</span> so the next project doesn't rediscover it.</div>
+      </div>
+      <div class="panel">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">02</div>
+        <div class="panel-title">A second engine, on purpose</div>
+        <div class="card-note">Six years of Unity is a comfortable place to stay. This is the second game this team has shipped in Godot in 2026, after <a href="https://arcadehead.itch.io/mascar" target="_blank" rel="noopener">mAscAr</a> — deliberately picking up an unfamiliar engine under jam pressure, which is the fastest way to find out what you actually understand about engines and what you had just memorised about one of them.</div>
+      </div>
+    </div>
+    <div class="card-note" style="margin-top:16px; font-size:13px;">The itch page declares <span style="color:var(--accent);">“No generative AI was used”</span> — the art, writing and audio are the team's own.</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">The cast</div>
+      <div class="sec-sub">ART BY SANTI · “ARCADEHEAD”</div>
+    </div>
+    <div class="grid-3">
+      <div class="ph small" style="aspect-ratio:16/10; padding:0; overflow:hidden; display:flex; align-items:center; justify-content:center;"><img src="assets/rush-fighter/frog.png" style="max-width:70%; max-height:80%; object-fit:contain;" alt="The player character — the last frog on Mars"></div>
+      <div class="ph small" style="aspect-ratio:16/10; padding:0; overflow:hidden; display:flex; align-items:center; justify-content:center;"><img src="assets/rush-fighter/enemy.png" style="max-width:70%; max-height:80%; object-fit:contain;" alt="An enemy from Rush Fighter"></div>
+      <div class="ph small" style="aspect-ratio:16/10; padding:0; overflow:hidden;"><img src="assets/rush-fighter/room.png" style="width:100%; height:100%; object-fit:cover;" alt="Rush Fighter — hand-drawn interior with the parry prompt on the wall"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="feather-fallout.html" class="footer-back">← PREV: FEATHER FALLOUT</a>
+    <a href="archive.html" class="footer-back">ALL PROJECTS ↑</a>
+    <a href="index.html" class="footer-cta" style="font-size:16px;">Back to Work →</a>
+  </div>
+
+</div>
+</body>
+</html>

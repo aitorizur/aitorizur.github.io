@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archive — Aitor Izurrategui</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;900&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* Dense index rows: stacked on a phone, three columns once there is room. */
+  .arch-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 14px 0;
+    border-top: 1px solid rgba(242, 240, 230, 0.22);
+  }
+  .arch-group .arch-row:last-child { border-bottom: 1px solid rgba(242, 240, 230, 0.22); }
+  .arch-year { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 0.06em; }
+  .arch-name { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 15px; color: var(--ink); }
+  .arch-links { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: color-mix(in srgb, var(--ink) 45%, transparent); }
+  .arch-links a { color: var(--accent); text-decoration: none; display: inline-block; padding: 3px 0; }
+  .arch-links a:hover { color: var(--ink); text-decoration: underline; }
+  @media (min-width: 900px) {
+    .arch-row { grid-template-columns: 104px 1fr 260px; gap: 22px; align-items: baseline; }
+    .arch-links { text-align: right; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topnav">
+    <div class="brand"><a href="index.html">AITOR IZURRATEGUI</a></div>
+    <div class="navlinks">
+      <a href="index.html" class="active">WORK</a><a href="about.html">ABOUT</a><a href="https://aitorizur.github.io/" target="_blank" rel="noopener">RESUME ↗</a>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:0.15em;">THE COMPLETE INDEX · 2016 — 2026</div>
+    <div class="h-display" style="color:var(--ink); margin-top:10px;">Everything I've<br>worked on.</div>
+    <div class="card-note" style="font-size:15px; max-width:72ch; margin-top:14px;">The hub shows the work that argues for itself. This is the rest of it — every prototype, every jam, every tool, including the ones that went nowhere.</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">Games &amp; jams</div>
+      <div class="sec-sub">DESIGN + PROGRAMMING UNLESS NOTED</div>
+    </div>
+    <div class="card-note" style="margin:0 0 6px; font-size:13px;">Recurring collaborator: <a href="https://arcadehead.itch.io" target="_blank" rel="noopener">Santi — “Arcadehead”</a> (art), credited alongside me on six of the games below, from 2019 to 2026. Music and sound effects in the jam games come from third-party libraries and are not my work.</div>
+    <div class="arch-group">
+
+      <div class="arch-row">
+        <div class="arch-year">2026</div>
+        <div>
+          <div class="arch-name">Rush Fighter</div>
+          <div class="card-note">2D beat 'em up built on parry timing. JaénJam II. Godot 4 with C#, exported to the web through WebAssembly — a path Godot 4 does not officially support, documented in the repo. Programming, in a team of four.</div>
+        </div>
+        <div class="arch-links"><a href="rush-fighter.html">DETAIL →</a> · <a href="https://arcadehead.itch.io/rush-fighter" target="_blank" rel="noopener">ITCH ↗</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">2026</div>
+        <div>
+          <div class="arch-name">mAscAr</div>
+          <div class="card-note">Narrative horror / interactive fiction, advanced one key at a time. MálagaJam Weekend 20. Godot with GDScript. Same four-person team as Rush Fighter.</div>
+        </div>
+        <div class="arch-links"><a href="https://arcadehead.itch.io/mascar" target="_blank" rel="noopener">ITCH ↗</a> · <a href="https://github.com/egomez-g/mascar-a" target="_blank" rel="noopener">CODE ↗</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">2024</div>
+        <div>
+          <div class="arch-name">Point of No Return &nbsp;<span style="color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:11px;">🏆 2ND OF 55</span></div>
+          <div class="card-note">Space exploration where the universe keeps expanding around you. Unity Jam 2024 (Tooling.gg), a jam with cash prizes: 2nd overall, 2nd in theme interpretation, 4th in mechanics. Five days, two people.</div>
+        </div>
+        <div class="arch-links"><a href="point-of-no-return.html">DETAIL →</a> · <a href="https://perceve.itch.io/point-of-no-return" target="_blank" rel="noopener">▶ PLAY ↗</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">2024</div>
+        <div>
+          <div class="arch-name">The Precise Hero &nbsp;<span style="color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:11px;">🏆 4TH GAMEPLAY OF 78</span></div>
+          <div class="card-note">Precision platformer about a hero who falls asleep mid-jump. // TODO Game Jam 2024, three days: 4th in gameplay, 8th in originality, 10th overall. Its itch page keeps a speedrun leaderboard with real player times.</div>
+        </div>
+        <div class="arch-links"><a href="precise-hero.html">DETAIL →</a> · <a href="https://perceve.itch.io/the-precise-hero" target="_blank" rel="noopener">▶ PLAY ↗</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">2024</div>
+        <div>
+          <div class="arch-name">Feather Fallout</div>
+          <div class="card-note">Two-colour tower defense where turrets swap colour and target on command. Built in two weeks taking the theme and the two-colour constraint of 1 bit Jam #4 as a design restriction — it was not submitted to the jam. Economy balanced as a written document first.</div>
+        </div>
+        <div class="arch-links"><a href="feather-fallout.html">DETAIL →</a> · <a href="https://perceve.itch.io/feather-fallout" target="_blank" rel="noopener">▶ PLAY ↗</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">2022</div>
+        <div>
+          <div class="arch-name">G!RO &nbsp;<span style="color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:11px;">🏆 MOST ENJOYABLE GAME</span></div>
+          <div class="card-note">One-button arcade with a ship that never stops rotating. Audience award at Fun&amp;Serious Bilbao 2022 and nominated Best Retro Game. Made by the Negone collective — started with four, finished by two, with me as lead programmer and designer.</div>
+        </div>
+        <div class="arch-links"><a href="giro.html">DETAIL →</a> · <a href="https://negone.itch.io/giro" target="_blank" rel="noopener">↓ DOWNLOAD ↗</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">2020</div>
+        <div>
+          <div class="arch-name">Gravity Down Quick</div>
+          <div class="card-note">FPS platformer: you build speed and flip gravity by shooting. One designer-programmer and one artist.</div>
+        </div>
+        <div class="arch-links"><a href="https://perceve.itch.io/gravity-down-quick" target="_blank" rel="noopener">▶ PLAY ↗</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">2019</div>
+        <div>
+          <div class="arch-name">FADE &nbsp;<span style="color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:11px;">🏆 3RD PRIZE</span></div>
+          <div class="card-note">Serious game about Alzheimer's. Hackathon Telefónica 2019, serious games and gamification category, 48 hours. One of two programmers in a team of five. No build was published — the record is the video.</div>
+        </div>
+        <div class="arch-links"><a href="https://www.youtube.com/watch?v=mRA8XhR5a6M" target="_blank" rel="noopener">VIDEO ↗</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">SOLO</div>
+        <div>
+          <div class="arch-name">Talassophobia</div>
+          <div class="card-note">Horror piece about waking up alone in the middle of the ocean. Mini Jam 159, two days, under an “as small as possible” constraint. Solo developer.</div>
+        </div>
+        <div class="arch-links"><a href="https://perceve.itch.io/talassophobia" target="_blank" rel="noopener">▶ PLAY ↗</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">SOLO</div>
+        <div>
+          <div class="arch-name">Haunted Echoes</div>
+          <div class="card-note">VR horror for Google Cardboard: total darkness, audio as your only guide, looking around as your only input. Solo developer.</div>
+        </div>
+        <div class="arch-links"><a href="https://perceve.itch.io/vr-google-cardboard-scary-protoype" target="_blank" rel="noopener">ITCH ↗</a> · <a href="https://github.com/aitorizur/VRCardboard-scary-prototype" target="_blank" rel="noopener">CODE ↗</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">Production &amp; studio work</div>
+      <div class="sec-sub">PAID WORK · YBVR · LURTIS AI · ISOSTOPY</div>
+    </div>
+    <div class="arch-group">
+
+      <div class="arch-row">
+        <div class="arch-year">2024 — NOW</div>
+        <div>
+          <div class="arch-name">Xtadium — YBVR</div>
+          <div class="card-note">Meta's featured immersive sports app on Quest, built in partnership with Meta. I own spatial UI positioning, notifications, onboarding, localization and the spin-off architecture, and I lead the device-agnostic architecture effort. Full breakdown of what is mine and what was the team's in the case study.</div>
+        </div>
+        <div class="arch-links"><a href="xtadium.html">CASE STUDY →</a> · <a href="https://www.meta.com/es-es/experiences/xtadium-immersive-sports/7281839885191361/" target="_blank" rel="noopener">STORE ↗</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">2025</div>
+        <div>
+          <div class="arch-name">Xtadium Music · CultVRe</div>
+          <div class="card-note">Two separate Meta Store releases shipped from the Xtadium codebase through the feature-flag system I built. Immersive concerts, and culture and heritage.</div>
+        </div>
+        <div class="arch-links"><a href="https://www.meta.com/es-es/experiences/xtadium-music/25188032557482815/" target="_blank" rel="noopener">MUSIC ↗</a> · <a href="https://www.meta.com/es-es/experiences/cultvre-culture-comes-alive-in-vr/28427588560218368/" target="_blank" rel="noopener">CULTVRE ↗</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">2025</div>
+        <div>
+          <div class="arch-name">NASCAR 3D Tabletop</div>
+          <div class="card-note">Interactive race miniature driven by real telemetry, 100+ cars synced frame-accurate to live and recorded video alike, with its live leaderboard. Fully developed as an internal R&amp;D build — never shipped to users, never used in a live event.</div>
+        </div>
+        <div class="arch-links"><a href="xtadium.html">CASE STUDY →</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">2022 — 2024</div>
+        <div>
+          <div class="arch-name">ZPLN — Lurtis AI</div>
+          <div class="card-note">Space strategy-shooter with pinball bouncing, published on Google Play. Mechanics and environments, plus an Angular / TypeScript / Firebase management dashboard and an early multiplayer mode.</div>
+        </div>
+        <div class="arch-links"><a href="https://play.google.com/store/apps/details?id=tv.zpln.game" target="_blank" rel="noopener">GOOGLE PLAY ↗</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">2023 — 2024</div>
+        <div>
+          <div class="arch-name">Lorak — Lurtis AI</div>
+          <div class="card-note">Transmedia RPG: the same character carried across tabletop sessions, a virtual tabletop and a mobile game. I defined and helped design the inventory system, and prototyped the core loop — party management and expeditions into procedural scenarios. Funding ended before release.</div>
+        </div>
+        <div class="arch-links"><a href="https://www.lurtis.com/lorak-the-future-of-transmedia-gaming/" target="_blank" rel="noopener">ABOUT ↗</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">2023 — 2024</div>
+        <div>
+          <div class="arch-name">Kumal — Lurtis AI</div>
+          <div class="card-note">A Unity tool for creating and co-designing 3D scenarios, from single rooms to whole worlds, meant to buy design time back for narrative and gameplay. Publicly funded R&amp;D (CDTI). I worked on the tool itself, not just as its user.</div>
+        </div>
+        <div class="arch-links"><a href="https://kumal.lurtis.com/" target="_blank" rel="noopener">SITE ↗</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">2022 — 2023</div>
+        <div>
+          <div class="arch-name">Private Unity &amp; programming tutor</div>
+          <div class="card-note">Three second-year students on the same game development programme I had just finished, tutored through the school year in the programming subject. All three passed.</div>
+        </div>
+        <div class="arch-links">—</div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">2021</div>
+        <div>
+          <div class="arch-name">Classroom 2060 — Lurtis AI</div>
+          <div class="card-note">Serious game teaching recent history to teenagers in the classroom. Unity development, during an internship.</div>
+        </div>
+        <div class="arch-links"><a href="https://www.lurtis.com/es/classroom-2060-learn-history-through-a-video-game/" target="_blank" rel="noopener">ABOUT ↗</a></div>
+      </div>
+
+      <div class="arch-row">
+        <div class="arch-year">2020</div>
+        <div>
+          <div class="arch-name">Pre-Trip Inspection — Isostopy</div>
+          <div class="card-note">VR/AR truck-inspection simulator for a North American training company, preparing drivers for the US CDL certification: the full inspection routine with evaluation and feedback. Built entirely in Unity, during an internship.</div>
+        </div>
+        <div class="arch-links"><a href="https://isostopy.com/project/pre-trip-inspection/?lang=en" target="_blank" rel="noopener">PROJECT ↗</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">Graphics &amp; engine</div>
+      <div class="sec-sub">C++ · OPENGL · GLSL</div>
+    </div>
+    <div class="arch-group">
+      <div class="arch-row">
+        <div class="arch-year">C++</div>
+        <div><div class="arch-name">Game engine from scratch</div><div class="card-note">Renderer, physics integration and scene handling with SDL2, OpenGL, Bullet and Box2D. No engine underneath.</div></div>
+        <div class="arch-links"><a href="https://github.com/aitorizur/Cpp-Game-Engine" target="_blank" rel="noopener">CODE ↗</a></div>
+      </div>
+      <div class="arch-row">
+        <div class="arch-year">C++</div>
+        <div><div class="arch-name">Nori pathtracer</div><div class="card-note">Physically-based light transport implemented by hand, on the Nori framework. From the URJC master's coursework.</div></div>
+        <div class="arch-links"><a href="https://github.com/aitorizur/Nori-Pathtracer" target="_blank" rel="noopener">CODE ↗</a></div>
+      </div>
+      <div class="arch-row">
+        <div class="arch-year">C++</div>
+        <div><div class="arch-name">Fluid simulation</div><div class="card-note">Basic real-time fluid simulation.</div></div>
+        <div class="arch-links"><a href="https://github.com/aitorizur/Fluids-Simulation" target="_blank" rel="noopener">CODE ↗</a></div>
+      </div>
+      <div class="arch-row">
+        <div class="arch-year">GLSL</div>
+        <div><div class="arch-name">Grass shader</div><div class="card-note">GPU grass shader in Unity. The same kind of work I now do in HLSL and Shader Graph on Quest.</div></div>
+        <div class="arch-links"><a href="https://github.com/aitorizur/Grass-Shader-GLSL" target="_blank" rel="noopener">CODE ↗</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">Gameplay prototypes</div>
+      <div class="sec-sub">MECHANICS BUILT TO FIND OUT IF THEY WORK · <a href="prototypes.html">SEE THEM MOVING →</a></div>
+    </div>
+    <div class="arch-group">
+      <div class="arch-row"><div class="arch-year">UNITY</div><div><div class="arch-name">RTS core gameplay</div><div class="card-note">Selection, orders and the base loop of a real-time strategy game.</div></div><div class="arch-links"><a href="https://github.com/aitorizur/RTS-Prototype" target="_blank" rel="noopener">CODE ↗</a></div></div>
+      <div class="arch-row"><div class="arch-year">UNITY</div><div><div class="arch-name">4X strategy map navigation</div><div class="card-note">World-map navigation for a 4X game.</div></div><div class="arch-links"><a href="https://github.com/aitorizur/Mapamundi-Navigation" target="_blank" rel="noopener">CODE ↗</a></div></div>
+      <div class="arch-row"><div class="arch-year">UNITY</div><div><div class="arch-name">Vehicle controller + AI driving</div><div class="card-note">Extension of Unity's vehicle controller, plus experiments with AI-driven cars.</div></div><div class="arch-links"><a href="https://github.com/aitorizur/Car-Prototype" target="_blank" rel="noopener">CODE ↗</a></div></div>
+      <div class="arch-row"><div class="arch-year">UNITY</div><div><div class="arch-name">Realtime audio reaction</div><div class="card-note">Objects reacting to audio in real time.</div></div><div class="arch-links"><a href="https://github.com/aitorizur/Objects-Reacting-To-Audio" target="_blank" rel="noopener">CODE ↗</a></div></div>
+      <div class="arch-row"><div class="arch-year">UNREAL</div><div><div class="arch-name">Unit farming automation</div><div class="card-note">The one prototype in Unreal Engine rather than Unity.</div></div><div class="arch-links"><a href="https://github.com/aitorizur/Unreal-RTS-Farming" target="_blank" rel="noopener">CODE ↗</a></div></div>
+      <div class="arch-row"><div class="arch-year">UNITY</div><div><div class="arch-name">Mobile shooter — “ASTRO”</div><div class="card-note">Hypercasual: shoot the meteors before they reach your city.</div></div><div class="arch-links">PRIVATE REPO</div></div>
+      <div class="arch-row"><div class="arch-year">UNITY</div><div><div class="arch-name">Mobile kiting</div><div class="card-note">Hypercasual kiting mechanic.</div></div><div class="arch-links">PRIVATE REPO</div></div>
+      <div class="arch-row"><div class="arch-year">UNITY</div><div><div class="arch-name">Mobile climbing</div><div class="card-note">Hypercasual: bouncing a ball upwards.</div></div><div class="arch-links">PRIVATE REPO</div></div>
+      <div class="arch-row"><div class="arch-year">UNITY</div><div><div class="arch-name">Physics-based 2D platformer</div><div class="card-note">A 2D character controller driven by physics rather than kinematics.</div></div><div class="arch-links">PRIVATE REPO</div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">Tools &amp; utilities</div>
+      <div class="sec-sub">THINGS BUILT SO THE NEXT PROJECT STARTS FASTER</div>
+    </div>
+    <div class="arch-group">
+      <div class="arch-row"><div class="arch-year">UPM</div><div><div class="arch-name">Unity Utilities</div><div class="card-note">My own Unity package of components and extensions, reused across personal projects and jams.</div></div><div class="arch-links">PRIVATE REPO</div></div>
+      <div class="arch-row"><div class="arch-year">UNITY</div><div><div class="arch-name">URP jam template</div><div class="card-note">A base project with the packages I always end up needing, so a jam starts on code instead of configuration.</div></div><div class="arch-links">PRIVATE REPO</div></div>
+      <div class="arch-row"><div class="arch-year">C++</div><div><div class="arch-name">Breakout on Android Studio</div><div class="card-note">Breakout written natively in C++ for Android, without an engine.</div></div><div class="arch-links"><a href="https://github.com/aitorizur/Breakout-cpp" target="_blank" rel="noopener">CODE ↗</a></div></div>
+      <div class="arch-row"><div class="arch-year">PYTHON</div><div><div class="arch-name">Python × Notion</div><div class="card-note">Utilities to read and modify Notion databases through its API.</div></div><div class="arch-links">PRIVATE REPO</div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">Web prototypes</div>
+      <div class="sec-sub">SELF-INITIATED · NOT IN PRODUCTION</div>
+    </div>
+    <div class="card-note" style="margin:0 0 6px; font-size:13px;">Built on my own initiative for real businesses I know personally, and pitched to them — there was interest, but neither went into production. They were not commissioned. Both were built with AI assistance: I brought the requirements, use cases and architecture, reviewed and iterated; the code was written by Claude Code. The repositories stay private for that reason.</div>
+    <div class="arch-group">
+      <div class="arch-row"><div class="arch-year">NEXT.JS</div><div><div class="arch-name">Liga VCM — Voleibol Centro Madrid</div><div class="card-note">League management: 34 teams across three divisions, results, standings and court booking across five sports centres. It came out of a league I actually play in.</div></div><div class="arch-links"><a href="https://volley-test-nine.vercel.app" target="_blank" rel="noopener">DEMO ↗</a></div></div>
+      <div class="arch-row"><div class="arch-year">NEXT.JS</div><div><div class="arch-name">Don't Stop Madrid</div><div class="card-note">Listings site for two music venues in Madrid: filterable agenda, venue pages, newsletter and socials.</div></div><div class="arch-links"><a href="https://local-music-two.vercel.app" target="_blank" rel="noopener">DEMO ↗</a></div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">3D art</div>
+      <div class="sec-sub">MODELLING &amp; TEXTURING · <a href="art.html">SEE THE PIECES →</a></div>
+    </div>
+    <div class="arch-group">
+      <div class="arch-row"><div class="arch-year">4 PIECES</div><div><div class="arch-name">Kylo Ren lightsaber · Gaming room · Battle droid · E-5 Blaster</div><div class="card-note">Four finished pieces. Enough to build my own game ideas without waiting on an artist — not a claim to be one.</div></div><div class="arch-links"><a href="https://www.artstation.com/aitorizurrateguidecastro" target="_blank" rel="noopener">ARTSTATION ↗</a></div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">Studies &amp; student work</div>
+      <div class="sec-sub">ALGORITHMS, AI AND THE FIRST GAMES I FINISHED</div>
+    </div>
+    <div class="arch-group">
+      <div class="arch-row"><div class="arch-year">AI</div><div><div class="arch-name">School of fish (boids)</div><div class="card-note">Flocking behaviour simulation in Unity.</div></div><div class="arch-links"><a href="https://github.com/aitorizur/Unity-School-of-Fish" target="_blank" rel="noopener">CODE ↗</a></div></div>
+      <div class="arch-row"><div class="arch-year">AI</div><div><div class="arch-name">Q-Learning / SARSA</div><div class="card-note">Reinforcement learning algorithms implemented from scratch.</div></div><div class="arch-links"><a href="https://github.com/aitorizur/IA-QLearning-Sarsa" target="_blank" rel="noopener">CODE ↗</a></div></div>
+      <div class="arch-row"><div class="arch-year">AI</div><div><div class="arch-name">Connect 4 — minimax</div><div class="card-note">Adversarial search for Connect 4.</div></div><div class="arch-links"><a href="https://github.com/aitorizur/IA-Connect4-MINMAX" target="_blank" rel="noopener">CODE ↗</a></div></div>
+      <div class="arch-row"><div class="arch-year">AI</div><div><div class="arch-name">Pathfinding algorithms</div><div class="card-note">Implementations of the classic pathfinding set.</div></div><div class="arch-links"><a href="https://github.com/aitorizur/Pathfinding-Algorithms" target="_blank" rel="noopener">CODE ↗</a></div></div>
+      <div class="arch-row"><div class="arch-year">STUDENT</div><div><div class="arch-name">Top-Down Action Game</div><div class="card-note">A complete top-down action game with multiple elevations, made while studying.</div></div><div class="arch-links">PRIVATE REPO</div></div>
+      <div class="arch-row"><div class="arch-year">STUDENT</div><div><div class="arch-name">Platformer-Fighter</div><div class="card-note">A complete platform fighter, made while studying.</div></div><div class="arch-links">PRIVATE REPO</div></div>
+    </div>
+  </div>
+
+  <!-- Same footer as the landing. The one swap: its first link is ARCHIVE,
+       which here would point at this very page, so it goes back to the hub. -->
+  <div class="footer">
+    <span class="footer-links">
+      <a href="index.html">WORK</a> ·
+      <a href="https://aitorizur.github.io/" target="_blank" rel="noopener">RÉSUMÉ</a> ·
+      <a href="mailto:aitorizur@gmail.com">aitorizur@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/aitor-izurrategui-de-castro" target="_blank" rel="noopener">LINKEDIN</a> ·
+      <a href="https://github.com/aitorizur" target="_blank" rel="noopener">GITHUB</a> ·
+      <a href="https://perceve.itch.io" target="_blank" rel="noopener">ITCH.IO</a>
+    </span>
+  </div>
+
+</div>
+</body>
+</html>

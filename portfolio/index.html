@@ -1,262 +1,258 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aitor Izurrategui — Game Developer · Portfolio</title>
-<meta name="description" content="Aitor Izurrategui — game developer (gameplay &amp; game design). Portfolio of games, prototypes and 3D art.">
-<link rel="icon" type="image/jpeg" href="assets/photo.jpg">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Aitor Izurrategui — Game Developer · Portfolio">
-<meta property="og:description" content="Aitor Izurrategui — game developer (gameplay &amp; game design). Portfolio of games, prototypes and 3D art.">
-<meta property="og:url" content="https://aitorizur.github.io/portfolio/index.html">
-<meta property="og:image" content="https://aitorizur.github.io/portfolio/assets/photo.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Aitor Izurrategui — Game Developer · Portfolio">
-<meta name="twitter:description" content="Aitor Izurrategui — game developer (gameplay &amp; game design). Portfolio of games, prototypes and 3D art.">
-<meta name="twitter:image" content="https://aitorizur.github.io/portfolio/assets/photo.jpg">
+<title>Aitor Izurrategui — Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;900&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 <style>
-:root{
-  --bg:#0d0d0f; --panel:#141416; --ink:#eaeaea; --muted:#9a9a9e;
-  --accent:#f5c518; --line:#2a2a2e; --card:#161618;
-  --sans:"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif;
-}
-*{box-sizing:border-box;}
-html,body{margin:0;padding:0;}
-body{ font-family:var(--sans); background:var(--bg); color:var(--ink);
-  line-height:1.55; -webkit-font-smoothing:antialiased; }
-img{ display:block; max-width:100%; }
-a{ color:inherit; }
+  /* Hero with no side column: .hero reserves 340px for one on desktop, and
+     two classes outrank the media query without touching the shared CSS. */
+  .hero.solo { grid-template-columns:1fr; }
 
-/* Topbar */
-.topbar{ position:sticky; top:0; z-index:20; display:flex; align-items:center;
-  justify-content:space-between; gap:16px; padding:14px 22px;
-  background:#fafafa; color:#141416; border-bottom:1px solid #e3e3e3; }
-.brand{ font-weight:800; letter-spacing:1.5px; text-decoration:none; font-size:15px; }
-.nav{ display:flex; align-items:center; gap:20px; }
-.nav-link{ text-decoration:none; font-weight:700; font-size:12.5px; letter-spacing:1.5px;
-  text-transform:uppercase; color:#141416; padding:4px 2px; border-bottom:2px solid transparent; }
-.nav-link:hover{ border-bottom-color:var(--accent); }
-.nav-link.cur{ border-bottom-color:var(--accent); }
-.social-group{ display:flex; gap:12px; align-items:center; }
-.social{ color:#141416; opacity:.85; }
-.social:hover{ opacity:1; color:var(--accent); }
-.social svg{ width:19px; height:19px; }
+  .lbl { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.12em; color:var(--accent); }
+  .lbl.dim { color:color-mix(in srgb, var(--ink) 55%, transparent); }
+  .body { font-family:'Space Grotesk',sans-serif; font-size:15px; line-height:1.65;
+          color:color-mix(in srgb, var(--ink) 85%, transparent); }
 
-/* Intro band */
-.intro{ background:#fafafa; color:#141416; padding:26px 22px; border-bottom:1px solid #e3e3e3; }
-.intro-inner{ max-width:1080px; margin:0 auto; display:flex; gap:22px; align-items:center; }
-.intro-photo{ flex:0 0 auto; width:96px; height:96px; border-radius:8px; overflow:hidden; background:#ddd; }
-.intro-photo img{ width:100%; height:100%; object-fit:cover; }
-.greeting{ margin:0 0 4px; font-size:24px; font-weight:800; }
-.tagline{ margin:0; color:#3a3a3a; font-size:15px; max-width:640px; }
-.cta-btn{ display:inline-block; margin-top:14px; background:var(--accent); color:#141416;
-  font-weight:800; text-decoration:none; padding:9px 18px; border-radius:8px; font-size:13.5px; }
-.cta-btn:hover{ background:#ffd53d; }
+  /* Door: the primary action of a card, sized so it reads as the point. */
+  .door { display:inline-block; font-family:'Anton',sans-serif; font-size:18px;
+          text-transform:uppercase; letter-spacing:0.02em; line-height:1;
+          background:var(--accent); color:var(--bg); border:var(--fw) solid var(--accent);
+          padding:11px 16px; text-decoration:none; margin-top:12px; }
+  .door:hover { background:var(--bg); color:var(--accent); }
+  .door.ghost { background:transparent; color:var(--accent); }
+  .door.ghost:hover { background:var(--accent); color:var(--bg); }
+  .door.sm { font-size:14px; padding:9px 13px; }
 
-/* Layout */
-.wrap{ max-width:1080px; margin:0 auto; padding:10px 22px 40px; }
-.section{ margin-top:34px; }
-.section-title{ text-align:center; text-transform:uppercase; letter-spacing:3px;
-  font-size:16px; font-weight:800; margin:40px 0 6px; padding-bottom:12px;
-  border-bottom:1.5px solid var(--line); }
-.section-intro{ text-align:center; color:var(--muted); max-width:680px; margin:0 auto 22px;
-  font-size:14.5px; }
-
-/* Card grids */
-.grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-.grid-compact{ grid-template-columns:repeat(4,1fr); gap:16px; }
-.card{ background:var(--card); border:1px solid var(--line); border-radius:10px;
-  overflow:hidden; text-decoration:none; display:flex; flex-direction:column;
-  transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
-.card-link:hover{ transform:translateY(-4px); border-color:var(--accent);
-  box-shadow:0 10px 30px rgba(0,0,0,.5); }
-.card-media{ aspect-ratio:16/9; overflow:hidden; background:#000; }
-.card-media img{ width:100%; height:100%; object-fit:cover;
-  transition:transform .35s ease; }
-.card-link:hover .card-media img{ transform:scale(1.07); }
-.card-body{ padding:12px 14px 16px; }
-.card-title{ margin:0; font-size:16px; font-weight:800; color:var(--accent);
-  display:flex; align-items:center; gap:6px; }
-.card-arrow{ font-size:13px; color:var(--muted); transition:color .18s ease; }
-.card-link:hover .card-arrow{ color:var(--accent); }
-.card-role{ color:var(--muted); font-size:12.5px; margin-top:2px; }
-.card-award{ display:inline-flex; align-items:center; gap:5px; background:rgba(245,197,24,.12);
-  color:var(--accent); border:1px solid rgba(245,197,24,.4); border-radius:999px;
-  padding:3px 10px; font-size:11px; font-weight:700; margin-top:8px; }
-.card-tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
-.card-desc{ color:#cfcfd2; font-size:13.5px; margin:8px 0 0; }
-.card-compact .card-body{ padding:10px 12px 12px; }
-.card-compact .card-title{ font-size:14px; }
-
-/* Game detail */
-.game{ padding-top:22px; }
-.back{ display:inline-block; color:var(--muted); text-decoration:none; font-size:13.5px;
-  margin-bottom:18px; }
-.back:hover{ color:var(--accent); }
-.game-head{ margin-bottom:22px; }
-.game-title{ margin:0; font-size:34px; font-weight:800; color:var(--accent); letter-spacing:.5px; }
-.game-role{ font-size:17px; margin-top:4px; }
-.game-team{ color:var(--muted); font-size:14px; margin-top:2px; }
-.tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
-.tag{ font-size:11.5px; letter-spacing:.5px; text-transform:uppercase; color:var(--muted);
-  border:1px solid var(--line); border-radius:999px; padding:3px 10px; }
-.gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-bottom:24px; }
-.shot{ display:block; border-radius:8px; overflow:hidden; border:1px solid var(--line); background:#000; }
-.shot img{ width:100%; aspect-ratio:16/9; object-fit:cover; transition:transform .35s ease; }
-.shot:hover img{ transform:scale(1.05); }
-.game-desc{ max-width:760px; font-size:15.5px; color:#dcdcdf; }
-.game-desc p{ margin:0 0 12px; }
-.play-row{ margin-top:14px; }
-.play-link{ display:inline-block; background:var(--accent); color:#141416; font-weight:800;
-  text-decoration:none; padding:10px 18px; border-radius:8px; font-size:14px; }
-.play-link:hover{ background:#ffd53d; }
-.contribs{ display:grid; grid-template-columns:repeat(2,1fr); gap:26px 30px; margin-top:22px; }
-.contrib-title{ margin:12px 0 4px; font-size:16px; font-weight:800; }
-.contrib-text{ margin:0; color:#cfcfd2; font-size:14px; }
-
-/* Footer */
-.footer{ border-top:1px solid var(--line); margin-top:50px; padding:26px 22px;
-  display:flex; align-items:center; justify-content:space-between; max-width:1080px;
-  margin-left:auto; margin-right:auto; }
-.footer .social{ color:var(--muted); }
-.footer .social:hover{ color:var(--accent); }
-.footer-name{ color:var(--muted); font-size:12px; letter-spacing:1.5px; }
-
-/* Responsive */
-@media (max-width:860px){
-  .grid{ grid-template-columns:repeat(2,1fr); }
-  .grid-compact{ grid-template-columns:repeat(2,1fr); }
-  .contribs{ grid-template-columns:1fr; }
-}
-@media (max-width:560px){
-  .grid{ grid-template-columns:1fr; }
-  .gallery{ grid-template-columns:1fr; }
-  .intro-inner{ flex-direction:column; text-align:center; }
-  .nav{ gap:12px; }
-  .game-title{ font-size:27px; }
-}
+  /* Repo list — the "clone and run" door. */
+  .repos { display:grid; grid-template-columns:1fr; gap:2px;
+           background:color-mix(in srgb, var(--ink) 30%, transparent);
+           border:var(--fw) solid var(--ink); }
+  @media (min-width:700px) { .repos { grid-template-columns:repeat(2, minmax(0,1fr)); } }
+  @media (min-width:900px) { .repos { grid-template-columns:repeat(3, minmax(0,1fr)); } }
+  .repos a { background:var(--bg); padding:13px 15px; text-decoration:none; display:block;
+             font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ink); }
+  .repos a:hover { background:var(--panel1); }
+  .repos a b { color:var(--accent); font-weight:400; }
+  .repos a span { display:block; margin-top:4px; font-size:10.5px;
+                  color:color-mix(in srgb, var(--ink) 55%, transparent); }
 </style>
 </head>
 <body>
-<header class="topbar">
-    <a class="brand" href="index.html">AITOR IZURRATEGUI</a>
-    <nav class="nav"><a class="nav-link cur" href="index.html">SHOWCASE</a><a class="nav-link" href="../index.html">RESUME</a><span class="social-group"><a class="social" href="https://www.linkedin.com/in/aitor-izurrategui-de-castro/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a><a class="social" href="https://github.com/aitorizur" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.42-1.305.762-1.605-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 0 1 3.003-.404c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.805 5.624-5.478 5.92.43.372.814 1.102.814 2.222 0 1.606-.014 2.9-.014 3.294 0 .32.216.694.825.576C20.565 22.296 24 17.798 24 12.5 24 5.87 18.627.5 12 .5z"/></svg></a><a class="social" href="https://perceve.itch.io/" target="_blank" rel="noopener" aria-label="itch.io"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.13 1.34C2.09 1.96.05 4.29 0 4.9v1.03c0 1.3 1.21 2.44 2.31 2.44 1.32 0 2.42-1.1 2.42-2.4 0 1.3 1.06 2.4 2.38 2.4s2.34-1.1 2.34-2.4c0 1.3 1.12 2.4 2.44 2.4h.03c1.32 0 2.44-1.1 2.44-2.4 0 1.3 1.02 2.4 2.34 2.4s2.38-1.1 2.38-2.4c0 1.3 1.1 2.4 2.42 2.4 1.1 0 2.31-1.14 2.31-2.44V4.9c-.05-.61-2.09-2.94-3.13-3.56C19.6 1.24 16.5 1.2 12 1.2s-7.6.04-8.87.14zM8.1 8.83c-.44.67-1.2 1.13-2.06 1.16h-.03c-.86-.03-1.62-.49-2.06-1.16-.44.67-1.2 1.13-2.06 1.16-.08 0-.16 0-.24-.01-.19 2.4-.34 5.3-.35 8.28 0 .05.34 2.68 2.38 2.83 2.2.16 4.66.24 7.28.24s5.08-.08 7.28-.24c2.04-.15 2.38-2.78 2.38-2.83-.01-2.98-.16-5.88-.35-8.28-.08.01-.16.01-.24.01-.86-.03-1.62-.49-2.06-1.16-.44.67-1.2 1.13-2.06 1.16h-.03c-.86-.03-1.62-.49-2.06-1.16-.44.67-1.2 1.13-2.06 1.16h-.06c-.86-.03-1.62-.49-2.06-1.16-.44.67-1.2 1.13-2.06 1.16h-.03zm3.9 1.4c.78 0 2.37 0 3.2.9.24.85.72 4.02.72 4.02s.35 1.62-.44 1.62c-.79 0-1.24-.85-1.24-.85l-.79-1.35s-.24.85-.79.85h-1.3c-.55 0-.79-.85-.79-.85l-.79 1.35s-.44.85-1.24.85c-.79 0-.44-1.62-.44-1.62s.48-3.17.72-4.02c.83-.9 2.42-.9 3.2-.9z"/></svg></a></span></nav>
-  </header><section class="intro">
-    <div class="intro-inner">
-      <div class="intro-photo"><img src="assets/photo.jpg" alt="AITOR IZURRATEGUI"></div>
-      <div class="intro-text">
-        <h1 class="greeting">Hey!</h1>
-        <p class="tagline">Game developer based in Madrid, Spain. Currently focusing on gameplay &amp; game design.</p>
-        <a class="cta-btn" href="../dist/Aitor-Izurrategui-CV.pdf" target="_blank" rel="noopener">Download CV ↓</a>
+<div class="wrap">
+
+  <div class="topnav">
+    <div class="brand"><a href="index.html">AITOR IZURRATEGUI</a></div>
+    <div class="navlinks">
+      <a href="index.html" class="active">WORK</a><a href="about.html">ABOUT</a><a href="https://aitorizur.github.io/" target="_blank" rel="noopener">RESUME ↗</a>
+    </div>
+  </div>
+
+  <div class="hero solo">
+    <div>
+      <div class="lbl" style="margin-bottom:12px;">GAME DESIGN &amp; GAMEPLAY · UNITY / XR — MADRID, ES</div>
+      <div class="hero-line">Everything on this page is something you can <em>open right now.</em> Five games in your browser, three apps free on the Meta Store, and the repositories behind the rest.</div>
+      <!-- One button per section, in the order the sections appear. -->
+      <div style="display:flex; gap:12px; margin-top:20px; flex-wrap:wrap;">
+        <a href="#studio" class="btn primary">Studio work</a>
+        <a href="#games" class="btn primary">The games</a>
+        <a href="#misc" class="btn primary">Miscellaneous</a>
+        <a href="archive.html" class="btn outline">Full archive →</a>
       </div>
     </div>
-  </section><main class="wrap"><section class="section" id="games">
-    <h2 class="section-title">GAMES</h2>
-    <p class="section-intro">Take a look at some of the games I've worked on over the years!</p>
-    <div class="grid"><a class="card card-link" href="games/precise-hero.html"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/precise-hero.jpg" alt="The Precise Hero"></div><div class="card-body">
-      <h3 class="card-title">The Precise Hero<span class="card-arrow">→</span></h3>
-      <div class="card-role">Designer / Programmer</div><div class="card-award">🏆 4th place — Todo Game Jam</div><div class="card-tags"><span class="tag">Platformer</span><span class="tag">2024</span></div><p class="card-desc">Precision platformer where you control a hero suffering from narcolepsy.</p>
-    </div></a><a class="card card-link" href="games/giro.html"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/giro.jpg" alt="G!RO"></div><div class="card-body">
-      <h3 class="card-title">G!RO<span class="card-arrow">→</span></h3>
-      <div class="card-role">Designer / Programmer</div><div class="card-award">🏆 Most Enjoyable Game — Fun&amp;Serious 2022</div><div class="card-tags"><span class="tag">Arcade</span><span class="tag">2022</span></div><p class="card-desc">Fast-paced arcade game where you pilot a constantly rotating spaceship with a single button.</p>
-    </div></a><a class="card card-link" href="games/point-of-no-return.html"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/point-of-no-return.jpg" alt="Point of No Return"></div><div class="card-body">
-      <h3 class="card-title">Point of No Return<span class="card-arrow">→</span></h3>
-      <div class="card-role">Designer / Programmer</div><div class="card-award">🏆 2nd place — Unity Jam</div><div class="card-tags"><span class="tag">Exploration</span><span class="tag">2024</span></div><p class="card-desc">Space exploration game where you race against the expansion of the universe.</p>
-    </div></a><a class="card card-link" href="games/feather-fallout.html"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/feather-fallout.jpg" alt="Feather Fallout"></div><div class="card-body">
-      <h3 class="card-title">Feather Fallout<span class="card-arrow">→</span></h3>
-      <div class="card-role">Designer / Programmer</div><div class="card-tags"><span class="tag">Tower Defense</span></div><p class="card-desc">Two-colour tower defense where each turret can only hit enemies of its matching colour.</p>
-    </div></a><a class="card card-link" href="https://www.youtube.com/watch?v=0_vrLjIdiCg" target="_blank" rel="noopener"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/gravity-down-quick.jpg" alt="Gravity Down Quick"></div><div class="card-body">
-      <h3 class="card-title">Gravity Down Quick<span class="card-arrow">↗</span></h3>
-      <div class="card-role">Designer / Programmer</div><div class="card-tags"><span class="tag">FPS Platformer</span><span class="tag">2019</span></div><p class="card-desc">FPS platformer where you gain speed and change the direction of gravity by shooting.</p>
-    </div></a><a class="card card-link" href="https://www.youtube.com/watch?v=mRA8XhR5a6M" target="_blank" rel="noopener"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/fade.jpg" alt="FADE"></div><div class="card-body">
-      <h3 class="card-title">FADE<span class="card-arrow">↗</span></h3>
-      <div class="card-role">Programmer</div><div class="card-award">🏆 3rd Prize — Hackathon Telefónica 2019</div><div class="card-tags"><span class="tag">Serious Game</span><span class="tag">2019</span></div><p class="card-desc">Serious game designed to help visualise the daily challenges faced by people living with Alzheimer's.</p>
-    </div></a><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/talassophobia.jpg" alt="Talassophobia"></div><div class="card-body">
-      <h3 class="card-title">Talassophobia</h3>
-      <div class="card-role">Solo developer</div><p class="card-desc">An experience that emulates the intense fear of deep bodies of water and the unknown lurking below.</p>
-    </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/haunted-echoes.jpg" alt="Haunted Echoes"></div><div class="card-body">
-      <h3 class="card-title">Haunted Echoes</h3>
-      <div class="card-role">Solo developer</div><div class="card-tags"><span class="tag">VR</span></div><p class="card-desc">VR experience where you uncover what happened by listening to audio cues in complete darkness.</p>
-    </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/games/zpln.jpg" alt="ZPLN"></div><div class="card-body">
-      <h3 class="card-title">ZPLN</h3>
-      <div class="card-role">Programmer</div><div class="card-tags"><span class="tag">Published</span></div><p class="card-desc">Space-themed strategy shooter built around pinball-like bounces.</p>
-    </div></div></div>
-  </section><section class="section" id="misc">
-    <h2 class="section-title">MISCELLANEOUS PROJECTS</h2>
-    <p class="section-intro">I've also been involved in projects beyond video games! Here are a few of them.</p>
-    <div class="grid"><a class="card card-link" href="https://github.com/aitorizur/Cpp-Game-Engine" target="_blank" rel="noopener"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/cpp-game-engine.jpg" alt="C++ Game Engine"></div><div class="card-body">
-      <h3 class="card-title">C++ Game Engine<span class="card-arrow">↗</span></h3>
-      <div class="card-tags"><span class="tag">C++</span><span class="tag">SDL2</span><span class="tag">OpenGL</span></div><p class="card-desc">Game engine built from scratch in C++ using SDL2 and OpenGL.</p>
-    </div></a><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/python-notion.jpg" alt="Python × Notion"></div><div class="card-body">
-      <h3 class="card-title">Python × Notion</h3>
-      <div class="card-tags"><span class="tag">Python</span></div><p class="card-desc">Utilities to modify Notion databases through its API using Python.</p>
-    </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/unity-utilities.jpg" alt="Unity Utilities"></div><div class="card-body">
-      <h3 class="card-title">Unity Utilities</h3>
-      <div class="card-tags"><span class="tag">Unity</span><span class="tag">C#</span></div><p class="card-desc">A personal toolbox of Unity components and extensions I reuse in every project.</p>
-    </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/nori-pathtracer.jpg" alt="Nori Pathtracer"></div><div class="card-body">
-      <h3 class="card-title">Nori Pathtracer</h3>
-      <div class="card-tags"><span class="tag">C++</span></div><p class="card-desc">Learning project in C++ where I built a core pathtracer on top of Nori.</p>
-    </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/fluid-simulation.jpg" alt="Fluid Simulation"></div><div class="card-body">
-      <h3 class="card-title">Fluid Simulation</h3>
-      <div class="card-tags"><span class="tag">C++</span></div><p class="card-desc">Learning project in C++ to experiment with basic fluid simulation.</p>
-    </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/classroom-2060.jpg" alt="Classroom 2060"></div><div class="card-body">
-      <h3 class="card-title">Classroom 2060</h3>
-      <div class="card-tags"><span class="tag">2021</span></div><p class="card-desc">Helped build an experience for students to learn recent history through a game played in class.</p>
-    </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/breakout-android.jpg" alt="Breakout in Android Studio"></div><div class="card-body">
-      <h3 class="card-title">Breakout in Android Studio</h3>
-      <div class="card-tags"><span class="tag">C++</span><span class="tag">Android</span></div><p class="card-desc">Developed "Breakout" natively in Android Studio with C++.</p>
-    </div></div><div class="card"><div class="card-media"><img loading="lazy" src="assets/thumbs/misc/truck-inspection.jpg" alt="Truck Pre-Trip Inspection"></div><div class="card-body">
-      <h3 class="card-title">Truck Pre-Trip Inspection</h3>
-      <p class="card-desc">Assisted in a truck-inspection simulator for a US company that issues truck-driving licences.</p>
-    </div></div></div>
-  </section><section class="section" id="prototypes">
-    <h2 class="section-title">PROTOTYPES &amp; GAMEPLAY</h2>
-    <p class="section-intro">Rapid prototyping is essential in game development. I often build quick prototypes of mechanics that catch my interest — here are some recent ones.</p>
-    <div class="grid grid-compact"><div class="card card-compact"><div class="card-media"><img loading="lazy" src="assets/thumbs/proto/mobile-shooter.jpg" alt="Mobile shooter prototype"></div><div class="card-body">
-      <h3 class="card-title">Mobile shooter prototype</h3>
-      
-    </div></div><div class="card card-compact"><div class="card-media"><img loading="lazy" src="assets/thumbs/proto/mobile-kiting.jpg" alt="Mobile kiting prototype"></div><div class="card-body">
-      <h3 class="card-title">Mobile kiting prototype</h3>
-      
-    </div></div><div class="card card-compact"><div class="card-media"><img loading="lazy" src="assets/thumbs/proto/audio-reaction.jpg" alt="Realtime audio reaction"></div><div class="card-body">
-      <h3 class="card-title">Realtime audio reaction</h3>
-      
-    </div></div><div class="card card-compact"><div class="card-media"><img loading="lazy" src="assets/thumbs/proto/strategy-map.jpg" alt="4X strategy map navigation"></div><div class="card-body">
-      <h3 class="card-title">4X strategy map navigation</h3>
-      
-    </div></div><div class="card card-compact"><div class="card-media"><img loading="lazy" src="assets/thumbs/proto/physics-platformer.jpg" alt="Physics-based platformer"></div><div class="card-body">
-      <h3 class="card-title">Physics-based platformer</h3>
-      
-    </div></div><div class="card card-compact"><div class="card-media"><img loading="lazy" src="assets/thumbs/proto/rts-core.jpg" alt="RTS core gameplay"></div><div class="card-body">
-      <h3 class="card-title">RTS core gameplay</h3>
-      
-    </div></div><div class="card card-compact"><div class="card-media"><img loading="lazy" src="assets/thumbs/proto/mobile-climbing.jpg" alt="Mobile climbing prototype"></div><div class="card-body">
-      <h3 class="card-title">Mobile climbing prototype</h3>
-      
-    </div></div><div class="card card-compact"><div class="card-media"><img loading="lazy" src="assets/thumbs/proto/unit-farming.jpg" alt="Unit farming automation"></div><div class="card-body">
-      <h3 class="card-title">Unit farming automation</h3>
-      
-    </div></div></div>
-  </section><section class="section" id="art">
-    <h2 class="section-title">3D ART</h2>
-    <p class="section-intro">To bring my game ideas to life independently, I've also developed skills in modelling and texturing. Take a look at some of my creations.</p>
-    <div class="grid grid-compact"><div class="card card-compact"><div class="card-media"><img loading="lazy" src="assets/thumbs/art/kylo-ren-lightsaber.jpg" alt="Kylo Ren lightsaber"></div><div class="card-body">
-      <h3 class="card-title">Kylo Ren lightsaber</h3>
-      
-    </div></div><div class="card card-compact"><div class="card-media"><img loading="lazy" src="assets/thumbs/art/gaming-room.jpg" alt="Gaming room"></div><div class="card-body">
-      <h3 class="card-title">Gaming room</h3>
-      
-    </div></div><div class="card card-compact"><div class="card-media"><img loading="lazy" src="assets/thumbs/art/battle-droid.jpg" alt="Battle droid"></div><div class="card-body">
-      <h3 class="card-title">Battle droid</h3>
-      
-    </div></div><div class="card card-compact"><div class="card-media"><img loading="lazy" src="assets/thumbs/art/e5-blaster.jpg" alt="E-5 Blaster"></div><div class="card-body">
-      <h3 class="card-title">E-5 Blaster</h3>
-      
-    </div></div></div>
-  </section></main><footer class="footer">
-    <div class="social-group"><a class="social" href="https://www.linkedin.com/in/aitor-izurrategui-de-castro/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a><a class="social" href="https://github.com/aitorizur" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.42-1.305.762-1.605-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 0 1 3.003-.404c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.805 5.624-5.478 5.92.43.372.814 1.102.814 2.222 0 1.606-.014 2.9-.014 3.294 0 .32.216.694.825.576C20.565 22.296 24 17.798 24 12.5 24 5.87 18.627.5 12 .5z"/></svg></a><a class="social" href="https://perceve.itch.io/" target="_blank" rel="noopener" aria-label="itch.io"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.13 1.34C2.09 1.96.05 4.29 0 4.9v1.03c0 1.3 1.21 2.44 2.31 2.44 1.32 0 2.42-1.1 2.42-2.4 0 1.3 1.06 2.4 2.38 2.4s2.34-1.1 2.34-2.4c0 1.3 1.12 2.4 2.44 2.4h.03c1.32 0 2.44-1.1 2.44-2.4 0 1.3 1.02 2.4 2.34 2.4s2.38-1.1 2.38-2.4c0 1.3 1.1 2.4 2.42 2.4 1.1 0 2.31-1.14 2.31-2.44V4.9c-.05-.61-2.09-2.94-3.13-3.56C19.6 1.24 16.5 1.2 12 1.2s-7.6.04-8.87.14zM8.1 8.83c-.44.67-1.2 1.13-2.06 1.16h-.03c-.86-.03-1.62-.49-2.06-1.16-.44.67-1.2 1.13-2.06 1.16-.08 0-.16 0-.24-.01-.19 2.4-.34 5.3-.35 8.28 0 .05.34 2.68 2.38 2.83 2.2.16 4.66.24 7.28.24s5.08-.08 7.28-.24c2.04-.15 2.38-2.78 2.38-2.83-.01-2.98-.16-5.88-.35-8.28-.08.01-.16.01-.24.01-.86-.03-1.62-.49-2.06-1.16-.44.67-1.2 1.13-2.06 1.16h-.03c-.86-.03-1.62-.49-2.06-1.16-.44.67-1.2 1.13-2.06 1.16h-.06c-.86-.03-1.62-.49-2.06-1.16-.44.67-1.2 1.13-2.06 1.16h-.03zm3.9 1.4c.78 0 2.37 0 3.2.9.24.85.72 4.02.72 4.02s.35 1.62-.44 1.62c-.79 0-1.24-.85-1.24-.85l-.79-1.35s-.24.85-.79.85h-1.3c-.55 0-.79-.85-.79-.85l-.79 1.35s-.44.85-1.24.85c-.79 0-.44-1.62-.44-1.62s.48-3.17.72-4.02c.83-.9 2.42-.9 3.2-.9z"/></svg></a></div>
-    <div class="footer-name">AITOR IZURRATEGUI</div>
-  </footer>
+  </div>
+
+  <!-- 1: studio work. Plain like every other section: .sec already draws the
+       bottom rule, and the hero draws the one above. The tinted background and
+       accent title it used to carry were an emphasis marker from when this sat
+       in the middle of the page; first in the run, they only read as an
+       inconsistency. The archive block at the end keeps that treatment. -->
+  <div class="sec" id="studio">
+    <div class="sec-head">
+      <div class="sec-title">Studio work</div>
+      <div class="sec-sub">YBVR · LURTIS AI · ISOSTOPY — BUILT WITH TEAMS, FOR REAL USERS</div>
+    </div>
+
+    <!-- Same billing as the two featured games: credential line, then the name
+         at .h-sub. The name carries the link to the case study, so the prose
+         below does not repeat it. -->
+    <div class="lbl">YBVR · THREE APPS ON THE META STORE · ALL FREE · ALL FROM ONE CODEBASE</div>
+    <a href="xtadium.html" class="h-sub" style="text-decoration:none; display:block; margin:8px 0 14px;">Xtadium</a>
+
+    <!-- Trailer at two thirds; the remaining third stacks the two spin-offs and
+         the tabletop. The proportion travels in --cols, never inline, so the
+         block still collapses to one column below 900px. Both thumbnails are
+         16/9 like the trailer: two of them at a third of the width stack to
+         almost exactly the trailer's height. -->
+    <div class="split gap-lg" style="--cols:2fr 1fr; align-items:start; margin-top:18px;">
+      <!-- 8 MB that open on a fade from black: the poster holds the slot until
+           the stream is playing, and it is the spin-off shot this rearrangement
+           freed up. -->
+      <div>
+        <video class="vid" style="aspect-ratio:16/9;" poster="assets/xtadium/spinoff-xtadium.webp" autoplay loop muted playsinline><source src="assets/xtadium/clip-hero.mp4" type="video/mp4"></video>
+        <!-- The three doors sit under the trailer the way the thumbnails carry
+             their captions, which also squares the two columns off: trailer +
+             button row comes to the same height as two 16/9 thumbs + captions. -->
+        <div style="display:flex; gap:12px; margin-top:14px; flex-wrap:wrap;">
+          <a href="https://www.meta.com/es-es/experiences/xtadium-immersive-sports/7281839885191361/" target="_blank" rel="noopener" class="door" style="margin-top:0;">↓ Get Xtadium</a>
+          <a href="https://www.meta.com/es-es/experiences/xtadium-music/25188032557482815/" target="_blank" rel="noopener" class="door ghost" style="margin-top:0;">↓ Get Xtadium Music</a>
+          <a href="https://www.meta.com/es-es/experiences/cultvre-culture-comes-alive-in-vr/28427588560218368/" target="_blank" rel="noopener" class="door ghost" style="margin-top:0;">↓ Get CultVRe</a>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div>
+          <div class="spin thumb" style="aspect-ratio:16/9;">
+           <div class="spin-strip">
+            <div class="spin-panel"><div class="spin-inner"><img src="assets/xtadium/spinoff-music.webp" alt="Xtadium Music — immersive concerts on Meta Quest"></div></div>
+            <div class="spin-panel"><div class="spin-inner"><img src="assets/xtadium/spinoff-cultvre.webp" alt="CultVRe — immersive culture on Meta Quest"></div></div>
+           </div>
+          </div>
+          <div class="lbl dim" style="margin-top:7px;">XTADIUM MUSIC · CULTVRE — THE TWO SPIN-OFFS</div>
+        </div>
+        <div>
+          <video class="vid" style="aspect-ratio:16/9;" autoplay loop muted playsinline><source src="assets/xtadium/clip-tabletop-thumb.mp4" type="video/mp4"></video>
+          <div class="lbl dim" style="margin-top:7px;">NASCAR 3D TABLETOP — INTERNAL R&amp;D</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The prose closes the Xtadium block instead of opening it, which also
+         puts a band of text between it and the cards below. -->
+    <div class="body" style="max-width:78ch; margin-top:20px;">If you have a headset, this is the part of my work you can actually stand inside. Xtadium is Meta's featured immersive sports app — live NBA, UFC, NASCAR and EuroLeague in 8K 180°/360°, multi-camera, watch parties. I work on it full-time, and I own its spatial UI, notifications, onboarding, localization and the spin-off architecture the other two apps ship on.</div>
+
+    <!-- The rest of the studio work, oldest company last. None of it is
+         installable from here, so no card claims a door it cannot open. -->
+    <div class="grid-3" style="margin-top:30px;">
+      <div class="card"><video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/kumal/clip-kumal.mp4" type="video/mp4"></video><a href="https://kumal.lurtis.com/" target="_blank" rel="noopener" class="card-title">Kumal ↗</a><div class="card-badge dim">2023–2024 · LURTIS AI · UNITY EDITOR TOOL</div><div class="card-note">A Unity tool for creating and co-designing 3D scenarios, from single rooms to whole worlds, meant to buy design time back for narrative and gameplay. Publicly funded R&amp;D. I worked on the tool itself, not just as its user.</div><a href="https://kumal.lurtis.com/" target="_blank" rel="noopener" class="door sm ghost">Open the site →</a></div>
+      <div class="card"><video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/pretrip/clip-sim.mp4" type="video/mp4"></video><a href="https://isostopy.com/project/pre-trip-inspection/?lang=en" target="_blank" rel="noopener" class="card-title">Truck Pre-Trip Inspection ↗</a><div class="card-badge dim">2020 · ISOSTOPY · INTERNSHIP · VR / AR</div><div class="card-note">Truck-inspection simulator for a North American training company, preparing drivers for the US CDL certification: the full routine, with evaluation and feedback after each session. Built entirely in Unity.</div><a href="https://isostopy.com/project/pre-trip-inspection/?lang=en" target="_blank" rel="noopener" class="door sm ghost">See the project →</a></div>
+      <div class="card"><video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/zpln/clip-gameplay.mp4" type="video/mp4"></video><a href="https://play.google.com/store/apps/details?id=tv.zpln.game" target="_blank" rel="noopener" class="card-title">ZPLN ↗</a><div class="card-badge dim">LURTIS AI · PUBLISHED ON GOOGLE PLAY</div><div class="card-note">Space pinball-shooter. Programmed, tested and optimised its mechanics and environments, plus an Angular/TypeScript/Firebase management dashboard and an early multiplayer mode.</div><a href="https://play.google.com/store/apps/details?id=tv.zpln.game" target="_blank" rel="noopener" class="door sm">↓ Get it on Play</a></div>
+    </div>
+  </div>
+
+  <!-- 2: the games, all of them together. Five open in the browser and
+       three are a download; the card's own button says which, so grouping them
+       costs no honesty and the shelf reads as one body of work. -->
+  <div class="sec" id="games">
+    <div class="sec-head">
+      <div class="sec-title">The games</div>
+      <div class="sec-sub">FIVE RUN IN THIS BROWSER · TWO ARE A DOWNLOAD · ONE ONLY EXISTS ON VIDEO</div>
+    </div>
+
+    <!-- No frame and no .pad: the two featured games line up on the section
+         gutter exactly like the cards below, so the block reads as the top of
+         one shelf instead of a boxed-off panel. -->
+    <div class="split gap-lg" style="margin-bottom:20px;">
+      <div>
+        <div class="lbl">🏆 2ND OVERALL OF 55 — UNITY JAM 2024 · CASH PRIZES</div>
+        <a href="point-of-no-return.html" class="h-sub" style="text-decoration:none; display:block; margin:8px 0 12px;">Point of No Return</a>
+        <video class="vid" style="aspect-ratio:16/9;" autoplay loop muted playsinline><source src="assets/point-of-no-return/clip-cruising.mp4" type="video/mp4"></video>
+        <div class="card-note" style="font-size:14px;">The universe expands around you and outrunning it is the whole game. Built in 5 days, judged by other developers: 2nd in theme interpretation, 4th in game mechanics.</div>
+        <a href="point-of-no-return.html" class="door">▶ Play it</a>
+      </div>
+      <div>
+        <div class="lbl">🏆 4TH GAMEPLAY · 8TH ORIGINALITY — OF 78</div>
+        <a href="precise-hero.html" class="h-sub" style="text-decoration:none; display:block; margin:8px 0 12px;">The Precise Hero</a>
+        <video class="vid" style="aspect-ratio:16/9;" autoplay loop muted playsinline><source src="assets/precise-hero/clip-sleep-mechanic.mp4" type="video/mp4"></video>
+        <div class="card-note" style="font-size:14px;">A precision platformer about a hero who keeps falling asleep. The itch page still keeps a speedrun leaderboard with real player times — beat one.</div>
+        <a href="precise-hero.html" class="door">▶ Play it</a>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card"><video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/giro/clip-gameplay.mp4" type="video/mp4"></video><a href="giro.html" class="card-title">G!RO</a><div class="card-badge">🏆 MOST ENJOYABLE GAME — FUN&amp;SERIOUS BILBAO 2022</div><div class="card-note">Audience award at a national industry festival, nominated Best Retro Game. One button, a ship that never stops rotating.</div><a href="https://negone.itch.io/giro" target="_blank" rel="noopener" class="door sm ghost">↓ Download (Windows)</a></div>
+      <div class="card"><video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/feather-fallout/clip-endgame.mp4" type="video/mp4"></video><a href="feather-fallout.html" class="card-title">Feather Fallout</a><div class="card-badge dim">TOWER DEFENSE · TWO COLOURS ON SCREEN</div><div class="card-note">DPS, effectiveness values and per-round budgets written as a design document before a line of code.</div><a href="feather-fallout.html" class="door sm">▶ Play it</a></div>
+      <div class="card"><video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/gravity-down-quick/clip-gameplay.mp4" type="video/mp4"></video><a href="https://perceve.itch.io/gravity-down-quick" target="_blank" rel="noopener" class="card-title">Gravity Down Quick ↗</a><div class="card-badge dim">FPS PLATFORMER · SHOOT TO FLIP GRAVITY</div><div class="card-note">You gain speed and change the direction of gravity by shooting. Made with one artist.</div><a href="https://perceve.itch.io/gravity-down-quick" target="_blank" rel="noopener" class="door sm ghost">↓ Download</a></div>
+      <div class="card"><img class="vid" style="aspect-ratio:16/10; object-fit:cover;" src="assets/mascar/title.png" alt="mAscAr title art"><a href="https://arcadehead.itch.io/mascar" target="_blank" rel="noopener" class="card-title">mAscAr ↗</a><div class="card-badge">2026 · MÁLAGAJAM 20 · GODOT</div><div class="card-note">Narrative horror, advanced one key at a time. Same four-person team as Rush Fighter.</div><a href="https://arcadehead.itch.io/mascar" target="_blank" rel="noopener" class="door sm">▶ Play on itch</a></div>
+      <div class="card"><img class="vid" style="aspect-ratio:16/10; object-fit:cover;" src="assets/rush-fighter/title.jpg" alt="Rush Fighter title art"><a href="rush-fighter.html" class="card-title">Rush Fighter</a><div class="card-badge">2026 · JAÉNJAM II · GODOT 4 + C#</div><div class="card-note">Beat 'em up built on parry timing — shipped to the web in C#, which Godot 4 does not officially support.</div><a href="rush-fighter.html" class="door sm">▶ Play it</a></div>
+      <!-- Last: the only one with nothing left to open. Its door says so. -->
+      <div class="card"><video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/fade/clip-gameplay.mp4" type="video/mp4"></video><a href="https://www.youtube.com/watch?v=mRA8XhR5a6M" target="_blank" rel="noopener" class="card-title">FADE ↗</a><div class="card-badge">🏆 3RD PRIZE — HACKATHON TELEFÓNICA 2019, SERIOUS GAMES</div><div class="card-note">Serious game about Alzheimer's, built in 48 hours. One of two programmers in a team of five. No build was ever published — the video is what's left of it.</div><a href="https://www.youtube.com/watch?v=mRA8XhR5a6M" target="_blank" rel="noopener" class="door sm ghost">▶ Watch it</a></div>
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; margin-top:18px;"><a href="archive.html">EVERY GAME I'VE WORKED ON, 2019–2026 →</a></div>
+  </div>
+
+  <!-- 3: miscellaneous. Absorbs the old "open it somewhere else" and "clone it
+       and run it" into four thumbnails. Nothing is lost: archive.html carries
+       all eleven repositories and both web prototypes in full. -->
+  <div class="sec" id="misc">
+    <div class="sec-head">
+      <div class="sec-title">Miscellaneous</div>
+      <div class="sec-sub">LOW-LEVEL CODE · PROTOTYPES · 3D ART · WEB</div>
+    </div>
+
+    <!-- The featured one: written without an engine underneath. Widest slot
+         and first, because it is the only thing here that proves the floor. -->
+    <div class="split gap-lg" style="--cols:2fr 1fr; align-items:start; margin-bottom:26px;">
+      <div class="spin" style="aspect-ratio:16/9;">
+       <div class="spin-strip">
+        <div class="spin-panel"><div class="spin-inner"><img src="assets/engine/shot.jpg" alt="C++ game engine written from scratch"></div></div>
+        <div class="spin-panel"><div class="spin-inner"><img src="assets/nori/shot.png" alt="Nori pathtracer render"></div></div>
+        <div class="spin-panel"><div class="spin-inner"><img src="assets/fluid/shot.jpg" alt="Real-time fluid simulation"></div></div>
+        <div class="spin-panel"><div class="spin-inner"><img src="assets/misc/breakout-android.jpg" alt="Breakout written natively in C++ on Android"></div></div>
+       </div>
+      </div>
+      <div>
+        <div class="lbl">C++ · OPENGL · GLSL — NO ENGINE UNDERNEATH</div>
+        <div class="h-sub" style="margin:8px 0 12px;">Down to the metal</div>
+        <div class="card-note" style="font-size:14px;">A game engine written from scratch — renderer, physics integration and scene handling. A pathtracer with light transport implemented by hand: the theory behind every frame an engine gives you for free. A real-time fluid simulation. Breakout written natively in C++ on Android. This is the same shader instinct I now apply in HLSL on Quest.</div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11.5px; line-height:2.1; margin-top:12px;">
+          <a href="https://github.com/aitorizur/Cpp-Game-Engine" target="_blank" rel="noopener">C++ GAME ENGINE ↗</a><br>
+          <a href="https://github.com/aitorizur/Nori-Pathtracer" target="_blank" rel="noopener">NORI PATHTRACER ↗</a><br>
+          <a href="https://github.com/aitorizur/Fluids-Simulation" target="_blank" rel="noopener">FLUIDS SIMULATION ↗</a><br>
+          <a href="https://github.com/aitorizur/Breakout-cpp" target="_blank" rel="noopener">BREAKOUT IN C++ ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card"><video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/prototypes/clip-reel.mp4" type="video/mp4"></video><a href="prototypes.html" class="card-title">Gameplay prototypes</a><div class="card-badge dim">EIGHT OF THEM · UNITY · C# · UNREAL</div><div class="card-note">Mechanics built to find out whether they work: RTS command, 4X map navigation, mobile shooting, kiting and climbing, physics platforming, audio reaction, unit farming.</div><a href="prototypes.html" class="door sm ghost">See them moving →</a></div>
+      <div class="card">
+        <div class="spin thumb">
+         <div class="spin-strip">
+          <div class="spin-panel"><div class="spin-inner"><img src="assets/3d-art/kylo-ren-lightsaber.jpg" alt="Kylo Ren lightsaber — 3D model"></div></div>
+          <div class="spin-panel"><div class="spin-inner"><img src="assets/3d-art/gaming-room.jpg" alt="Gaming room — 3D render"></div></div>
+          <div class="spin-panel"><div class="spin-inner"><img src="assets/3d-art/battle-droid.jpg" alt="Battle droid — 3D model"></div></div>
+          <div class="spin-panel"><div class="spin-inner"><img src="assets/3d-art/e-5-blaster.jpg" alt="E-5 Blaster — 3D model"></div></div>
+         </div>
+        </div>
+        <a href="art.html" class="card-title">3D art</a><div class="card-badge dim">MODELLING &amp; TEXTURING · FOUR PIECES</div><div class="card-note">Enough to build my own game ideas without waiting on an artist — not a claim to be one.</div><a href="art.html" class="door sm ghost">See the pieces →</a>
+      </div>
+      <div class="card">
+        <div class="spin thumb">
+         <div class="spin-strip">
+          <div class="spin-panel"><div class="spin-inner"><img src="assets/web/liga-vcm.png" alt="Liga VCM — volleyball league platform"></div></div>
+          <div class="spin-panel"><div class="spin-inner"><img src="assets/web/dsm.png" alt="Don't Stop Madrid — venue listings"></div></div>
+         </div>
+        </div>
+        <div class="card-title">Web prototypes</div><div class="card-badge dim">MY OWN PROTOTYPES — NOT CLIENT WORK</div><div class="card-note">A league platform for 34 teams and an events agenda for two music venues, both for people I know. Pitched, never contracted, never in production. AI-built, with me as engineer and functional definition.</div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11.5px; line-height:2.1; margin-top:8px;">
+          <a href="https://volley-test-nine.vercel.app" target="_blank" rel="noopener">LIGA VCM ↗</a> &nbsp;·&nbsp;
+          <a href="https://local-music-two.vercel.app" target="_blank" rel="noopener">DON'T STOP MADRID ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; margin-top:18px;"><a href="https://github.com/aitorizur" target="_blank" rel="noopener">ALL REPOSITORIES ↗</a> &nbsp;·&nbsp; <a href="archive.html">EVERY PROJECT IN THE ARCHIVE →</a></div>
+  </div>
+
+  <a href="archive.html" class="sec" style="display:block; text-decoration:none; background:var(--panel2);">
+    <div class="sec-title" style="color:var(--accent);">Everything else →</div>
+    <div class="card-note" style="font-size:14px; max-width:70ch; margin-top:8px;">The complete index: 40+ projects from 2016 to today. Gameplay prototypes, 3D art, engine and graphics work, Unity tooling, web prototypes, algorithm studies and every jam entry — including the ones that didn't place.</div>
+  </a>
+
+  <div class="footer">
+    <span class="footer-links">
+      <a href="archive.html">ARCHIVE</a> ·
+      <a href="https://aitorizur.github.io/" target="_blank" rel="noopener">RÉSUMÉ</a> ·
+      <a href="mailto:aitorizur@gmail.com">aitorizur@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/aitor-izurrategui-de-castro" target="_blank" rel="noopener">LINKEDIN</a> ·
+      <a href="https://github.com/aitorizur" target="_blank" rel="noopener">GITHUB</a> ·
+      <a href="https://perceve.itch.io" target="_blank" rel="noopener">ITCH.IO</a>
+    </span>
+  </div>
+
+</div>
 </body>
 </html>

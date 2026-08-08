@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feather Fallout — Aitor Izurrategui</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;900&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/play.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topnav">
+    <div class="brand"><a href="index.html">AITOR IZURRATEGUI</a></div>
+    <div class="navlinks">
+      <a href="index.html" class="active">WORK</a><a href="about.html">ABOUT</a><a href="https://aitorizur.github.io/" target="_blank" rel="noopener">RESUME ↗</a>
+    </div>
+  </div>
+
+  <div class="split divided" style="--cols:1.4fr 1fr; border-bottom:var(--fw) solid var(--ink);">
+    <div>
+      <video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline>
+        <source src="assets/feather-fallout/clip-endgame.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="pad" style="display:flex; flex-direction:column;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:0.15em;">TOWER DEFENSE · 2024 · TWO WEEKS · TEAM OF 2</div>
+      <div class="game-h">Feather Fallout</div>
+      <div style="display:inline-flex; align-self:flex-start; align-items:center; gap:8px; background:var(--panel1); border:var(--fw) solid var(--ink); color:var(--ink); font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; padding:7px 12px; margin-top:14px;">TWO-COLOR TOWER DEFENSE · THEME: "TOWER"</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; line-height:1.65; color:color-mix(in srgb, var(--ink) 85%, transparent); margin-top:18px;">A tower defense built under a hard constraint: only two colors on screen, and turrets that swap color — and target — on command. Two weeks, taking the theme and the two-colour limitation of 1 bit Jam #4 as a design restriction rather than entering the jam itself.</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:14px; line-height:1.65; color:color-mix(in srgb, var(--ink) 70%, transparent); margin-top:12px;"><span style="color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:11px;">MY ROLE —</span> One of 2 developers (with a 2D pixel artist): game design, Unity, C#, and the color-swap targeting system.</div>
+      <div class="tags" style="margin-top:18px;">
+        <span class="tag">UNITY</span><span class="tag">C#</span><span class="tag">GAME DESIGN</span><span class="tag">TOWER DEFENSE</span>
+      </div>
+      <div style="display:flex; gap:14px; margin-top:auto; padding-top:26px; flex-wrap:wrap;">
+        <a href="#play" class="btn primary">▶ Play it on this page</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="sec" id="play" style="padding-bottom:0;">
+    <div class="sec-head">
+      <div class="sec-title">Play it right here</div>
+      <div class="sec-sub">LOADS ON DEMAND · NOTHING TO INSTALL</div>
+    </div>
+    <div class="playbox" data-embed="11923096" data-title="Feather Fallout — playable build">
+      <button type="button">▶ Play Feather Fallout</button>
+      <div class="play-note">Two colours on screen at a time. Match the turret to the wave and see whether the numbers hold up.</div>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">What I designed &amp; built</div>
+      <div class="sec-sub">CORE LOOP · TURRET RULES · ECONOMY</div>
+    </div>
+    <div class="grid-4 text">
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">01</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">Dynamic tower defense</div><div class="card-note">I designed and programmed the core loop, where turrets flip between two colours and only damage matching enemies — turning colour management into the central tactical decision.</div></div>
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">02</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">Paired turrets</div><div class="card-note">Turrets work in colour pairs, so covering a lane means balancing both colours at once. I tuned their placement and switching rules to keep that trade-off constantly interesting.</div></div>
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">03</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">In-game economy</div><div class="card-note">I designed the round-based economy — DPS, effectiveness values and per-round budgets — so every purchase between waves is a meaningful decision.</div></div>
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">04</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">Aesthetics</div><div class="card-note">We committed to a strict two-colour palette and a matching setting and sound design, turning the jam's limitation into the game's identity.</div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">More from the build</div>
+      <div class="sec-sub">TWO WEEKS · TWO COLOURS</div>
+    </div>
+    <div class="grid-4">
+      <div class="ph small" style="aspect-ratio:16/10; padding:0; overflow:hidden; display:flex; align-items:center; justify-content:center; background:#000;"><img src="assets/feather-fallout/badge-1bit-jam.png" style="max-width:70%; max-height:70%; object-fit:contain;" alt="1 bit Jam #4 badge"></div>
+      <video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/feather-fallout/clip-intro.mp4" type="video/mp4"></video>
+      <video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/feather-fallout/clip-tutorial.mp4" type="video/mp4"></video>
+      <video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/feather-fallout/clip-level1.mp4" type="video/mp4"></video>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="precise-hero.html" class="footer-back">← PREV: THE PRECISE HERO</a>
+    <a href="archive.html" class="footer-back">ALL PROJECTS ↑</a>
+    <a href="rush-fighter.html" class="footer-cta" style="font-size:16px;">Next: Rush Fighter →</a>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,485 @@
+/* ============================================================
+   Portfolio v2 — mobile-first stylesheet.
+
+   The base rules target a phone; each @media (min-width) step adds
+   the wider layout back. Layout values that change per block come
+   from the HTML as custom properties (--cols), never as an inline
+   `grid-template-columns`: an inline declaration outranks anything
+   here, so a block written that way could never collapse.
+
+   Breakpoints:  400px  media cards go to 2 columns
+                 640px  gutter grows
+                 700px  text panels go to 2 columns
+                 900px  full desktop layout (splits side by side)
+   ============================================================ */
+
+:root {
+  --bg: #17160f;
+  --ink: #f2f0e6;
+  --accent: #ffd83d;
+  --panel1: #221f15;
+  --panel2: #1c1a11;
+  --fw: 2px;
+  --gut: 18px;              /* page gutter — grows with the viewport */
+}
+@media (min-width: 640px) { :root { --gut: 28px; } }
+@media (min-width: 900px) { :root { --gut: 44px; } }
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+/* Media never pushes its container wider than the screen. */
+img, video { max-width: 100%; }
+
+/* Grid and flex children default to min-width:auto, which lets long
+   words and wide media blow out the track. This is the fix. */
+.split > *, .grid-2 > *, .grid-3 > *, .grid-4 > *,
+.media-row > *, .tl-row > *, .hero > *, .stats > * { min-width: 0; }
+
+a { color: var(--accent); }
+a:hover { color: var(--ink); }
+
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  background: var(--bg);
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Placeholder media block (stand-in for real screenshots/video) */
+.ph {
+  background: repeating-linear-gradient(45deg, var(--panel1), var(--panel1) 14px, var(--panel2) 14px, var(--panel2) 28px);
+  border: var(--fw) solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.ph span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: color-mix(in srgb, var(--accent) 55%, transparent);
+  padding: 8px;
+}
+.ph.small span { font-size: 9.5px; color: color-mix(in srgb, var(--ink) 40%, transparent); }
+
+/* Profile photo */
+.photo {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border: var(--fw) solid var(--ink);
+  position: relative;
+}
+.photo-wrap {
+  position: relative;
+}
+.photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.18'/></svg>");
+  mix-blend-mode: overlay;
+  border: var(--fw) solid var(--ink);
+}
+
+/* ---------- Top nav ---------------------------------------------------- */
+/* Sticky on phones and tablets: the case-study pages run several screens
+   deep and getting back to the hub should not mean scrolling to the top.
+   Left static on desktop, which is the layout that was signed off. */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;          /* below ~310px the links drop to a second line
+                               instead of colliding with the name */
+  gap: 6px 12px;
+  padding: 12px var(--gut);
+  border-bottom: var(--fw) solid var(--ink);
+}
+.brand {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: clamp(10.5px, 3vw, 14px);
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.brand a { color: inherit; text-decoration: none; }
+.navlinks {
+  display: flex;
+  gap: clamp(13px, 3.6vw, 30px);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(10px, 2.9vw, 12px);
+  white-space: nowrap;
+}
+/* Padding + negative margin grows the tap target to ~44px without
+   changing where the text sits. */
+.navlinks a {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 14px 0;
+  margin: -14px 0;
+}
+.navlinks a.active { color: var(--accent); }
+
+@media (min-width: 900px) {
+  .brand { letter-spacing: 0.14em; }
+  .topnav { position: static; padding: 22px var(--gut); }
+  .navlinks a { padding: 0; margin: 0; }
+}
+
+/* ---------- Footer ----------------------------------------------------- */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 18px var(--gut);
+  flex-wrap: wrap;
+}
+.footer-cta {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(16px, 4.6vw, 20px);
+  color: var(--accent);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.footer-links {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  line-height: 2.2;
+  color: color-mix(in srgb, var(--ink) 75%, transparent);
+}
+.footer-links a { color: inherit; text-decoration: none; display: inline-block; padding: 4px 0; }
+.footer-links a:hover { color: var(--accent); }
+.footer-back {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: color-mix(in srgb, var(--ink) 60%, transparent);
+  text-decoration: none;
+  display: inline-block;
+  padding: 6px 0;
+}
+.footer-back:hover { color: var(--accent); }
+
+@media (min-width: 900px) {
+  .footer { flex-direction: row; justify-content: space-between; align-items: center; gap: 12px; }
+  .footer-links { line-height: normal; }
+}
+
+/* ---------- Sections --------------------------------------------------- */
+.sec {
+  padding: 22px var(--gut) 28px;
+  border-bottom: var(--fw) solid var(--ink);
+}
+.sec-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.sec-title {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(20px, 5.4vw, 26px);
+  color: var(--ink);
+  text-transform: uppercase;
+}
+.sec-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: color-mix(in srgb, var(--ink) 50%, transparent);
+}
+.sec-sub a { color: inherit; }
+
+@media (min-width: 900px) {
+  .sec { padding: 26px var(--gut) 34px; }
+  .sec-head { flex-direction: row; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+}
+
+/* ---------- Display headings ------------------------------------------- */
+/* Every oversized heading scales with the viewport instead of being
+   frozen at its desktop size. */
+.h-display {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(38px, 11vw, 56px);
+  text-transform: uppercase;
+  line-height: 1;
+}
+.h-sub {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(28px, 7.5vw, 40px);
+  color: var(--ink);
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+.h-sm {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(19px, 5vw, 24px);
+  color: var(--ink);
+  text-transform: uppercase;
+}
+/* Game jam detail-page heading, plus its two smaller variants. */
+.game-h { font-family: 'Anton', sans-serif; font-size: clamp(34px, 9.5vw, 76px); color: var(--ink); text-transform: uppercase; line-height: 0.98; margin-top: 10px; }
+.game-h.lg { font-size: clamp(32px, 9vw, 60px); }
+.game-h.md { font-size: clamp(30px, 8.5vw, 52px); }
+
+/* ---------- Tag pills -------------------------------------------------- */
+.tags { display: flex; flex-wrap: wrap; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+.tag { border: var(--fw) solid var(--ink); padding: 9px 14px; color: var(--ink); }
+.tag.accent { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 700; }
+
+/* ---------- Split: two panels side by side on desktop, stacked on phone -- */
+/* Column ratio comes in as --cols so this rule keeps winning on mobile. */
+.split { display: grid; grid-template-columns: 1fr; }
+.split.gap-lg { gap: 20px; }
+/* .divided draws the rule between panels — horizontal when stacked,
+   vertical when side by side. Panels must not carry their own border. */
+.split.divided > * + * { border-top: var(--fw) solid var(--ink); }
+
+@media (min-width: 900px) {
+  .split { grid-template-columns: var(--cols, 1fr 1fr); }
+  .split.gap-lg { gap: 32px; }
+  .split.divided > * + * { border-top: 0; border-left: var(--fw) solid var(--ink); }
+}
+
+/* Padded panel. Inside a split the inner edges tighten up on desktop. */
+.pad { padding: 24px var(--gut) 28px; }
+@media (min-width: 900px) {
+  .pad { padding: 32px var(--gut); }
+  .split > .pad:first-child { padding-right: 36px; }
+  .split > .pad:last-child { padding-left: 36px; }
+}
+
+/* Media that fills its half of a split on desktop but keeps a sane
+   aspect ratio once stacked (height:100% has nothing to resolve against
+   in a single-column grid). */
+.split-media { width: 100%; height: auto; aspect-ratio: 16 / 9; }
+@media (min-width: 900px) { .split-media { height: 100%; aspect-ratio: auto; } }
+
+/* ---------- Hero (hub) -------------------------------------------------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 26px var(--gut) 30px;
+  border-bottom: var(--fw) solid var(--ink);
+  align-items: center;
+}
+.hero-line {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(19px, 5.2vw, 32px);
+  line-height: 1.25;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.hero .tags { justify-content: flex-start; }
+
+@media (min-width: 900px) {
+  .hero { grid-template-columns: 1fr 340px; gap: 40px; padding: 36px var(--gut); }
+  .hero .tags { justify-content: flex-end; }
+}
+
+/* ---------- Thumbnail + text row (featured block) ----------------------- */
+.media-row { display: grid; grid-template-columns: 1fr; gap: 14px; }
+@media (min-width: 900px) { .media-row { grid-template-columns: 220px 1fr; gap: 20px; } }
+
+/* ---------- Timeline row (about) ---------------------------------------- */
+.tl-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(242, 240, 230, 0.25);
+}
+.tl-row:last-child { border-bottom: 1px solid rgba(242, 240, 230, 0.25); }
+.tl-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: color-mix(in srgb, var(--ink) 50%, transparent);
+  text-align: left;
+}
+@media (min-width: 900px) {
+  .tl-row { grid-template-columns: 190px 1fr 320px; gap: 24px; padding: 16px 0; }
+  .tl-meta { text-align: right; }
+}
+
+/* ---------- Card grids -------------------------------------------------- */
+/* Base is a single column. Media cards (thumbnail + title) pair up early;
+   text panels — the bordered ones with a paragraph inside — wait until
+   there is room to read them. */
+.grid-2, .grid-3, .grid-4 { display: grid; grid-template-columns: 1fr; gap: 12px; }
+
+@media (min-width: 360px) {
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .grid-3.text, .grid-4.text { grid-template-columns: 1fr; }
+}
+@media (min-width: 700px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3.text, .grid-4.text { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .grid-2 { gap: 20px; }
+  .grid-3, .grid-3.text { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .grid-4, .grid-4.text { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+}
+
+.card .ph { aspect-ratio: 16 / 10; }
+.card-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ink);
+  margin-top: 10px;
+  text-decoration: none;
+  display: block;
+}
+a.card-title { padding: 2px 0; }
+.card-note {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--ink) 72%, transparent);
+  margin-top: 5px;
+}
+.card-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  color: var(--accent);
+  margin-top: 3px;
+}
+.card-badge.dim { color: color-mix(in srgb, var(--ink) 50%, transparent); }
+
+/* Bordered text panel used inside .grid-*.text */
+.panel { border: var(--fw) solid var(--ink); padding: 16px; }
+.panel-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); }
+.panel-num.dim { color: color-mix(in srgb, var(--ink) 55%, transparent); }
+.panel-title { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 16px; color: var(--ink); margin-top: 8px; }
+@media (min-width: 900px) { .panel { padding: 18px; } }
+
+/* ---------- Stat grid --------------------------------------------------- */
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--ink); border: var(--fw) solid var(--ink); }
+.stat { background: var(--bg); padding: 12px 14px; }
+.stat b { font-family: 'Anton', sans-serif; font-size: clamp(20px, 5.5vw, 24px); color: var(--accent); display: block; font-weight: normal; }
+.stat small { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: color-mix(in srgb, var(--ink) 70%, transparent); margin-top: 2px; display: block; }
+
+/* ---------- Buttons ----------------------------------------------------- */
+.btn {
+  font-family: 'Anton', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn.primary { background: var(--accent); color: var(--bg); }
+.btn.outline { border: var(--fw) solid var(--ink); color: var(--ink); padding: 10px 24px; }
+
+/* Autoplaying video tiles inside .ph-style media slots */
+.vid { width: 100%; display: block; object-fit: cover; border: var(--fw) solid var(--ink); background: #000; }
+
+/* ---------- Spin-off triptych ------------------------------------------- */
+/* Three screenshots split by angled seams. Rectangular frame: the sheared
+   strip inside bleeds past the left/right edges, so the diagonal outer
+   edges get clipped and only the internal seams show.
+   Portrait frame on phones so the panels aren't slivers — the bleed has to
+   grow with the height: tan(8deg) * 1.25 / 2 ~= 8.8% of the width. */
+.spin {
+  --skew: -8deg;
+  --overhang: 12%;
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border: var(--fw) solid var(--ink);
+  background: var(--ink);
+  overflow: hidden;
+  container-type: size;            /* lets each panel size its art to the FRAME, not to itself */
+}
+.spin-strip {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: calc(var(--overhang) * -1);
+  right: calc(var(--overhang) * -1);
+  display: flex;
+  gap: var(--fw);
+  background: var(--ink);          /* becomes the seam colour */
+  transform: skewX(var(--skew));
+}
+.spin-panel { position: relative; flex: 1 1 0; min-width: 0; overflow: hidden; }
+
+/* Art is sized to the FRAME (100cqw) and centred on its panel, rather than
+   sized to the panel: each panel is a window onto the middle slice of its
+   full-scale screenshot, so nothing is squeezed or blown up. */
+.spin-inner {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 100cqw;
+  transform: translateX(-50%) skewX(calc(var(--skew) * -1));
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--ink) 8%, transparent) 0 2px, transparent 2px 12px),
+    #221f14;
+}
+.spin-inner img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+
+/* Hub thumbnail variant: shorter frame, so less bleed is needed. */
+.spin.thumb { aspect-ratio: 16 / 10; --skew: -6deg; --overhang: 6%; }
+
+@media (min-width: 900px) {
+  .spin { aspect-ratio: 16 / 9; --overhang: 6%; }
+}
+
+/* ------------------------------------------------------------------
+   Playable itch.io embed (story F). The box is the pre-load state;
+   assets/play.js swaps its contents for the iframe on click.
+   ------------------------------------------------------------------ */
+.playbox {
+  border: var(--fw) solid var(--accent);
+  background: var(--panel2);
+  aspect-ratio: 16 / 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px var(--gut);
+  text-align: center;
+}
+@media (min-width: 700px) { .playbox { aspect-ratio: 16 / 9; } }
+.playbox button {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(20px, 5vw, 34px);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  background: var(--accent);
+  color: var(--bg);
+  border: var(--fw) solid var(--accent);
+  padding: 14px 26px;
+  cursor: pointer;
+  line-height: 1;
+}
+.playbox button:hover { background: var(--bg); color: var(--accent); }
+.playbox .play-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--ink) 60%, transparent);
+  max-width: 46ch;
+}
+/* Once loaded the box is just a frame around the player. */
+.playbox.loaded { display: block; padding: 0; background: #000; }
+.playbox iframe { width: 100%; height: 100%; border: 0; display: block; }

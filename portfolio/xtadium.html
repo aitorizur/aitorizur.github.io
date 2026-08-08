@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xtadium — Aitor Izurrategui</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;900&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .xt-h { font-family:'Anton',sans-serif; font-size:clamp(36px, 11vw, 96px); color:var(--ink); text-transform:uppercase; line-height:0.98; margin-top:12px; }
+  .xt-meta { display:flex; flex-direction:column; gap:8px; margin-top:20px;
+             font-family:'JetBrains Mono',monospace; font-size:12px;
+             color:color-mix(in srgb, var(--ink) 65%, transparent); }
+  @media (min-width:900px){ .xt-meta { flex-direction:row; gap:40px; margin-top:24px; } }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topnav">
+    <div class="brand"><a href="index.html">AITOR IZURRATEGUI</a></div>
+    <div class="navlinks">
+      <a href="index.html" class="active">WORK</a><a href="about.html">ABOUT</a><a href="https://aitorizur.github.io/" target="_blank" rel="noopener">RESUME ↗</a>
+    </div>
+  </div>
+
+  <div class="sec" style="padding:30px var(--gut) 28px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:0.15em;">CASE STUDY 01 · YBVR / META · 2024—NOW</div>
+    <div class="xt-h">Xtadium — sports, <span style="color:var(--accent);">from the front row.</span></div>
+    <div class="xt-meta">
+      <span><span style="color:var(--accent);">ROLE</span> — Unity VR Developer (full-time on app)</span>
+      <span><span style="color:var(--accent);">PLATFORM</span> — Meta Quest 2 / 3 / Pro</span>
+      <span><span style="color:var(--accent);">STACK</span> — Unity · OpenXR · Photon · HLSL · Addressables</span>
+    </div>
+  </div>
+
+  <video class="vid" style="aspect-ratio:16/9; border-left:0; border-right:0;" autoplay loop muted playsinline>
+    <source src="assets/xtadium/clip-hero.mp4" type="video/mp4">
+  </video>
+
+  <div class="split divided" style="border-bottom:var(--fw) solid var(--ink);">
+    <div class="pad">
+      <div class="sec-title" style="font-size:24px;">The gig</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; line-height:1.65; color:color-mix(in srgb, var(--ink) 85%, transparent); margin-top:12px;">Xtadium is Meta's featured immersive sports app — free on Quest, funded by and built in direct partnership with Meta. Live NBA, UFC, NASCAR and EuroLeague in 8K 180°/360° video, with multi-camera switching, real-time stats and watch parties. I work full-time on the app: UX-focused features, systems architecture and whatever the next Meta deadline needs.</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; line-height:1.65; color:color-mix(in srgb, var(--ink) 85%, transparent); margin-top:12px;">The hard part: a production app growing fast on strict Meta deadlines, refactored continuously — UI, navigation, backend integration, Built-in → URP migration — <span style="color:var(--accent);">without ever pausing releases.</span></div>
+    </div>
+    <div class="pad" style="display:flex; flex-direction:column; gap:2px;">
+      <div class="sec-title" style="font-size:24px; margin-bottom:12px;">By the numbers</div>
+      <div class="stats">
+        <div class="stat"><b>90 FPS</b><small>STABLE — CRITICAL COMFORT REQ.</small></div>
+        <div class="stat"><b>8K / 60</b><small>180° / 360° STREAMS</small></div>
+        <div class="stat"><b>3 APPS</b><small>PUBLISHED FROM ONE CODEBASE</small></div>
+        <div class="stat"><b>3 LANGS</b><small>FULL LOCALIZATION SYSTEM</small></div>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:color-mix(in srgb, var(--ink) 60%, transparent); margin-top:14px; line-height:1.8;">SHIPPED WITH: NBA · WNBA · UFC · NASCAR · PSG · NHL · EUROLEAGUE · X GAMES · FOX</div>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-bottom:6px;">
+    <div class="sec-title" style="margin-bottom:10px;">From the bug queue to subsystem owner</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; line-height:1.65; color:color-mix(in srgb, var(--ink) 85%, transparent); max-width:78ch;">I joined fixing UI defects. Twenty-one months later I own entire cross-cutting subsystems — spatial UI, notifications, onboarding, localization, spin-offs — and I <span style="color:var(--accent);">lead the device-agnostic architecture effort</span>. It was never a title change. It was a scope change.</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">Systems I own end-to-end</div>
+      <div class="sec-sub">SOLE AUTHOR — PROTOTYPE, PRODUCTION, MAINTENANCE</div>
+    </div>
+    <div class="grid-3 text">
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">01</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">Spatial UI Positioning</div><div class="card-note">In XR the interface doesn't live on a screen — it lives around you. Default placement and scale for every panel, hooked into the headset's native recenter so the UI repositions itself instead of asking permission. Invalid-position rules, distance limits, and a long tail of drift bugs across scene, room and VR↔MR transitions.</div></div>
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">02</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">Notification System</div><div class="card-note">Three generations. Spatial audio and attention levels on the original; then a full re-architecture with per-product views, copy and icons; then migrating the last consumers off the legacy manager and <span style="color:var(--accent);">deleting it</span> — closing the tech debt rather than leaving two systems alive.</div></div>
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">03</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">Onboarding &amp; Tutorial</div><div class="card-note">My largest sustained codebase here. Prototyped in Timeline first to validate the concept <em>before</em> committing architecture. Enter and exit at any step, resume, restart, first-launch only. 3D highlighter and coachmarks in world space, plus an immersive video tutorial synced to the step sequence. <em>Design owned the design; I owned the implementation.</em></div></div>
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">04</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">Localization Pipeline</div><div class="card-note">EN / ES / DE, built as a customization capability rather than a fixed translation. Two iterations: strings first, then culture data — date formats and regional variants. Shared dictionaries across separate Unity projects, with key sanitation and reference-repair tooling.</div></div>
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">05</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">Spin-off Architecture</div><div class="card-note">The reusable base plus the feature switching that lets a whole separate product ship from this codebase — same systems, different skin, features on or off per product. Three apps on the Meta Store run on it.</div></div>
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">06</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">Engagement Features</div><div class="card-note">Content voting with particle effects and its own behavior inside watch parties, session-gated favourites, app-rating modal, content and duration tags, and headset-calendar integration — feasibility research first, then the flow.</div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">Built with the team</div>
+      <div class="sec-sub">CO-AUTHORED — MY SHARE, NOT THE WHOLE SYSTEM</div>
+    </div>
+    <div class="grid-4 text">
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:color-mix(in srgb, var(--ink) 55%, transparent);">CO-AUTHORED</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">UI Components &amp; Design Toolkit</div><div class="card-note">The component system and the design-system package that grew out of it: asset library, global bindings, custom UI Toolkit editors — including a matrix editor for button states. The outcome that matters: <span style="color:var(--accent);">layout stopped going through engineering.</span> Design now builds the prefabs and the pure UI behaviour; we wire the logic.</div></div>
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:color-mix(in srgb, var(--ink) 55%, transparent);">CO-AUTHORED</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">XRI + OpenXR Migration</div><div class="card-note">Team migration onto Unity's XR Interaction Toolkit rig, recovering every dependent interaction: near-far interactors, reticle, fist-grab, panel and bar handling, 3D object interaction. The technical base that makes multi-device viable.</div></div>
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:color-mix(in srgb, var(--ink) 55%, transparent);">CO-AUTHORED</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">Immersive Video Playback</div><div class="card-note">Shared with the tech lead. Playback controls and slow-motion menu, the multi-camera map with 7+ cameras, viewport ordering and camera pinning on low-latency feeds, plus 3D environments loaded and unloaded with the content.</div></div>
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:color-mix(in srgb, var(--ink) 55%, transparent);">CO-AUTHORED</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">Space Navigation</div><div class="card-note">Co-designed with the tech lead: room-to-room travel with history and a back stack, loading screens between spaces, hub customization, and the spaces menu in the personal UI.</div></div>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-top:0;">
+    <div style="border:var(--fw) solid var(--accent); padding:22px 24px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">CURRENTLY LEADING — 2026</div>
+      <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:18px; color:var(--ink); margin-top:8px;">Device-agnostic architecture</div>
+      <div class="card-note" style="font-size:13.5px;">Xtadium was built against a single vendor's SDK. I lead the work to isolate those vendor-specific dependencies — avatar profiles among them — and turn them into cross-cutting, device-agnostic functionality, so every product on this codebase can be built for more than one target from the same project.</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">HIGHLIGHT — SPIN-OFF SYSTEM</div>
+    <div class="sec-title" style="margin:10px 0 6px;">One codebase, three apps</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; line-height:1.65; color:color-mix(in srgb, var(--ink) 85%, transparent); max-width:70ch; margin-bottom:14px;">The feature-flag base I built lets a whole app ship from Xtadium's codebase — same systems, different skin, features switched on or off per product.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:11.5px; line-height:2; margin-bottom:22px;">ALL THREE LIVE ON THE META STORE —
+      <a href="https://www.meta.com/es-es/experiences/xtadium-immersive-sports/7281839885191361/" target="_blank" rel="noopener">XTADIUM ↗</a> ·
+      <a href="https://www.meta.com/es-es/experiences/xtadium-music/25188032557482815/" target="_blank" rel="noopener">XTADIUM MUSIC ↗</a> ·
+      <a href="https://www.meta.com/es-es/experiences/cultvre-culture-comes-alive-in-vr/28427588560218368/" target="_blank" rel="noopener">CULTVRE ↗</a>
+    </div>
+
+    <div class="spin">
+     <div class="spin-strip">
+      <div class="spin-panel">
+        <div class="spin-inner"><img src="assets/xtadium/spinoff-xtadium.webp" alt="Xtadium — immersive sports app on Meta Quest"></div>
+      </div>
+      <div class="spin-panel">
+        <div class="spin-inner"><img src="assets/xtadium/spinoff-music.webp" alt="Xtadium Music — immersive concerts on Meta Quest"></div>
+      </div>
+      <div class="spin-panel">
+        <div class="spin-inner"><img src="assets/xtadium/spinoff-cultvre.webp" alt="CultVRe — immersive culture and heritage on Meta Quest"></div>
+      </div>
+     </div>
+    </div>
+  </div>
+
+  <div class="split divided" style="--cols:1fr 1.2fr; border-bottom:var(--fw) solid var(--ink);">
+    <div class="pad">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">HIGHLIGHT — REAL-TIME TELEMETRY, 100+ CARS</div>
+      <div class="h-sub" style="margin-top:10px;">NASCAR 3D Tabletop</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:14.5px; line-height:1.65; color:color-mix(in srgb, var(--ink) 85%, transparent); margin-top:14px;">An interactive 3D miniature of the racetrack — grab it, move it, rotate it — replaying the race synced frame-accurate with video playback. Real telemetry streamed in chunks from an external provider and consumed <em>identically in live and VOD</em>, driving <span style="color:var(--accent);">100+ cars on screen</span> at once. I built the entire user experience and its integration inside Xtadium.</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:10.5px; color:color-mix(in srgb, var(--ink) 55%, transparent); margin-top:14px; line-height:1.6;">STATUS — INTERNAL R&amp;D BUILD. FULLY DEVELOPED, NEVER PUBLICLY RELEASED.</div>
+    </div>
+    <video class="vid split-media" poster="assets/xtadium/tabletop-poster.webp" preload="metadata" autoplay loop muted playsinline><source src="assets/xtadium/clip-tabletop.mp4" type="video/mp4"></video>
+  </div>
+
+  <div class="split divided" style="--cols:1.2fr 1fr; border-bottom:var(--fw) solid var(--ink);">
+    <video class="vid split-media" poster="assets/xtadium/leaderboard-poster.webp" preload="metadata" autoplay loop muted playsinline><source src="assets/xtadium/clip-leaderboard.mp4" type="video/mp4"></video>
+    <div class="pad">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">PART OF THE SAME SYSTEM</div>
+      <div class="h-sub" style="margin-top:10px;">Live Leaderboard</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:14.5px; line-height:1.65; color:color-mix(in srgb, var(--ink) 85%, transparent); margin-top:14px;">The tabletop's companion panel — same feature, same author. The full field ranked live, with <span style="color:var(--accent);">per-driver focus and hide</span> controls that drive what the miniature shows. Pinned driver cards keep speed and interval telemetry in view while the race runs, fed by the same chunked stream in live and VOD alike. Participant selection, handle placement, miniature scaling and teardown on exit all sit in here too.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="index.html" class="footer-back">← BACK TO WORK</a>
+    <a href="giro.html" class="footer-cta">Next: G!RO →</a>
+  </div>
+
+</div>
+</body>
+</html>

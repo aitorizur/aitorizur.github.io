@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Point of No Return — Aitor Izurrategui</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;900&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/play.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topnav">
+    <div class="brand"><a href="index.html">AITOR IZURRATEGUI</a></div>
+    <div class="navlinks">
+      <a href="index.html" class="active">WORK</a><a href="about.html">ABOUT</a><a href="https://aitorizur.github.io/" target="_blank" rel="noopener">RESUME ↗</a>
+    </div>
+  </div>
+
+  <div class="split divided" style="--cols:1.4fr 1fr; border-bottom:var(--fw) solid var(--ink);">
+    <div>
+      <video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline>
+        <source src="assets/point-of-no-return/clip-danger-zone.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="pad" style="display:flex; flex-direction:column;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:0.15em;">SPACE EXPLORATION · 2024 · UNITY JAM · TEAM OF 2</div>
+      <div class="game-h md">Point of<br>No Return</div>
+      <div style="display:inline-flex; align-self:flex-start; align-items:center; gap:8px; background:var(--accent); color:var(--bg); font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; padding:7px 12px; margin-top:14px;">🏆 2ND OVERALL OF 55 — UNITY JAM 2024 · CASH PRIZES</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; line-height:1.65; color:color-mix(in srgb, var(--ink) 85%, transparent); margin-top:18px;">A space exploration &amp; colonization game built for the jam's "expanding" theme: the universe itself keeps expanding around you, and outrunning it is the whole point. Built in 5 days.</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:14px; line-height:1.65; color:color-mix(in srgb, var(--ink) 70%, transparent); margin-top:12px;"><span style="color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:11px;">MY ROLE —</span> One of 2 developers (with a 2D pixel artist): game design, Unity, C#, a scale-aware world system, physics-driven ship controller, and the upgrade loop.</div>
+      <div class="tags" style="margin-top:18px;">
+        <span class="tag">UNITY</span><span class="tag">C#</span><span class="tag">GAME DESIGN</span><span class="tag">PHYSICS</span>
+      </div>
+      <div style="display:flex; gap:14px; margin-top:auto; padding-top:26px; flex-wrap:wrap;">
+        <a href="#play" class="btn primary">▶ Play it on this page</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="sec" id="play" style="padding-bottom:0;">
+    <div class="sec-head">
+      <div class="sec-title">Play it right here</div>
+      <div class="sec-sub">LOADS ON DEMAND · NOTHING TO INSTALL</div>
+    </div>
+    <div class="playbox" data-embed="11535289" data-title="Point of No Return — playable build">
+      <button type="button">▶ Play Point of No Return</button>
+      <div class="play-note">The Unity Jam build, exactly as it was judged. Runs in this page — no download, no account.</div>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">What I designed &amp; built</div>
+      <div class="sec-sub">WORLD SYSTEM · MAP · PROGRESSION · SHIP PHYSICS</div>
+    </div>
+    <div class="grid-4 text">
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">01</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">Scaling world</div><div class="card-note">For the game's main mechanic I designed and programmed the system that constantly pushes every object apart, while keeping the world and its physics working as expected.</div></div>
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">02</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">Map design</div><div class="card-note">To reward exploration, points of interest are spread across the map. There is a preferred path, but the map is an open world where players can head in any direction at any time.</div></div>
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">03</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">Upgrade system</div><div class="card-note">I implemented a progression and upgrade system: you collect resources to gradually improve your ship and discover upgrades scattered throughout the map.</div></div>
+      <div class="panel"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent);">04</div><div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin-top:8px;">Player controller</div><div class="card-note">I built a physics-based ship controller to sell the feeling of steering a propelled body through space, requiring careful handling and fuel management.</div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">More from the jam</div>
+      <div class="sec-sub">SCALE SYSTEM · SHIP PHYSICS · UPGRADES</div>
+    </div>
+    <div class="grid-4">
+      <div class="ph small" style="aspect-ratio:16/10; padding:0; overflow:hidden;"><img src="assets/point-of-no-return/cover-ship.png" style="width:100%; height:100%; object-fit:cover;" alt="Point of No Return ship render"></div>
+      <video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/point-of-no-return/clip-cruising.mp4" type="video/mp4"></video>
+      <video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/point-of-no-return/clip-scaling-world.mp4" type="video/mp4"></video>
+      <video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/point-of-no-return/clip-upgrade-system.mp4" type="video/mp4"></video>
+      <video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/point-of-no-return/clip-asteroids.mp4" type="video/mp4"></video>
+      <video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/point-of-no-return/clip-intro.mp4" type="video/mp4"></video>
+      <video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/point-of-no-return/clip-extra1.mp4" type="video/mp4"></video>
+      <video class="vid" style="aspect-ratio:16/10;" autoplay loop muted playsinline><source src="assets/point-of-no-return/clip-extra2.mp4" type="video/mp4"></video>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="giro.html" class="footer-back">← PREV: G!RO</a>
+    <a href="archive.html" class="footer-back">ALL PROJECTS ↑</a>
+    <a href="precise-hero.html" class="footer-cta" style="font-size:16px;">Next: The Precise Hero →</a>
+  </div>
+
+</div>
+</body>
+</html>
